@@ -1,0 +1,8 @@
+description = "Universally unique identifiers (UUIDs) for OCaml"
+version = "0.9.10"
+requires = ""
+archive(byte) = "uuidm.cma"
+archive(native) = "uuidm.cmxa"
+plugin(byte) = "uuidm.cma"
+plugin(native) = "uuidm.cmxs"
+exists_if = "uuidm.cma uuidm.cmxa"

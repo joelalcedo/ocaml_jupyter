@@ -1,0 +1,1 @@
+include module type of struct include Genlex end

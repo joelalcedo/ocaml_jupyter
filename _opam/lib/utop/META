@@ -1,0 +1,8 @@
+version = "2.15.0"
+description = ""
+requires =
+"compiler-libs.toplevel findlib.top lambda-term logs logs.lwt threads xdg zed"
+archive(byte) = "uTop.cma"
+archive(native) = ""
+plugin(byte) = "uTop.cma"
+plugin(native) = ""

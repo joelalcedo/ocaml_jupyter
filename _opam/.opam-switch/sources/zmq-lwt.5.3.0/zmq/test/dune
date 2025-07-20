@@ -1,0 +1,10 @@
+(executable
+ (name test)
+ (libraries ounit2 zmq threads))
+
+(rule
+ (alias runtest)
+ (deps
+  (:test test.exe))
+ (action
+  (run %{test})))

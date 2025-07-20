@@ -1,0 +1,110 @@
+(lang dune 3.19)
+(name ppx_yojson_conv)
+(version v0.15.1)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_yojson_conv))
+(files
+ (lib
+  (META
+   dune-package
+   expander/attrs.ml
+   expander/attrs.mli
+   expander/label_with_name.ml
+   expander/label_with_name.mli
+   expander/ppx_yojson_conv_expander.a
+   expander/ppx_yojson_conv_expander.cma
+   expander/ppx_yojson_conv_expander.cmi
+   expander/ppx_yojson_conv_expander.cmt
+   expander/ppx_yojson_conv_expander.cmti
+   expander/ppx_yojson_conv_expander.cmx
+   expander/ppx_yojson_conv_expander.cmxa
+   expander/ppx_yojson_conv_expander.ml
+   expander/ppx_yojson_conv_expander.mli
+   expander/ppx_yojson_conv_expander__.cmi
+   expander/ppx_yojson_conv_expander__.cmt
+   expander/ppx_yojson_conv_expander__.cmx
+   expander/ppx_yojson_conv_expander__.ml
+   expander/ppx_yojson_conv_expander__Attrs.cmi
+   expander/ppx_yojson_conv_expander__Attrs.cmt
+   expander/ppx_yojson_conv_expander__Attrs.cmti
+   expander/ppx_yojson_conv_expander__Attrs.cmx
+   expander/ppx_yojson_conv_expander__Label_with_name.cmi
+   expander/ppx_yojson_conv_expander__Label_with_name.cmt
+   expander/ppx_yojson_conv_expander__Label_with_name.cmti
+   expander/ppx_yojson_conv_expander__Label_with_name.cmx
+   opam
+   ppx_yojson_conv.a
+   ppx_yojson_conv.cma
+   ppx_yojson_conv.cmi
+   ppx_yojson_conv.cmt
+   ppx_yojson_conv.cmti
+   ppx_yojson_conv.cmx
+   ppx_yojson_conv.cmxa
+   ppx_yojson_conv.ml
+   ppx_yojson_conv.mli))
+ (libexec (expander/ppx_yojson_conv_expander.cmxs ppx_yojson_conv.cmxs))
+ (doc (LICENSE.md README.org)))
+(library
+ (name ppx_yojson_conv)
+ (kind ppx_deriver)
+ (archives (byte ppx_yojson_conv.cma) (native ppx_yojson_conv.cmxa))
+ (plugins (byte ppx_yojson_conv.cma) (native ppx_yojson_conv.cmxs))
+ (native_archives ppx_yojson_conv.a)
+ (requires ppxlib.ast ppxlib ppx_yojson_conv.expander)
+ (main_module_name Ppx_yojson_conv)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ppx_yojson_conv)
+   (visibility public)
+   (source
+    (path Ppx_yojson_conv)
+    (intf (path ppx_yojson_conv.mli))
+    (impl (path ppx_yojson_conv.ml))))))
+(library
+ (name ppx_yojson_conv.expander)
+ (kind normal)
+ (archives
+  (byte expander/ppx_yojson_conv_expander.cma)
+  (native expander/ppx_yojson_conv_expander.cmxa))
+ (plugins
+  (byte expander/ppx_yojson_conv_expander.cma)
+  (native expander/ppx_yojson_conv_expander.cmxs))
+ (native_archives expander/ppx_yojson_conv_expander.a)
+ (requires base ppxlib.ast ppxlib)
+ (ppx_runtime_deps ppx_yojson_conv_lib)
+ (main_module_name Ppx_yojson_conv_expander)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_yojson_conv_expander__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ppx_yojson_conv_expander__)
+      (impl (path expander/ppx_yojson_conv_expander__.ml-gen))))
+    (name Ppx_yojson_conv_expander)
+    (modules
+     (module
+      (obj_name ppx_yojson_conv_expander__Attrs)
+      (visibility public)
+      (source
+       (path Attrs)
+       (intf (path expander/attrs.mli))
+       (impl (path expander/attrs.ml))))
+     (module
+      (obj_name ppx_yojson_conv_expander__Label_with_name)
+      (visibility public)
+      (source
+       (path Label_with_name)
+       (intf (path expander/label_with_name.mli))
+       (impl (path expander/label_with_name.ml))))
+     (module
+      (obj_name ppx_yojson_conv_expander)
+      (visibility public)
+      (source
+       (path Ppx_yojson_conv_expander)
+       (intf (path expander/ppx_yojson_conv_expander.mli))
+       (impl (path expander/ppx_yojson_conv_expander.ml))))))
+   (wrapped true))))

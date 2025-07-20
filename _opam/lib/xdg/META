@@ -1,0 +1,7 @@
+version = "3.19.1"
+description = "[Internal] XDG base directories specification implementation"
+requires = ""
+archive(byte) = "xdg.cma"
+archive(native) = "xdg.cmxa"
+plugin(byte) = "xdg.cma"
+plugin(native) = "xdg.cmxs"

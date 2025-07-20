@@ -1,0 +1,58 @@
+(lang dune 3.19)
+(name jsonrpc)
+(version 1.18.0)
+(sections (lib .) (libexec .) (doc ../../doc/jsonrpc))
+(files
+ (lib
+  (META
+   dune-package
+   import.ml
+   jsonrpc.a
+   jsonrpc.cma
+   jsonrpc.cmi
+   jsonrpc.cmt
+   jsonrpc.cmti
+   jsonrpc.cmx
+   jsonrpc.cmxa
+   jsonrpc.ml
+   jsonrpc.mli
+   jsonrpc__.cmi
+   jsonrpc__.cmt
+   jsonrpc__.cmx
+   jsonrpc__.ml
+   jsonrpc__Import.cmi
+   jsonrpc__Import.cmt
+   jsonrpc__Import.cmx
+   opam))
+ (libexec (jsonrpc.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name jsonrpc)
+ (kind normal)
+ (archives (byte jsonrpc.cma) (native jsonrpc.cmxa))
+ (plugins (byte jsonrpc.cma) (native jsonrpc.cmxs))
+ (native_archives jsonrpc.a)
+ (main_module_name Jsonrpc)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name jsonrpc__)
+     (visibility public)
+     (kind alias)
+     (source (path Jsonrpc__) (impl (path jsonrpc__.ml-gen))))
+    (name Jsonrpc)
+    (modules
+     (module
+      (obj_name jsonrpc__Import)
+      (visibility public)
+      (source (path Import) (impl (path import.ml))))
+     (module
+      (obj_name jsonrpc)
+      (visibility public)
+      (source
+       (path Jsonrpc)
+       (intf (path jsonrpc.mli))
+       (impl (path jsonrpc.ml))))))
+   (wrapped true))))

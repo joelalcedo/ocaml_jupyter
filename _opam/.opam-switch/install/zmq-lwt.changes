@@ -1,0 +1,29 @@
+opam-version: "2.0"
+added: [
+  "doc/zmq-lwt" {"D"}
+  "doc/zmq-lwt/CHANGES.md" {"F:S3118T1753036244.45"}
+  "doc/zmq-lwt/LICENSE.md" {"F:S1118T1753036244.45"}
+  "doc/zmq-lwt/README.md" {"F:S999T1753036244.45"}
+  "lib/zmq-lwt" {"D"}
+  "lib/zmq-lwt/META" {"F:S209T1753036244.45"}
+  "lib/zmq-lwt/deferred.ml" {"F:S1222T1753036244.45"}
+  "lib/zmq-lwt/deferred.mli" {"F:S58T1753036244.45"}
+  "lib/zmq-lwt/dune-package" {"F:S1322T1753036244.45"}
+  "lib/zmq-lwt/opam" {"F:S730T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.a" {"F:S12032T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cma" {"F:S18705T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cmi" {"F:S3433T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cmt" {"F:S12532T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cmx" {"F:S1741T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cmxa" {"F:S1494T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.cmxs" {"F:S55136T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt.ml" {"F:S51T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__.cmi" {"F:S225T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__.cmt" {"F:S2652T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__.cmx" {"F:S121T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__.ml" {"F:S96T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__Deferred.cmi" {"F:S3031T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__Deferred.cmt" {"F:S22155T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__Deferred.cmti" {"F:S11142T1753036244.45"}
+  "lib/zmq-lwt/zmq_lwt__Deferred.cmx" {"F:S3483T1753036244.45"}
+]

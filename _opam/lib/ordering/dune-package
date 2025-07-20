@@ -1,0 +1,37 @@
+(lang dune 3.19)
+(name ordering)
+(version 3.19.1)
+(sections (lib .) (libexec .) (doc ../../doc/ordering))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   ordering.a
+   ordering.cma
+   ordering.cmi
+   ordering.cmt
+   ordering.cmti
+   ordering.cmx
+   ordering.cmxa
+   ordering.ml
+   ordering.mli))
+ (libexec (ordering.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name ordering)
+ (kind normal)
+ (synopsis "Element ordering.")
+ (archives (byte ordering.cma) (native ordering.cmxa))
+ (plugins (byte ordering.cma) (native ordering.cmxs))
+ (native_archives ordering.a)
+ (main_module_name Ordering)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ordering)
+   (visibility public)
+   (source
+    (path Ordering)
+    (intf (path ordering.mli))
+    (impl (path ordering.ml))))))

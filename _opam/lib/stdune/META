@@ -1,0 +1,20 @@
+version = "3.19.1"
+description =
+"Standard library of Dune.
+This library offers no backwards compatibility guarantees. Use at your own risk."
+requires = "csexp dyn ordering pp stdune.filesystem_stubs unix"
+exports = "dyn ordering pp stdune.filesystem_stubs"
+archive(byte) = "stdune.cma"
+archive(native) = "stdune.cmxa"
+plugin(byte) = "stdune.cma"
+plugin(native) = "stdune.cmxs"
+package "filesystem_stubs" (
+  directory = "filesystem_stubs"
+  version = "3.19.1"
+  description = ""
+  requires = "unix"
+  archive(byte) = "dune_filesystem_stubs.cma"
+  archive(native) = "dune_filesystem_stubs.cmxa"
+  plugin(byte) = "dune_filesystem_stubs.cma"
+  plugin(native) = "dune_filesystem_stubs.cmxs"
+)

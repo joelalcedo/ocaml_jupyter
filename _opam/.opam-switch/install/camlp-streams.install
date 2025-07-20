@@ -1,0 +1,27 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/camlp-streams/META"
+  "_build/install/default/lib/camlp-streams/camlp_streams.a"
+  "_build/install/default/lib/camlp-streams/camlp_streams.cma"
+  "_build/install/default/lib/camlp-streams/camlp_streams.cmxa"
+  "_build/install/default/lib/camlp-streams/dune-package"
+  "_build/install/default/lib/camlp-streams/genlex.cmi"
+  "_build/install/default/lib/camlp-streams/genlex.cmt"
+  "_build/install/default/lib/camlp-streams/genlex.cmti"
+  "_build/install/default/lib/camlp-streams/genlex.cmx"
+  "_build/install/default/lib/camlp-streams/genlex.ml"
+  "_build/install/default/lib/camlp-streams/genlex.mli"
+  "_build/install/default/lib/camlp-streams/opam"
+  "_build/install/default/lib/camlp-streams/stream.cmi"
+  "_build/install/default/lib/camlp-streams/stream.cmt"
+  "_build/install/default/lib/camlp-streams/stream.cmti"
+  "_build/install/default/lib/camlp-streams/stream.cmx"
+  "_build/install/default/lib/camlp-streams/stream.ml"
+  "_build/install/default/lib/camlp-streams/stream.mli"
+]
+doc: [
+  "_build/install/default/doc/camlp-streams/CHANGES.md"
+  "_build/install/default/doc/camlp-streams/LICENSE"
+  "_build/install/default/doc/camlp-streams/README.md"
+]
+libexec: "_build/install/default/lib/camlp-streams/camlp_streams.cmxs"

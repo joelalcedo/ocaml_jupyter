@@ -1,0 +1,7 @@
+version = "3.19.1"
+description = ""
+requires = "ordering pp"
+archive(byte) = "dyn.cma"
+archive(native) = "dyn.cmxa"
+plugin(byte) = "dyn.cma"
+plugin(native) = "dyn.cmxs"

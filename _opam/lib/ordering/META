@@ -1,0 +1,7 @@
+version = "3.19.1"
+description = "Element ordering."
+requires = ""
+archive(byte) = "ordering.cma"
+archive(native) = "ordering.cmxa"
+plugin(byte) = "ordering.cma"
+plugin(native) = "ordering.cmxs"

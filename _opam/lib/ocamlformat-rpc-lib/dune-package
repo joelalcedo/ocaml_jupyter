@@ -1,0 +1,74 @@
+(lang dune 3.19)
+(name ocamlformat-rpc-lib)
+(version 0.27.0)
+(sections (lib .) (libexec .) (doc ../../doc/ocamlformat-rpc-lib))
+(files
+ (lib
+  (IO.ml
+   META
+   dune-package
+   ocamlformat_rpc_lib.a
+   ocamlformat_rpc_lib.cma
+   ocamlformat_rpc_lib.cmi
+   ocamlformat_rpc_lib.cmt
+   ocamlformat_rpc_lib.cmti
+   ocamlformat_rpc_lib.cmx
+   ocamlformat_rpc_lib.cmxa
+   ocamlformat_rpc_lib.ml
+   ocamlformat_rpc_lib.mli
+   ocamlformat_rpc_lib__.cmi
+   ocamlformat_rpc_lib__.cmt
+   ocamlformat_rpc_lib__.cmx
+   ocamlformat_rpc_lib__.ml
+   ocamlformat_rpc_lib__IO.cmi
+   ocamlformat_rpc_lib__IO.cmt
+   ocamlformat_rpc_lib__IO.cmx
+   ocamlformat_rpc_lib__Protocol.cmi
+   ocamlformat_rpc_lib__Protocol.cmt
+   ocamlformat_rpc_lib__Protocol.cmti
+   ocamlformat_rpc_lib__Protocol.cmx
+   opam
+   protocol.ml
+   protocol.mli))
+ (libexec (ocamlformat_rpc_lib.cmxs))
+ (doc (CHANGES.md LICENSE README.md)))
+(library
+ (name ocamlformat-rpc-lib)
+ (kind normal)
+ (archives (byte ocamlformat_rpc_lib.cma) (native ocamlformat_rpc_lib.cmxa))
+ (plugins (byte ocamlformat_rpc_lib.cma) (native ocamlformat_rpc_lib.cmxs))
+ (native_archives ocamlformat_rpc_lib.a)
+ (requires csexp)
+ (main_module_name Ocamlformat_rpc_lib)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocamlformat_rpc_lib__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ocamlformat_rpc_lib__)
+      (impl (path ocamlformat_rpc_lib__.ml-gen))))
+    (name Ocamlformat_rpc_lib)
+    (modules
+     (module
+      (obj_name ocamlformat_rpc_lib__IO)
+      (visibility public)
+      (source (path IO) (impl (path IO.ml))))
+     (module
+      (obj_name ocamlformat_rpc_lib)
+      (visibility public)
+      (source
+       (path Ocamlformat_rpc_lib)
+       (intf (path ocamlformat_rpc_lib.mli))
+       (impl (path ocamlformat_rpc_lib.ml))))
+     (module
+      (obj_name ocamlformat_rpc_lib__Protocol)
+      (visibility public)
+      (source
+       (path Protocol)
+       (intf (path protocol.mli))
+       (impl (path protocol.ml))))))
+   (wrapped true))))

@@ -1,0 +1,8 @@
+(lang dune 3.19)
+(name ocaml-lsp-server)
+(version 1.18.0)
+(sections (lib .) (bin ../../bin) (doc ../../doc/ocaml-lsp-server))
+(files
+ (lib (META dune-package opam))
+ (bin (ocamllsp))
+ (doc (CHANGES.md LICENSE.md README.md)))

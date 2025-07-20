@@ -1,0 +1,19 @@
+opam-version: "2.0"
+added: [
+  "doc/trie" {"D"}
+  "doc/trie/LICENSE" {"F:S1091T1753036238.3"}
+  "lib/trie" {"D"}
+  "lib/trie/META" {"F:S142T1753036238.3"}
+  "lib/trie/dune-package" {"F:S615T1753036238.3"}
+  "lib/trie/opam" {"F:S421T1753036238.3"}
+  "lib/trie/trie.a" {"F:S7184T1753036238.3"}
+  "lib/trie/trie.cma" {"F:S16569T1753036238.3"}
+  "lib/trie/trie.cmi" {"F:S2009T1753036238.3"}
+  "lib/trie/trie.cmt" {"F:S33547T1753036238.3"}
+  "lib/trie/trie.cmti" {"F:S10360T1753036238.3"}
+  "lib/trie/trie.cmx" {"F:S784T1753036238.3"}
+  "lib/trie/trie.cmxa" {"F:S343T1753036238.3"}
+  "lib/trie/trie.cmxs" {"F:S52312T1753036238.3"}
+  "lib/trie/trie.ml" {"F:S1962T1753036238.3"}
+  "lib/trie/trie.mli" {"F:S849T1753036238.3"}
+]

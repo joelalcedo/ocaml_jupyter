@@ -1,0 +1,7 @@
+version = "3.7.0"
+description = "Monadic concurrency library"
+requires = "dyn ordering pp stdune stdune.filesystem_stubs"
+archive(byte) = "fiber.cma"
+archive(native) = "fiber.cmxa"
+plugin(byte) = "fiber.cma"
+plugin(native) = "fiber.cmxs"

@@ -1,0 +1,7 @@
+version = "1.18.0"
+description = ""
+requires = ""
+archive(byte) = "jsonrpc.cma"
+archive(native) = "jsonrpc.cmxa"
+plugin(byte) = "jsonrpc.cma"
+plugin(native) = "jsonrpc.cmxs"

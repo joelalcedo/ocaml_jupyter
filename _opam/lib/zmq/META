@@ -1,0 +1,17 @@
+version = "5.2.2-15-g7cca40d"
+description = ""
+requires = "bigarray unix"
+archive(byte) = "zmq.cma"
+archive(native) = "zmq.cmxa"
+plugin(byte) = "zmq.cma"
+plugin(native) = "zmq.cmxs"
+package "deferred" (
+  directory = "deferred"
+  version = "5.2.2-15-g7cca40d"
+  description = ""
+  requires = "zmq"
+  archive(byte) = "zmq_deferred.cma"
+  archive(native) = "zmq_deferred.cmxa"
+  plugin(byte) = "zmq_deferred.cma"
+  plugin(native) = "zmq_deferred.cmxs"
+)

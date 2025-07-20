@@ -1,0 +1,77 @@
+(lang dune 3.19)
+(name ppx_yojson_conv_lib)
+(version v0.15.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_yojson_conv_lib))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   ppx_yojson_conv_lib.a
+   ppx_yojson_conv_lib.cma
+   ppx_yojson_conv_lib.cmi
+   ppx_yojson_conv_lib.cmt
+   ppx_yojson_conv_lib.cmx
+   ppx_yojson_conv_lib.cmxa
+   ppx_yojson_conv_lib.ml
+   ppx_yojson_conv_lib__.cmi
+   ppx_yojson_conv_lib__.cmt
+   ppx_yojson_conv_lib__.cmx
+   ppx_yojson_conv_lib__.ml
+   ppx_yojson_conv_lib__Yojson_conv.cmi
+   ppx_yojson_conv_lib__Yojson_conv.cmt
+   ppx_yojson_conv_lib__Yojson_conv.cmti
+   ppx_yojson_conv_lib__Yojson_conv.cmx
+   ppx_yojson_conv_lib__Yojson_conv_error.cmi
+   ppx_yojson_conv_lib__Yojson_conv_error.cmt
+   ppx_yojson_conv_lib__Yojson_conv_error.cmx
+   ppx_yojson_conv_lib__Yojsonable_intf.cmi
+   ppx_yojson_conv_lib__Yojsonable_intf.cmt
+   ppx_yojson_conv_lib__Yojsonable_intf.cmx
+   yojson_conv.ml
+   yojson_conv.mli
+   yojson_conv_error.ml
+   yojsonable_intf.ml))
+ (libexec (ppx_yojson_conv_lib.cmxs))
+ (doc (LICENSE.md)))
+(library
+ (name ppx_yojson_conv_lib)
+ (kind normal)
+ (archives (byte ppx_yojson_conv_lib.cma) (native ppx_yojson_conv_lib.cmxa))
+ (plugins (byte ppx_yojson_conv_lib.cma) (native ppx_yojson_conv_lib.cmxs))
+ (native_archives ppx_yojson_conv_lib.a)
+ (requires yojson)
+ (main_module_name Ppx_yojson_conv_lib)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_yojson_conv_lib__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ppx_yojson_conv_lib__)
+      (impl (path ppx_yojson_conv_lib__.ml-gen))))
+    (name Ppx_yojson_conv_lib)
+    (modules
+     (module
+      (obj_name ppx_yojson_conv_lib)
+      (visibility public)
+      (source (path Ppx_yojson_conv_lib) (impl (path ppx_yojson_conv_lib.ml))))
+     (module
+      (obj_name ppx_yojson_conv_lib__Yojson_conv)
+      (visibility public)
+      (source
+       (path Yojson_conv)
+       (intf (path yojson_conv.mli))
+       (impl (path yojson_conv.ml))))
+     (module
+      (obj_name ppx_yojson_conv_lib__Yojson_conv_error)
+      (visibility public)
+      (source (path Yojson_conv_error) (impl (path yojson_conv_error.ml))))
+     (module
+      (obj_name ppx_yojson_conv_lib__Yojsonable_intf)
+      (visibility public)
+      (source (path Yojsonable_intf) (impl (path yojsonable_intf.ml))))))
+   (wrapped true))))

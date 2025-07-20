@@ -1,0 +1,21 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/dyn/META"
+  "_build/install/default/lib/dyn/dune-package"
+  "_build/install/default/lib/dyn/dyn.a"
+  "_build/install/default/lib/dyn/dyn.cma"
+  "_build/install/default/lib/dyn/dyn.cmi"
+  "_build/install/default/lib/dyn/dyn.cmt"
+  "_build/install/default/lib/dyn/dyn.cmti"
+  "_build/install/default/lib/dyn/dyn.cmx"
+  "_build/install/default/lib/dyn/dyn.cmxa"
+  "_build/install/default/lib/dyn/dyn.ml"
+  "_build/install/default/lib/dyn/dyn.mli"
+  "_build/install/default/lib/dyn/opam"
+]
+doc: [
+  "_build/install/default/doc/dyn/CHANGES.md"
+  "_build/install/default/doc/dyn/LICENSE.md"
+  "_build/install/default/doc/dyn/README.md"
+]
+libexec: "_build/install/default/lib/dyn/dyn.cmxs"

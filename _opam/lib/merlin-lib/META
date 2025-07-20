@@ -1,0 +1,195 @@
+package "analysis" (
+  directory = "analysis"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.config
+   merlin-lib.extend
+   merlin-lib.kernel
+   merlin-lib.ocaml_merlin_specific
+   merlin-lib.ocaml_parsing
+   merlin-lib.ocaml_preprocess
+   merlin-lib.ocaml_typing
+   merlin-lib.ocaml_utils
+   merlin-lib.query_protocol
+   merlin-lib.utils"
+  archive(byte) = "merlin_analysis.cma"
+  archive(native) = "merlin_analysis.cmxa"
+  plugin(byte) = "merlin_analysis.cma"
+  plugin(native) = "merlin_analysis.cmxs"
+)
+package "commands" (
+  directory = "commands"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.kernel
+   merlin-lib.ocaml_parsing
+   merlin-lib.query_commands
+   merlin-lib.query_protocol
+   merlin-lib.utils"
+  archive(byte) = "merlin_commands.cma"
+  archive(native) = "merlin_commands.cmxa"
+  plugin(byte) = "merlin_commands.cma"
+  plugin(native) = "merlin_commands.cmxs"
+)
+package "config" (
+  directory = "config"
+  version = "4.16-414"
+  description = ""
+  requires = ""
+  archive(byte) = "merlin_config.cma"
+  archive(native) = "merlin_config.cmxa"
+  plugin(byte) = "merlin_config.cma"
+  plugin(native) = "merlin_config.cmxs"
+)
+package "dot_protocol" (
+  directory = "dot_protocol"
+  version = "4.16-414"
+  description = ""
+  requires = "csexp merlin-lib.utils"
+  archive(byte) = "merlin_dot_protocol.cma"
+  archive(native) = "merlin_dot_protocol.cmxa"
+  plugin(byte) = "merlin_dot_protocol.cma"
+  plugin(native) = "merlin_dot_protocol.cmxs"
+)
+package "extend" (
+  directory = "extend"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.ocaml_parsing
+   merlin-lib.ocaml_typing
+   merlin-lib.ocaml_utils
+   unix"
+  archive(byte) = "merlin_extend.cma"
+  archive(native) = "merlin_extend.cmxa"
+  plugin(byte) = "merlin_extend.cma"
+  plugin(native) = "merlin_extend.cmxs"
+)
+package "kernel" (
+  directory = "kernel"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.config
+   merlin-lib.dot_protocol
+   merlin-lib.extend
+   merlin-lib.ocaml_merlin_specific
+   merlin-lib.ocaml_parsing
+   merlin-lib.ocaml_preprocess
+   merlin-lib.ocaml_typing
+   merlin-lib.ocaml_utils
+   merlin-lib.os_ipc
+   merlin-lib.utils"
+  archive(byte) = "merlin_kernel.cma"
+  archive(native) = "merlin_kernel.cmxa"
+  plugin(byte) = "merlin_kernel.cma"
+  plugin(native) = "merlin_kernel.cmxs"
+)
+package "ocaml_merlin_specific" (
+  directory = "ocaml_merlin_specific"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.ocaml_parsing
+   merlin-lib.ocaml_preprocess
+   merlin-lib.ocaml_typing
+   merlin-lib.ocaml_utils
+   merlin-lib.utils"
+  archive(byte) = "merlin_specific.cma"
+  archive(native) = "merlin_specific.cmxa"
+  plugin(byte) = "merlin_specific.cma"
+  plugin(native) = "merlin_specific.cmxs"
+)
+package "ocaml_parsing" (
+  directory = "ocaml_parsing"
+  version = "4.16-414"
+  description = ""
+  requires = "merlin-lib.ocaml_utils merlin-lib.utils"
+  archive(byte) = "ocaml_parsing.cma"
+  archive(native) = "ocaml_parsing.cmxa"
+  plugin(byte) = "ocaml_parsing.cma"
+  plugin(native) = "ocaml_parsing.cmxs"
+)
+package "ocaml_preprocess" (
+  directory = "ocaml_preprocess"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.ocaml_parsing merlin-lib.ocaml_utils merlin-lib.utils"
+  archive(byte) = "ocaml_preprocess.cma"
+  archive(native) = "ocaml_preprocess.cmxa"
+  plugin(byte) = "ocaml_preprocess.cma"
+  plugin(native) = "ocaml_preprocess.cmxs"
+)
+package "ocaml_typing" (
+  directory = "ocaml_typing"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.ocaml_parsing merlin-lib.ocaml_utils merlin-lib.utils"
+  archive(byte) = "ocaml_typing.cma"
+  archive(native) = "ocaml_typing.cmxa"
+  plugin(byte) = "ocaml_typing.cma"
+  plugin(native) = "ocaml_typing.cmxs"
+)
+package "ocaml_utils" (
+  directory = "ocaml_utils"
+  version = "4.16-414"
+  description = ""
+  requires = "merlin-lib.config merlin-lib.utils"
+  archive(byte) = "ocaml_utils.cma"
+  archive(native) = "ocaml_utils.cmxa"
+  plugin(byte) = "ocaml_utils.cma"
+  plugin(native) = "ocaml_utils.cmxs"
+)
+package "os_ipc" (
+  directory = "os_ipc"
+  version = "4.16-414"
+  description = ""
+  requires = ""
+  archive(byte) = "os_ipc.cma"
+  archive(native) = "os_ipc.cmxa"
+  plugin(byte) = "os_ipc.cma"
+  plugin(native) = "os_ipc.cmxs"
+)
+package "query_commands" (
+  directory = "query_commands"
+  version = "4.16-414"
+  description = ""
+  requires =
+  "merlin-lib.analysis
+   merlin-lib.config
+   merlin-lib.kernel
+   merlin-lib.ocaml_merlin_specific
+   merlin-lib.ocaml_parsing
+   merlin-lib.ocaml_typing
+   merlin-lib.ocaml_utils
+   merlin-lib.query_protocol
+   merlin-lib.utils"
+  archive(byte) = "query_commands.cma"
+  archive(native) = "query_commands.cmxa"
+  plugin(byte) = "query_commands.cma"
+  plugin(native) = "query_commands.cmxs"
+)
+package "query_protocol" (
+  directory = "query_protocol"
+  version = "4.16-414"
+  description = ""
+  requires = "merlin-lib.kernel merlin-lib.ocaml_parsing merlin-lib.utils"
+  archive(byte) = "query_protocol.cma"
+  archive(native) = "query_protocol.cmxa"
+  plugin(byte) = "query_protocol.cma"
+  plugin(native) = "query_protocol.cmxs"
+)
+package "utils" (
+  directory = "utils"
+  version = "4.16-414"
+  description = ""
+  requires = "str unix"
+  archive(byte) = "merlin_utils.cma"
+  archive(native) = "merlin_utils.cmxa"
+  plugin(byte) = "merlin_utils.cma"
+  plugin(native) = "merlin_utils.cmxs"
+)

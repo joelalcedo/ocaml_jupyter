@@ -1,0 +1,117 @@
+opam-version: "2.0"
+added: [
+  "bin/ocaml-jupyter-kernel" {"F:S26072085T1753036835.91"}
+  "bin/ocaml-jupyter-opam-genspec" {"F:S639T1753036835.91"}
+  "doc/jupyter" {"D"}
+  "doc/jupyter/LICENSE" {"F:S1068T1753036835.93"}
+  "doc/jupyter/README.md" {"F:S9277T1753036835.93"}
+  "lib/jupyter" {"D"}
+  "lib/jupyter/META" {"F:S910T1753036835.91"}
+  "lib/jupyter/ansiCode.ml" {"F:S1575T1753036835.91"}
+  "lib/jupyter/comm" {"D"}
+  "lib/jupyter/comm.ml" {"F:S1454T1753036835.91"}
+  "lib/jupyter/comm/jupyter_comm.cma" {"F:S47085T1753036835.91"}
+  "lib/jupyter/comm/jupyter_comm.cmi" {"F:S1005T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm.cmt" {"F:S6172T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm.ml" {"F:S1350T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__.cmi" {"F:S424T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__.cmt" {"F:S3563T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__.ml" {"F:S252T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Manager.cmi" {"F:S3144T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Manager.cmt" {"F:S43666T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Manager.cmti" {"F:S15794T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Router.cmi" {"F:S3383T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Router.cmt" {"F:S29387T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Stdin.cmi" {"F:S641T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Stdin.cmt" {"F:S14918T1753036835.92"}
+  "lib/jupyter/comm/jupyter_comm__Stdin.cmti" {"F:S5736T1753036835.92"}
+  "lib/jupyter/comm/manager.ml" {"F:S4283T1753036835.92"}
+  "lib/jupyter/comm/manager.mli" {"F:S3464T1753036835.92"}
+  "lib/jupyter/comm/router.ml" {"F:S2809T1753036835.92"}
+  "lib/jupyter/comm/stdin.ml" {"F:S1800T1753036835.92"}
+  "lib/jupyter/comm/stdin.mli" {"F:S1452T1753036835.92"}
+  "lib/jupyter/dune-package" {"F:S7048T1753036835.92"}
+  "lib/jupyter/iopub.ml" {"F:S4132T1753036835.92"}
+  "lib/jupyter/json.ml" {"F:S1592T1753036835.92"}
+  "lib/jupyter/json.mli" {"F:S1371T1753036835.92"}
+  "lib/jupyter/jupyter.a" {"F:S257632T1753036835.92"}
+  "lib/jupyter/jupyter.cma" {"F:S563779T1753036835.92"}
+  "lib/jupyter/jupyter.cmi" {"F:S1448T1753036835.92"}
+  "lib/jupyter/jupyter.cmt" {"F:S7393T1753036835.92"}
+  "lib/jupyter/jupyter.cmx" {"F:S915T1753036835.92"}
+  "lib/jupyter/jupyter.cmxa" {"F:S10257T1753036835.92"}
+  "lib/jupyter/jupyter.cmxs" {"F:S231520T1753036835.93"}
+  "lib/jupyter/jupyter.ml" {"F:S1494T1753036835.92"}
+  "lib/jupyter/jupyter__.cmi" {"F:S767T1753036835.92"}
+  "lib/jupyter/jupyter__.cmt" {"F:S5477T1753036835.92"}
+  "lib/jupyter/jupyter__.cmx" {"F:S249T1753036835.92"}
+  "lib/jupyter/jupyter__.ml" {"F:S543T1753036835.92"}
+  "lib/jupyter/jupyter__AnsiCode.cmi" {"F:S1675T1753036835.92"}
+  "lib/jupyter/jupyter__AnsiCode.cmt" {"F:S9537T1753036835.92"}
+  "lib/jupyter/jupyter__AnsiCode.cmx" {"F:S1329T1753036835.92"}
+  "lib/jupyter/jupyter__Comm.cmi" {"F:S2197T1753036835.92"}
+  "lib/jupyter/jupyter__Comm.cmt" {"F:S36676T1753036835.92"}
+  "lib/jupyter/jupyter__Comm.cmx" {"F:S1421T1753036835.92"}
+  "lib/jupyter/jupyter__Iopub.cmi" {"F:S13739T1753036835.92"}
+  "lib/jupyter/jupyter__Iopub.cmt" {"F:S287014T1753036835.92"}
+  "lib/jupyter/jupyter__Iopub.cmx" {"F:S4978T1753036835.92"}
+  "lib/jupyter/jupyter__Json.cmi" {"F:S1890T1753036835.92"}
+  "lib/jupyter/jupyter__Json.cmt" {"F:S10246T1753036835.92"}
+  "lib/jupyter/jupyter__Json.cmti" {"F:S9576T1753036835.92"}
+  "lib/jupyter/jupyter__Json.cmx" {"F:S1035T1753036835.92"}
+  "lib/jupyter/jupyter__Message.cmi" {"F:S6458T1753036835.92"}
+  "lib/jupyter/jupyter__Message.cmt" {"F:S167827T1753036835.92"}
+  "lib/jupyter/jupyter__Message.cmx" {"F:S4147T1753036835.92"}
+  "lib/jupyter/jupyter__Shell.cmi" {"F:S30612T1753036835.92"}
+  "lib/jupyter/jupyter__Shell.cmt" {"F:S751620T1753036835.92"}
+  "lib/jupyter/jupyter__Shell.cmx" {"F:S7082T1753036835.92"}
+  "lib/jupyter/jupyter__Stdin.cmi" {"F:S3703T1753036835.92"}
+  "lib/jupyter/jupyter__Stdin.cmt" {"F:S68428T1753036835.92"}
+  "lib/jupyter/jupyter__Stdin.cmx" {"F:S1842T1753036835.92"}
+  "lib/jupyter/jupyter__Version.cmi" {"F:S954T1753036835.92"}
+  "lib/jupyter/jupyter__Version.cmt" {"F:S5462T1753036835.92"}
+  "lib/jupyter/jupyter__Version.cmx" {"F:S843T1753036835.92"}
+  "lib/jupyter/message.ml" {"F:S4718T1753036835.92"}
+  "lib/jupyter/notebook" {"D"}
+  "lib/jupyter/notebook/bench.ml" {"F:S3745T1753036835.92"}
+  "lib/jupyter/notebook/bench.mli" {"F:S3422T1753036835.92"}
+  "lib/jupyter/notebook/eval.ml" {"F:S1610T1753036835.92"}
+  "lib/jupyter/notebook/eval.mli" {"F:S1296T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.cma" {"F:S110319T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.cmi" {"F:S2649T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.cmt" {"F:S38432T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.cmti" {"F:S16167T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.ml" {"F:S3169T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook.mli" {"F:S3557T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__.cmi" {"F:S557T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__.cmt" {"F:S4113T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__.ml" {"F:S354T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Bench.cmi"
+    {"F:S2076T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Bench.cmt"
+    {"F:S58907T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Bench.cmti"
+    {"F:S16008T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Eval.cmi" {"F:S373T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Eval.cmt"
+    {"F:S12572T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Eval.cmti"
+    {"F:S4771T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Process.cmi"
+    {"F:S7495T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Process.cmt"
+    {"F:S149714T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Process.cmti"
+    {"F:S41819T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Unsafe.cmi"
+    {"F:S3297T1753036835.92"}
+  "lib/jupyter/notebook/jupyter_notebook__Unsafe.cmt"
+    {"F:S21936T1753036835.92"}
+  "lib/jupyter/notebook/process.ml" {"F:S7587T1753036835.92"}
+  "lib/jupyter/notebook/process.mli" {"F:S7217T1753036835.92"}
+  "lib/jupyter/notebook/unsafe.ml" {"F:S2375T1753036835.93"}
+  "lib/jupyter/opam" {"F:S1360T1753036835.93"}
+  "lib/jupyter/shell.ml" {"F:S8401T1753036835.93"}
+  "lib/jupyter/stdin.ml" {"F:S1771T1753036835.93"}
+  "lib/jupyter/version.ml" {"F:S1211T1753036835.93"}
+]

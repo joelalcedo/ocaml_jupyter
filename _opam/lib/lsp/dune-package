@@ -1,0 +1,291 @@
+(lang dune 3.19)
+(name lsp)
+(version 1.18.0)
+(sections (lib .) (libexec .) (doc ../../doc/lsp))
+(files
+ (lib
+  (META
+   array_view.ml
+   array_view.mli
+   cancel_request.ml
+   cancel_request.mli
+   cli.ml
+   cli.mli
+   client_notification.ml
+   client_notification.mli
+   client_request.ml
+   client_request.mli
+   diff.ml
+   diff.mli
+   dune-package
+   extension.ml
+   extension.mli
+   header.ml
+   header.mli
+   import.ml
+   io.ml
+   io.mli
+   lsp.a
+   lsp.cma
+   lsp.cmi
+   lsp.cmt
+   lsp.cmx
+   lsp.cmxa
+   lsp.ml
+   lsp__.cmi
+   lsp__.cmt
+   lsp__.cmx
+   lsp__.ml
+   lsp__Array_view.cmi
+   lsp__Array_view.cmt
+   lsp__Array_view.cmti
+   lsp__Array_view.cmx
+   lsp__Cancel_request.cmi
+   lsp__Cancel_request.cmt
+   lsp__Cancel_request.cmti
+   lsp__Cancel_request.cmx
+   lsp__Cli.cmi
+   lsp__Cli.cmt
+   lsp__Cli.cmti
+   lsp__Cli.cmx
+   lsp__Client_notification.cmi
+   lsp__Client_notification.cmt
+   lsp__Client_notification.cmti
+   lsp__Client_notification.cmx
+   lsp__Client_request.cmi
+   lsp__Client_request.cmt
+   lsp__Client_request.cmti
+   lsp__Client_request.cmx
+   lsp__Diff.cmi
+   lsp__Diff.cmt
+   lsp__Diff.cmti
+   lsp__Diff.cmx
+   lsp__Extension.cmi
+   lsp__Extension.cmt
+   lsp__Extension.cmti
+   lsp__Extension.cmx
+   lsp__Header.cmi
+   lsp__Header.cmt
+   lsp__Header.cmti
+   lsp__Header.cmx
+   lsp__Import.cmi
+   lsp__Import.cmt
+   lsp__Import.cmx
+   lsp__Io.cmi
+   lsp__Io.cmt
+   lsp__Io.cmti
+   lsp__Io.cmx
+   lsp__Position.cmi
+   lsp__Position.cmt
+   lsp__Position.cmx
+   lsp__Progress.cmi
+   lsp__Progress.cmt
+   lsp__Progress.cmti
+   lsp__Progress.cmx
+   lsp__Server_notification.cmi
+   lsp__Server_notification.cmt
+   lsp__Server_notification.cmti
+   lsp__Server_notification.cmx
+   lsp__Server_request.cmi
+   lsp__Server_request.cmt
+   lsp__Server_request.cmti
+   lsp__Server_request.cmx
+   lsp__Snippet.cmi
+   lsp__Snippet.cmt
+   lsp__Snippet.cmti
+   lsp__Snippet.cmx
+   lsp__String_zipper.cmi
+   lsp__String_zipper.cmt
+   lsp__String_zipper.cmti
+   lsp__String_zipper.cmx
+   lsp__Substring.cmi
+   lsp__Substring.cmt
+   lsp__Substring.cmti
+   lsp__Substring.cmx
+   lsp__Text_document.cmi
+   lsp__Text_document.cmt
+   lsp__Text_document.cmti
+   lsp__Text_document.cmx
+   lsp__Types.cmi
+   lsp__Types.cmt
+   lsp__Types.cmti
+   lsp__Types.cmx
+   lsp__Uri0.cmi
+   lsp__Uri0.cmt
+   lsp__Uri0.cmti
+   lsp__Uri0.cmx
+   lsp__Uri_lexer.cmi
+   lsp__Uri_lexer.cmt
+   lsp__Uri_lexer.cmti
+   lsp__Uri_lexer.cmx
+   opam
+   position.ml
+   progress.ml
+   progress.mli
+   server_notification.ml
+   server_notification.mli
+   server_request.ml
+   server_request.mli
+   snippet.ml
+   snippet.mli
+   string_zipper.ml
+   string_zipper.mli
+   substring.ml
+   substring.mli
+   text_document.ml
+   text_document.mli
+   types.ml
+   types.mli
+   uri0.ml
+   uri0.mli
+   uri_lexer.ml
+   uri_lexer.mli))
+ (libexec (lsp.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name lsp)
+ (kind normal)
+ (archives (byte lsp.cma) (native lsp.cmxa))
+ (plugins (byte lsp.cma) (native lsp.cmxs))
+ (native_archives lsp.a)
+ (requires jsonrpc ppx_yojson_conv_lib uutf yojson)
+ (main_module_name Lsp)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name lsp__)
+     (visibility public)
+     (kind alias)
+     (source (path Lsp__) (impl (path lsp__.ml-gen))))
+    (name Lsp)
+    (modules
+     (module
+      (obj_name lsp__Array_view)
+      (visibility public)
+      (source
+       (path Array_view)
+       (intf (path array_view.mli))
+       (impl (path array_view.ml))))
+     (module
+      (obj_name lsp__Cancel_request)
+      (visibility public)
+      (source
+       (path Cancel_request)
+       (intf (path cancel_request.mli))
+       (impl (path cancel_request.ml))))
+     (module
+      (obj_name lsp__Cli)
+      (visibility public)
+      (source (path Cli) (intf (path cli.mli)) (impl (path cli.ml))))
+     (module
+      (obj_name lsp__Client_notification)
+      (visibility public)
+      (source
+       (path Client_notification)
+       (intf (path client_notification.mli))
+       (impl (path client_notification.ml))))
+     (module
+      (obj_name lsp__Client_request)
+      (visibility public)
+      (source
+       (path Client_request)
+       (intf (path client_request.mli))
+       (impl (path client_request.ml))))
+     (module
+      (obj_name lsp__Diff)
+      (visibility public)
+      (source (path Diff) (intf (path diff.mli)) (impl (path diff.ml))))
+     (module
+      (obj_name lsp__Extension)
+      (visibility public)
+      (source
+       (path Extension)
+       (intf (path extension.mli))
+       (impl (path extension.ml))))
+     (module
+      (obj_name lsp__Header)
+      (visibility public)
+      (source (path Header) (intf (path header.mli)) (impl (path header.ml))))
+     (module
+      (obj_name lsp__Import)
+      (visibility public)
+      (source (path Import) (impl (path import.ml))))
+     (module
+      (obj_name lsp__Io)
+      (visibility public)
+      (source (path Io) (intf (path io.mli)) (impl (path io.ml))))
+     (module
+      (obj_name lsp)
+      (visibility public)
+      (source (path Lsp) (impl (path lsp.ml))))
+     (module
+      (obj_name lsp__Position)
+      (visibility public)
+      (source (path Position) (impl (path position.ml))))
+     (module
+      (obj_name lsp__Progress)
+      (visibility public)
+      (source
+       (path Progress)
+       (intf (path progress.mli))
+       (impl (path progress.ml))))
+     (module
+      (obj_name lsp__Server_notification)
+      (visibility public)
+      (source
+       (path Server_notification)
+       (intf (path server_notification.mli))
+       (impl (path server_notification.ml))))
+     (module
+      (obj_name lsp__Server_request)
+      (visibility public)
+      (source
+       (path Server_request)
+       (intf (path server_request.mli))
+       (impl (path server_request.ml))))
+     (module
+      (obj_name lsp__Snippet)
+      (visibility public)
+      (source
+       (path Snippet)
+       (intf (path snippet.mli))
+       (impl (path snippet.ml))))
+     (module
+      (obj_name lsp__String_zipper)
+      (visibility public)
+      (source
+       (path String_zipper)
+       (intf (path string_zipper.mli))
+       (impl (path string_zipper.ml))))
+     (module
+      (obj_name lsp__Substring)
+      (visibility public)
+      (source
+       (path Substring)
+       (intf (path substring.mli))
+       (impl (path substring.ml))))
+     (module
+      (obj_name lsp__Text_document)
+      (visibility public)
+      (source
+       (path Text_document)
+       (intf (path text_document.mli))
+       (impl (path text_document.ml))))
+     (module
+      (obj_name lsp__Types)
+      (visibility public)
+      (source (path Types) (intf (path types.mli)) (impl (path types.ml))))
+     (module
+      (obj_name lsp__Uri0)
+      (visibility public)
+      (source (path Uri0) (intf (path uri0.mli)) (impl (path uri0.ml))))
+     (module
+      (obj_name lsp__Uri_lexer)
+      (visibility public)
+      (source
+       (path Uri_lexer)
+       (intf (path uri_lexer.mli))
+       (impl (path uri_lexer.ml))))))
+   (wrapped true))))

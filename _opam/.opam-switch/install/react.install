@@ -1,0 +1,25 @@
+opam-version: "2.0"
+lib: [
+  "_build/opam" {"opam"}
+  "_build/pkg/META" {"META"}
+  "_build/src/react.a" {"react.a"}
+  "_build/src/react.cma" {"react.cma"}
+  "_build/src/react.cmi" {"react.cmi"}
+  "?_build/src/react.cmti" {"react.cmti"}
+  "_build/src/react.cmx" {"react.cmx"}
+  "_build/src/react.cmxa" {"react.cmxa"}
+  "_build/src/react.cmxs" {"react.cmxs"}
+  "_build/src/react.mli" {"react.mli"}
+  "_build/src/react_top.a" {"react_top.a"}
+  "_build/src/react_top.cma" {"react_top.cma"}
+  "_build/src/react_top.cmx" {"react_top.cmx"}
+  "_build/src/react_top.cmxa" {"react_top.cmxa"}
+  "_build/src/react_top.cmxs" {"react_top.cmxs"}
+  "_build/src/react_top_init.ml" {"react_top_init.ml"}
+]
+doc: [
+  "_build/CHANGES.md" {"CHANGES.md"}
+  "_build/LICENSE.md" {"LICENSE.md"}
+  "_build/README.md" {"README.md"}
+  "_build/doc/index.mld" {"odoc-pages/index.mld"}
+]

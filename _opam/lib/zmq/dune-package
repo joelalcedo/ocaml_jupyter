@@ -1,0 +1,90 @@
+(lang dune 3.19)
+(name zmq)
+(version 5.2.2-15-g7cca40d)
+(sections (lib .) (libexec .) (doc ../../doc/zmq) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   deferred/deferred.ml
+   deferred/socket.ml
+   deferred/socket.mli
+   deferred/zmq_deferred.a
+   deferred/zmq_deferred.cma
+   deferred/zmq_deferred.cmi
+   deferred/zmq_deferred.cmt
+   deferred/zmq_deferred.cmx
+   deferred/zmq_deferred.cmxa
+   deferred/zmq_deferred.ml
+   deferred/zmq_deferred__Deferred.cmi
+   deferred/zmq_deferred__Deferred.cmt
+   deferred/zmq_deferred__Deferred.cmx
+   deferred/zmq_deferred__Socket.cmi
+   deferred/zmq_deferred__Socket.cmt
+   deferred/zmq_deferred__Socket.cmti
+   deferred/zmq_deferred__Socket.cmx
+   dune-package
+   libzmq_stubs.a
+   opam
+   zmq.a
+   zmq.cma
+   zmq.cmi
+   zmq.cmt
+   zmq.cmti
+   zmq.cmx
+   zmq.cmxa
+   zmq.ml
+   zmq.mli))
+ (libexec (deferred/zmq_deferred.cmxs zmq.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dllzmq_stubs.so)))
+(library
+ (name zmq)
+ (kind normal)
+ (archives (byte zmq.cma) (native zmq.cmxa))
+ (plugins (byte zmq.cma) (native zmq.cmxs))
+ (foreign_objects caml_zmq_stubs.o context.o fail.o msg.o poll.o socket.o)
+ (foreign_archives (archives (for all) (files libzmq_stubs.a)))
+ (foreign_dll_files ../stublibs/dllzmq_stubs.so)
+ (native_archives zmq.a)
+ (requires unix bigarray)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name zmq)
+   (visibility public)
+   (source (path Zmq) (intf (path zmq.mli)) (impl (path zmq.ml))))))
+(library
+ (name zmq.deferred)
+ (kind normal)
+ (archives
+  (byte deferred/zmq_deferred.cma)
+  (native deferred/zmq_deferred.cmxa))
+ (plugins
+  (byte deferred/zmq_deferred.cma)
+  (native deferred/zmq_deferred.cmxs))
+ (native_archives deferred/zmq_deferred.a)
+ (requires zmq)
+ (main_module_name Zmq_deferred)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name zmq_deferred)
+     (visibility public)
+     (kind alias)
+     (source (path Zmq_deferred) (impl (path deferred/zmq_deferred.ml-gen))))
+    (name Zmq_deferred)
+    (modules
+     (module
+      (obj_name zmq_deferred__Deferred)
+      (visibility public)
+      (source (path Deferred) (impl (path deferred/deferred.ml))))
+     (module
+      (obj_name zmq_deferred__Socket)
+      (visibility public)
+      (source
+       (path Socket)
+       (intf (path deferred/socket.mli))
+       (impl (path deferred/socket.ml))))))
+   (wrapped true))))

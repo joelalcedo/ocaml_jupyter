@@ -1,0 +1,263 @@
+(lang dune 3.19)
+(name jupyter)
+(version 2.8.3)
+(sections (lib .) (libexec .) (bin ../../bin) (doc ../../doc/jupyter))
+(files
+ (lib
+  (META
+   ansiCode.ml
+   comm.ml
+   comm/jupyter_comm.cma
+   comm/jupyter_comm.cmi
+   comm/jupyter_comm.cmt
+   comm/jupyter_comm.ml
+   comm/jupyter_comm__.cmi
+   comm/jupyter_comm__.cmt
+   comm/jupyter_comm__.ml
+   comm/jupyter_comm__Manager.cmi
+   comm/jupyter_comm__Manager.cmt
+   comm/jupyter_comm__Manager.cmti
+   comm/jupyter_comm__Router.cmi
+   comm/jupyter_comm__Router.cmt
+   comm/jupyter_comm__Stdin.cmi
+   comm/jupyter_comm__Stdin.cmt
+   comm/jupyter_comm__Stdin.cmti
+   comm/manager.ml
+   comm/manager.mli
+   comm/router.ml
+   comm/stdin.ml
+   comm/stdin.mli
+   dune-package
+   iopub.ml
+   json.ml
+   json.mli
+   jupyter.a
+   jupyter.cma
+   jupyter.cmi
+   jupyter.cmt
+   jupyter.cmx
+   jupyter.cmxa
+   jupyter.ml
+   jupyter__.cmi
+   jupyter__.cmt
+   jupyter__.cmx
+   jupyter__.ml
+   jupyter__AnsiCode.cmi
+   jupyter__AnsiCode.cmt
+   jupyter__AnsiCode.cmx
+   jupyter__Comm.cmi
+   jupyter__Comm.cmt
+   jupyter__Comm.cmx
+   jupyter__Iopub.cmi
+   jupyter__Iopub.cmt
+   jupyter__Iopub.cmx
+   jupyter__Json.cmi
+   jupyter__Json.cmt
+   jupyter__Json.cmti
+   jupyter__Json.cmx
+   jupyter__Message.cmi
+   jupyter__Message.cmt
+   jupyter__Message.cmx
+   jupyter__Shell.cmi
+   jupyter__Shell.cmt
+   jupyter__Shell.cmx
+   jupyter__Stdin.cmi
+   jupyter__Stdin.cmt
+   jupyter__Stdin.cmx
+   jupyter__Version.cmi
+   jupyter__Version.cmt
+   jupyter__Version.cmx
+   message.ml
+   notebook/bench.ml
+   notebook/bench.mli
+   notebook/eval.ml
+   notebook/eval.mli
+   notebook/jupyter_notebook.cma
+   notebook/jupyter_notebook.cmi
+   notebook/jupyter_notebook.cmt
+   notebook/jupyter_notebook.cmti
+   notebook/jupyter_notebook.ml
+   notebook/jupyter_notebook.mli
+   notebook/jupyter_notebook__.cmi
+   notebook/jupyter_notebook__.cmt
+   notebook/jupyter_notebook__.ml
+   notebook/jupyter_notebook__Bench.cmi
+   notebook/jupyter_notebook__Bench.cmt
+   notebook/jupyter_notebook__Bench.cmti
+   notebook/jupyter_notebook__Eval.cmi
+   notebook/jupyter_notebook__Eval.cmt
+   notebook/jupyter_notebook__Eval.cmti
+   notebook/jupyter_notebook__Process.cmi
+   notebook/jupyter_notebook__Process.cmt
+   notebook/jupyter_notebook__Process.cmti
+   notebook/jupyter_notebook__Unsafe.cmi
+   notebook/jupyter_notebook__Unsafe.cmt
+   notebook/process.ml
+   notebook/process.mli
+   notebook/unsafe.ml
+   opam
+   shell.ml
+   stdin.ml
+   version.ml))
+ (libexec (jupyter.cmxs))
+ (bin (ocaml-jupyter-kernel ocaml-jupyter-opam-genspec))
+ (doc (LICENSE README.md)))
+(library
+ (name jupyter)
+ (kind normal)
+ (synopsis "The core library module for Jupyter")
+ (archives (byte jupyter.cma) (native jupyter.cmxa))
+ (plugins (byte jupyter.cma) (native jupyter.cmxs))
+ (native_archives jupyter.a)
+ (requires unix uuidm ppx_yojson_conv_lib)
+ (main_module_name Jupyter)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name jupyter__)
+     (visibility public)
+     (kind alias)
+     (source (path Jupyter__) (impl (path jupyter__.ml-gen))))
+    (name Jupyter)
+    (modules
+     (module
+      (obj_name jupyter__AnsiCode)
+      (visibility public)
+      (source (path AnsiCode) (impl (path ansiCode.ml))))
+     (module
+      (obj_name jupyter__Comm)
+      (visibility public)
+      (source (path Comm) (impl (path comm.ml))))
+     (module
+      (obj_name jupyter__Iopub)
+      (visibility public)
+      (source (path Iopub) (impl (path iopub.ml))))
+     (module
+      (obj_name jupyter__Json)
+      (visibility public)
+      (source (path Json) (intf (path json.mli)) (impl (path json.ml))))
+     (module
+      (obj_name jupyter)
+      (visibility public)
+      (source (path Jupyter) (impl (path jupyter.ml))))
+     (module
+      (obj_name jupyter__Message)
+      (visibility public)
+      (source (path Message) (impl (path message.ml))))
+     (module
+      (obj_name jupyter__Shell)
+      (visibility public)
+      (source (path Shell) (impl (path shell.ml))))
+     (module
+      (obj_name jupyter__Stdin)
+      (visibility public)
+      (source (path Stdin) (impl (path stdin.ml))))
+     (module
+      (obj_name jupyter__Version)
+      (visibility public)
+      (source (path Version) (impl (path version.ml))))))
+   (wrapped true))))
+(library
+ (name jupyter.comm)
+ (kind normal)
+ (synopsis "A library for communication between Jupyter and notebooks")
+ (archives (byte comm/jupyter_comm.cma))
+ (plugins (byte comm/jupyter_comm.cma))
+ (requires jupyter jupyter.notebook ppx_yojson_conv_lib)
+ (main_module_name Jupyter_comm)
+ (modes byte)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name jupyter_comm__)
+     (visibility public)
+     (kind alias)
+     (source (path Jupyter_comm__) (impl (path comm/jupyter_comm__.ml-gen))))
+    (name Jupyter_comm)
+    (modules
+     (module
+      (obj_name jupyter_comm)
+      (visibility public)
+      (source (path Jupyter_comm) (impl (path comm/jupyter_comm.ml))))
+     (module
+      (obj_name jupyter_comm__Manager)
+      (visibility public)
+      (source
+       (path Manager)
+       (intf (path comm/manager.mli))
+       (impl (path comm/manager.ml))))
+     (module
+      (obj_name jupyter_comm__Router)
+      (visibility public)
+      (source (path Router) (impl (path comm/router.ml))))
+     (module
+      (obj_name jupyter_comm__Stdin)
+      (visibility public)
+      (source
+       (path Stdin)
+       (intf (path comm/stdin.mli))
+       (impl (path comm/stdin.ml))))))
+   (wrapped true))))
+(library
+ (name jupyter.notebook)
+ (kind normal)
+ (synopsis "A library for Jupyter notebooks")
+ (archives (byte notebook/jupyter_notebook.cma))
+ (plugins (byte notebook/jupyter_notebook.cma))
+ (requires
+  jupyter
+  uuidm
+  base64
+  compiler-libs.common
+  ppx_yojson_conv_lib
+  ppx_deriving.runtime)
+ (main_module_name Jupyter_notebook)
+ (modes byte)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name jupyter_notebook__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Jupyter_notebook__)
+      (impl (path notebook/jupyter_notebook__.ml-gen))))
+    (name Jupyter_notebook)
+    (modules
+     (module
+      (obj_name jupyter_notebook__Bench)
+      (visibility public)
+      (source
+       (path Bench)
+       (intf (path notebook/bench.mli))
+       (impl (path notebook/bench.ml))))
+     (module
+      (obj_name jupyter_notebook__Eval)
+      (visibility public)
+      (source
+       (path Eval)
+       (intf (path notebook/eval.mli))
+       (impl (path notebook/eval.ml))))
+     (module
+      (obj_name jupyter_notebook)
+      (visibility public)
+      (source
+       (path Jupyter_notebook)
+       (intf (path notebook/jupyter_notebook.mli))
+       (impl (path notebook/jupyter_notebook.ml))))
+     (module
+      (obj_name jupyter_notebook__Process)
+      (visibility public)
+      (source
+       (path Process)
+       (intf (path notebook/process.mli))
+       (impl (path notebook/process.ml))))
+     (module
+      (obj_name jupyter_notebook__Unsafe)
+      (visibility public)
+      (source (path Unsafe) (impl (path notebook/unsafe.ml))))))
+   (wrapped true))))

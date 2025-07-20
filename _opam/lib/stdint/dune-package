@@ -1,0 +1,157 @@
+(lang dune 3.19)
+(name stdint)
+(version 0.7.2)
+(sections (lib .) (libexec .) (doc ../../doc/stdint) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   Stdint_stdlib_.ml
+   bytes_conv.ml
+   bytes_conv.mli
+   dune-package
+   infix.ml
+   infix.mli
+   int128.h
+   int16.h
+   int24.h
+   int40.h
+   int48.h
+   int56.h
+   int8.h
+   int_wrapper.ml
+   int_wrapper.mli
+   libstdint_stubs.a
+   opam
+   stdint.a
+   stdint.cma
+   stdint.cmi
+   stdint.cmt
+   stdint.cmti
+   stdint.cmx
+   stdint.cmxa
+   stdint.ml
+   stdint.mli
+   stdint__.cmi
+   stdint__.cmt
+   stdint__.cmx
+   stdint__.ml
+   stdint__Bytes_conv.cmi
+   stdint__Bytes_conv.cmt
+   stdint__Bytes_conv.cmti
+   stdint__Bytes_conv.cmx
+   stdint__Infix.cmi
+   stdint__Infix.cmt
+   stdint__Infix.cmti
+   stdint__Infix.cmx
+   stdint__Int_wrapper.cmi
+   stdint__Int_wrapper.cmt
+   stdint__Int_wrapper.cmti
+   stdint__Int_wrapper.cmx
+   stdint__Stdint_stdlib_.cmi
+   stdint__Stdint_stdlib_.cmt
+   stdint__Stdint_stdlib_.cmx
+   stdint__Str_conv.cmi
+   stdint__Str_conv.cmt
+   stdint__Str_conv.cmti
+   stdint__Str_conv.cmx
+   str_conv.ml
+   str_conv.mli
+   uint128.h
+   uint16.h
+   uint24.h
+   uint32.h
+   uint40.h
+   uint48.h
+   uint56.h
+   uint64.h
+   uint8.h))
+ (libexec (stdint.cmxs))
+ (doc (CHANGES.md LICENSE README.md))
+ (stublibs (dllstdint_stubs.so)))
+(library
+ (name stdint)
+ (kind normal)
+ (synopsis "Standard integer types for OCaml")
+ (archives (byte stdint.cma) (native stdint.cmxa))
+ (plugins (byte stdint.cma) (native stdint.cmxs))
+ (foreign_objects
+  float_conv.o
+  int128_conv.o
+  int128_stubs.o
+  int16_conv.o
+  int24_conv.o
+  int32_conv.o
+  int40_conv.o
+  int40_stubs.o
+  int48_conv.o
+  int48_stubs.o
+  int56_conv.o
+  int56_stubs.o
+  int64_conv.o
+  int8_conv.o
+  int_conv.o
+  nativeint_conv.o
+  uint128_conv.o
+  uint128_stubs.o
+  uint16_conv.o
+  uint24_conv.o
+  uint32_conv.o
+  uint32_stubs.o
+  uint40_conv.o
+  uint40_stubs.o
+  uint48_conv.o
+  uint48_stubs.o
+  uint56_conv.o
+  uint56_stubs.o
+  uint64_conv.o
+  uint64_stubs.o
+  uint8_conv.o)
+ (foreign_archives (archives (for all) (files libstdint_stubs.a)))
+ (foreign_dll_files ../stublibs/dllstdint_stubs.so)
+ (native_archives stdint.a)
+ (main_module_name Stdint)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name stdint__)
+     (visibility public)
+     (kind alias)
+     (source (path Stdint__) (impl (path stdint__.ml-gen))))
+    (name Stdint)
+    (modules
+     (module
+      (obj_name stdint__Bytes_conv)
+      (visibility public)
+      (source
+       (path Bytes_conv)
+       (intf (path bytes_conv.mli))
+       (impl (path bytes_conv.ml))))
+     (module
+      (obj_name stdint__Infix)
+      (visibility public)
+      (source (path Infix) (intf (path infix.mli)) (impl (path infix.ml))))
+     (module
+      (obj_name stdint__Int_wrapper)
+      (visibility public)
+      (source
+       (path Int_wrapper)
+       (intf (path int_wrapper.mli))
+       (impl (path int_wrapper.ml))))
+     (module
+      (obj_name stdint)
+      (visibility public)
+      (source (path Stdint) (intf (path stdint.mli)) (impl (path stdint.ml))))
+     (module
+      (obj_name stdint__Stdint_stdlib_)
+      (visibility public)
+      (source (path Stdint_stdlib_) (impl (path Stdint_stdlib_.ml))))
+     (module
+      (obj_name stdint__Str_conv)
+      (visibility public)
+      (source
+       (path Str_conv)
+       (intf (path str_conv.mli))
+       (impl (path str_conv.ml))))))
+   (wrapped true))))

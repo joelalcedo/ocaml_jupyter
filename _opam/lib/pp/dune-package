@@ -1,0 +1,33 @@
+(lang dune 3.19)
+(name pp)
+(version 2.0.0)
+(sections (lib .) (libexec .) (doc ../../doc/pp))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   pp.a
+   pp.cma
+   pp.cmi
+   pp.cmt
+   pp.cmti
+   pp.cmx
+   pp.cmxa
+   pp.ml
+   pp.mli))
+ (libexec (pp.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name pp)
+ (kind normal)
+ (archives (byte pp.cma) (native pp.cmxa))
+ (plugins (byte pp.cma) (native pp.cmxs))
+ (native_archives pp.a)
+ (main_module_name Pp)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name pp)
+   (visibility public)
+   (source (path Pp) (intf (path pp.mli)) (impl (path pp.ml))))))

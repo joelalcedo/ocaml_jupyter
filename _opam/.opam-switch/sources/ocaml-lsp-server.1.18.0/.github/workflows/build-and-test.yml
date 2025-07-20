@@ -1,0 +1,105 @@
+name: Build and Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    # Prime the caches every Monday
+    - cron: 0 1 * * MON
+
+jobs:
+  build-and-test:
+    name: Build and Test
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        ocaml-compiler:
+          - "4.14"
+        include:
+          - os: ubuntu-latest
+            ocaml-compiler: 5.1.x
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+
+      - name: Checkout tree
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set-up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install npm packages
+        run: yarn --frozen-lockfile
+        working-directory: ocaml-lsp-server/test/e2e
+
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - name: Build and install dependencies
+        run: opam install .
+
+      # the makefile explains why we don't use --with-test
+      # ppx expect is not yet compatible with 5.1 and test output vary from one
+      # compiler to another. We only test on 4.14.
+      - name: Install test dependencies
+        if: matrix.ocaml-compiler == '4.14'
+        run: opam exec -- make install-test-deps
+
+      - name: Run build @all
+        if: matrix.ocaml-compiler == '4.14'
+        run: opam exec -- make all
+
+      - name: Run the unit tests
+        if: matrix.ocaml-compiler == '4.14'
+        run: opam exec -- make test-ocaml
+
+      - name: Run the template integration tests
+        if: matrix.ocaml-compiler == '4.14'
+        run: opam exec -- make test-e2e
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tree
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set-up OCaml
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: "4.14"
+          allow-prerelease-opam: true
+
+      - name: Set git user
+        run: |
+          git config --global user.name github-actions[bot]
+          git config --global user.email github-actions[bot]@users.noreply.github.com
+
+      - name: Install dependencies
+        run: |
+          opam install . --deps-only
+          opam exec -- make coverage-deps install-test-deps
+      - run: opam exec -- make test-coverage
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{ github.event.number }}

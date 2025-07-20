@@ -1,0 +1,128 @@
+(lang dune 3.19)
+(name utop)
+(version 2.15.0)
+(sections
+ (lib .)
+ (bin ../../bin)
+ (share ../../share/utop)
+ (share_root ../../share)
+ (doc ../../doc/utop)
+ (man ../../man))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   uTop.cma
+   uTop.cmi
+   uTop.cmt
+   uTop.cmti
+   uTop.ml
+   uTop.mli
+   uTop_compat.cmi
+   uTop_compat.cmt
+   uTop_compat.ml
+   uTop_complete.cmi
+   uTop_complete.cmt
+   uTop_complete.cmti
+   uTop_complete.ml
+   uTop_complete.mli
+   uTop_history.cmi
+   uTop_history.cmt
+   uTop_history.cmti
+   uTop_history.ml
+   uTop_history.mli
+   uTop_lexer.cmi
+   uTop_lexer.cmt
+   uTop_lexer.cmti
+   uTop_lexer.ml
+   uTop_lexer.mli
+   uTop_main.cmi
+   uTop_main.cmt
+   uTop_main.cmti
+   uTop_main.ml
+   uTop_main.mli
+   uTop_private.cmi
+   uTop_private.cmt
+   uTop_private.ml
+   uTop_styles.cmi
+   uTop_styles.cmt
+   uTop_styles.cmti
+   uTop_styles.ml
+   uTop_styles.mli
+   uTop_token.cmi
+   uTop_token.cmt
+   uTop_token.ml))
+ (bin (utop utop-full))
+ (share (utoprc-dark utoprc-light))
+ (share_root (emacs/site-lisp/utop.el))
+ (doc (CHANGES.md LICENSE README.md))
+ (man (man1/utop-full.1 man1/utop.1 man5/utoprc.5)))
+(library
+ (name utop)
+ (kind normal)
+ (archives (byte uTop.cma))
+ (plugins (byte uTop.cma))
+ (requires
+  compiler-libs.toplevel
+  findlib.top
+  lambda-term
+  logs
+  logs.lwt
+  threads
+  xdg
+  zed)
+ (modes byte)
+ (modules
+  (unwrapped
+   (module
+    (obj_name uTop)
+    (visibility public)
+    (source (path UTop) (intf (path uTop.mli)) (impl (path uTop.ml))))
+   (module
+    (obj_name uTop_compat)
+    (visibility public)
+    (source (path UTop_compat) (impl (path uTop_compat.ml))))
+   (module
+    (obj_name uTop_complete)
+    (visibility public)
+    (source
+     (path UTop_complete)
+     (intf (path uTop_complete.mli))
+     (impl (path uTop_complete.ml))))
+   (module
+    (obj_name uTop_history)
+    (visibility public)
+    (source
+     (path UTop_history)
+     (intf (path uTop_history.mli))
+     (impl (path uTop_history.ml))))
+   (module
+    (obj_name uTop_lexer)
+    (visibility public)
+    (source
+     (path UTop_lexer)
+     (intf (path uTop_lexer.mli))
+     (impl (path uTop_lexer.ml))))
+   (module
+    (obj_name uTop_main)
+    (visibility public)
+    (source
+     (path UTop_main)
+     (intf (path uTop_main.mli))
+     (impl (path uTop_main.ml))))
+   (module
+    (obj_name uTop_private)
+    (visibility public)
+    (source (path UTop_private) (impl (path uTop_private.ml))))
+   (module
+    (obj_name uTop_styles)
+    (visibility public)
+    (source
+     (path UTop_styles)
+     (intf (path uTop_styles.mli))
+     (impl (path uTop_styles.ml))))
+   (module
+    (obj_name uTop_token)
+    (visibility public)
+    (source (path UTop_token) (impl (path uTop_token.ml)))))))

@@ -1,0 +1,18 @@
+(env (_
+ (binaries merlin-wrapper)
+ (env-vars
+  (MERLIN merlin-wrapper)
+  (OCAMLC ocamlc))))
+
+(cram
+ (package merlin)
+ (applies_to :whole_subtree)
+ (deps
+  %{bin:merlin-wrapper}
+  %{bin:ocamlmerlin-server}
+  %{bin:ocamlmerlin}
+  %{bin:dot-merlin-reader}))
+
+(cram
+ (applies_to with-ppx)
+ (deps (package ppxlib)))

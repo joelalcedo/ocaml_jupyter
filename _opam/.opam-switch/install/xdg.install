@@ -1,0 +1,25 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/xdg/META"
+  "_build/install/default/lib/xdg/dune-package"
+  "_build/install/default/lib/xdg/libxdg_stubs.a"
+  "_build/install/default/lib/xdg/opam"
+  "_build/install/default/lib/xdg/xdg.a"
+  "_build/install/default/lib/xdg/xdg.cma"
+  "_build/install/default/lib/xdg/xdg.cmi"
+  "_build/install/default/lib/xdg/xdg.cmt"
+  "_build/install/default/lib/xdg/xdg.cmti"
+  "_build/install/default/lib/xdg/xdg.cmx"
+  "_build/install/default/lib/xdg/xdg.cmxa"
+  "_build/install/default/lib/xdg/xdg.ml"
+  "_build/install/default/lib/xdg/xdg.mli"
+]
+stublibs: "_build/install/default/lib/stublibs/dllxdg_stubs.so"
+doc: [
+  "_build/install/default/doc/xdg/CHANGES.md"
+  "_build/install/default/doc/xdg/LICENSE.md"
+  "_build/install/default/doc/xdg/README.md"
+  "_build/install/default/doc/xdg/odoc-pages/index.mld"
+    {"odoc-pages/index.mld"}
+]
+libexec: "_build/install/default/lib/xdg/xdg.cmxs"

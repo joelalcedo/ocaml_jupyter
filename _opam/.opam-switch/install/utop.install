@@ -1,0 +1,66 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/utop/META"
+  "_build/install/default/lib/utop/dune-package"
+  "_build/install/default/lib/utop/opam"
+  "_build/install/default/lib/utop/uTop.cma"
+  "_build/install/default/lib/utop/uTop.cmi"
+  "_build/install/default/lib/utop/uTop.cmt"
+  "_build/install/default/lib/utop/uTop.cmti"
+  "_build/install/default/lib/utop/uTop.ml"
+  "_build/install/default/lib/utop/uTop.mli"
+  "_build/install/default/lib/utop/uTop_compat.cmi"
+  "_build/install/default/lib/utop/uTop_compat.cmt"
+  "_build/install/default/lib/utop/uTop_compat.ml"
+  "_build/install/default/lib/utop/uTop_complete.cmi"
+  "_build/install/default/lib/utop/uTop_complete.cmt"
+  "_build/install/default/lib/utop/uTop_complete.cmti"
+  "_build/install/default/lib/utop/uTop_complete.ml"
+  "_build/install/default/lib/utop/uTop_complete.mli"
+  "_build/install/default/lib/utop/uTop_history.cmi"
+  "_build/install/default/lib/utop/uTop_history.cmt"
+  "_build/install/default/lib/utop/uTop_history.cmti"
+  "_build/install/default/lib/utop/uTop_history.ml"
+  "_build/install/default/lib/utop/uTop_history.mli"
+  "_build/install/default/lib/utop/uTop_lexer.cmi"
+  "_build/install/default/lib/utop/uTop_lexer.cmt"
+  "_build/install/default/lib/utop/uTop_lexer.cmti"
+  "_build/install/default/lib/utop/uTop_lexer.ml"
+  "_build/install/default/lib/utop/uTop_lexer.mli"
+  "_build/install/default/lib/utop/uTop_main.cmi"
+  "_build/install/default/lib/utop/uTop_main.cmt"
+  "_build/install/default/lib/utop/uTop_main.cmti"
+  "_build/install/default/lib/utop/uTop_main.ml"
+  "_build/install/default/lib/utop/uTop_main.mli"
+  "_build/install/default/lib/utop/uTop_private.cmi"
+  "_build/install/default/lib/utop/uTop_private.cmt"
+  "_build/install/default/lib/utop/uTop_private.ml"
+  "_build/install/default/lib/utop/uTop_styles.cmi"
+  "_build/install/default/lib/utop/uTop_styles.cmt"
+  "_build/install/default/lib/utop/uTop_styles.cmti"
+  "_build/install/default/lib/utop/uTop_styles.ml"
+  "_build/install/default/lib/utop/uTop_styles.mli"
+  "_build/install/default/lib/utop/uTop_token.cmi"
+  "_build/install/default/lib/utop/uTop_token.cmt"
+  "_build/install/default/lib/utop/uTop_token.ml"
+]
+bin: [
+  "_build/install/default/bin/utop" "_build/install/default/bin/utop-full"
+]
+share: [
+  "_build/install/default/share/utop/utoprc-dark"
+  "_build/install/default/share/utop/utoprc-light"
+]
+share_root:
+  "_build/install/default/share/emacs/site-lisp/utop.el"
+    {"emacs/site-lisp/utop.el"}
+doc: [
+  "_build/install/default/doc/utop/CHANGES.md"
+  "_build/install/default/doc/utop/LICENSE"
+  "_build/install/default/doc/utop/README.md"
+]
+man: [
+  "_build/install/default/man/man1/utop-full.1"
+  "_build/install/default/man/man1/utop.1"
+  "_build/install/default/man/man5/utoprc.5"
+]

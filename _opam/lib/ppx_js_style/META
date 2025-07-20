@@ -1,0 +1,12 @@
+version = "v0.15.0"
+description = ""
+requires(ppx_driver) = "base compiler-libs.common octavius ppxlib ppxlib.ast"
+archive(ppx_driver,byte) = "ppx_js_style.cma"
+archive(ppx_driver,native) = "ppx_js_style.cmxa"
+plugin(ppx_driver,byte) = "ppx_js_style.cma"
+plugin(ppx_driver,native) = "ppx_js_style.cmxs"
+# This line makes things transparent for people mixing preprocessors
+# and normal dependencies
+requires(-ppx_driver) = ""
+ppx(-ppx_driver,-custom_ppx) = "./ppx.exe --as-ppx"
+library_kind = "ppx_rewriter"

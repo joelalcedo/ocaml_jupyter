@@ -1,0 +1,21 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/ordering/META"
+  "_build/install/default/lib/ordering/dune-package"
+  "_build/install/default/lib/ordering/opam"
+  "_build/install/default/lib/ordering/ordering.a"
+  "_build/install/default/lib/ordering/ordering.cma"
+  "_build/install/default/lib/ordering/ordering.cmi"
+  "_build/install/default/lib/ordering/ordering.cmt"
+  "_build/install/default/lib/ordering/ordering.cmti"
+  "_build/install/default/lib/ordering/ordering.cmx"
+  "_build/install/default/lib/ordering/ordering.cmxa"
+  "_build/install/default/lib/ordering/ordering.ml"
+  "_build/install/default/lib/ordering/ordering.mli"
+]
+doc: [
+  "_build/install/default/doc/ordering/CHANGES.md"
+  "_build/install/default/doc/ordering/LICENSE.md"
+  "_build/install/default/doc/ordering/README.md"
+]
+libexec: "_build/install/default/lib/ordering/ordering.cmxs"

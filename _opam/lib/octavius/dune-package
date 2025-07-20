@@ -1,0 +1,114 @@
+(lang dune 3.19)
+(name octavius)
+(sections (lib .) (libexec .) (bin ../../bin) (doc ../../doc/octavius))
+(files
+ (lib
+  (META
+   common.ml
+   common.mli
+   dune-package
+   errors.ml
+   errors.mli
+   octLexer.ml
+   octLexer.mli
+   octParser.ml
+   octParser.mli
+   octavius.a
+   octavius.cma
+   octavius.cmi
+   octavius.cmt
+   octavius.cmti
+   octavius.cmx
+   octavius.cmxa
+   octavius.ml
+   octavius.mli
+   octavius__.cmi
+   octavius__.cmt
+   octavius__.cmx
+   octavius__.ml
+   octavius__Common.cmi
+   octavius__Common.cmt
+   octavius__Common.cmti
+   octavius__Common.cmx
+   octavius__Errors.cmi
+   octavius__Errors.cmt
+   octavius__Errors.cmti
+   octavius__Errors.cmx
+   octavius__OctLexer.cmi
+   octavius__OctLexer.cmt
+   octavius__OctLexer.cmti
+   octavius__OctLexer.cmx
+   octavius__OctParser.cmi
+   octavius__OctParser.cmt
+   octavius__OctParser.cmti
+   octavius__OctParser.cmx
+   octavius__Print.cmi
+   octavius__Print.cmt
+   octavius__Print.cmti
+   octavius__Print.cmx
+   octavius__Types.cmi
+   octavius__Types.cmt
+   octavius__Types.cmx
+   opam
+   print.ml
+   print.mli
+   types.ml))
+ (libexec (octavius.cmxs))
+ (bin (octavius))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name octavius)
+ (kind normal)
+ (archives (byte octavius.cma) (native octavius.cmxa))
+ (plugins (byte octavius.cma) (native octavius.cmxs))
+ (native_archives octavius.a)
+ (main_module_name Octavius)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name octavius__)
+     (visibility public)
+     (kind alias)
+     (source (path Octavius__) (impl (path octavius__.ml-gen))))
+    (name Octavius)
+    (modules
+     (module
+      (obj_name octavius__Common)
+      (visibility public)
+      (source (path Common) (intf (path common.mli)) (impl (path common.ml))))
+     (module
+      (obj_name octavius__Errors)
+      (visibility public)
+      (source (path Errors) (intf (path errors.mli)) (impl (path errors.ml))))
+     (module
+      (obj_name octavius__OctLexer)
+      (visibility public)
+      (source
+       (path OctLexer)
+       (intf (path octLexer.mli))
+       (impl (path octLexer.ml))))
+     (module
+      (obj_name octavius__OctParser)
+      (visibility public)
+      (source
+       (path OctParser)
+       (intf (path octParser.mli))
+       (impl (path octParser.ml))))
+     (module
+      (obj_name octavius)
+      (visibility public)
+      (source
+       (path Octavius)
+       (intf (path octavius.mli))
+       (impl (path octavius.ml))))
+     (module
+      (obj_name octavius__Print)
+      (visibility public)
+      (source (path Print) (intf (path print.mli)) (impl (path print.ml))))
+     (module
+      (obj_name octavius__Types)
+      (visibility public)
+      (source (path Types) (impl (path types.ml))))))
+   (wrapped true))))

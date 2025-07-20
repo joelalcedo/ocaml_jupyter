@@ -1,0 +1,21 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/lwt_react/META"
+  "_build/install/default/lib/lwt_react/dune-package"
+  "_build/install/default/lib/lwt_react/lwt_react.a"
+  "_build/install/default/lib/lwt_react/lwt_react.cma"
+  "_build/install/default/lib/lwt_react/lwt_react.cmi"
+  "_build/install/default/lib/lwt_react/lwt_react.cmt"
+  "_build/install/default/lib/lwt_react/lwt_react.cmti"
+  "_build/install/default/lib/lwt_react/lwt_react.cmx"
+  "_build/install/default/lib/lwt_react/lwt_react.cmxa"
+  "_build/install/default/lib/lwt_react/lwt_react.ml"
+  "_build/install/default/lib/lwt_react/lwt_react.mli"
+  "_build/install/default/lib/lwt_react/opam"
+]
+doc: [
+  "_build/install/default/doc/lwt_react/CHANGES"
+  "_build/install/default/doc/lwt_react/LICENSE.md"
+  "_build/install/default/doc/lwt_react/README.md"
+]
+libexec: "_build/install/default/lib/lwt_react/lwt_react.cmxs"

@@ -1,0 +1,6 @@
+# dune init proj ocaml_jupyter
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/joelalcedo/.cache/dune/db
+# Workspace root: /Users/joelalcedo/Documents/development/ocaml_jupyter
+# Auto-detected concurrency: 14

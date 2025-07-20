@@ -1,0 +1,28 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/cryptokit/META"
+  "_build/install/default/lib/cryptokit/cryptokit.a"
+  "_build/install/default/lib/cryptokit/cryptokit.cma"
+  "_build/install/default/lib/cryptokit/cryptokit.cmi"
+  "_build/install/default/lib/cryptokit/cryptokit.cmt"
+  "_build/install/default/lib/cryptokit/cryptokit.cmti"
+  "_build/install/default/lib/cryptokit/cryptokit.cmx"
+  "_build/install/default/lib/cryptokit/cryptokit.cmxa"
+  "_build/install/default/lib/cryptokit/cryptokit.ml"
+  "_build/install/default/lib/cryptokit/cryptokit.mli"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.cmi"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.cmt"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.cmti"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.cmx"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.ml"
+  "_build/install/default/lib/cryptokit/cryptokitBignum.mli"
+  "_build/install/default/lib/cryptokit/dune-package"
+  "_build/install/default/lib/cryptokit/libcryptokit_stubs.a"
+  "_build/install/default/lib/cryptokit/opam"
+]
+stublibs: "_build/install/default/lib/stublibs/dllcryptokit_stubs.so"
+doc: [
+  "_build/install/default/doc/cryptokit/LICENSE"
+  "_build/install/default/doc/cryptokit/README.md"
+]
+libexec: "_build/install/default/lib/cryptokit/cryptokit.cmxs"

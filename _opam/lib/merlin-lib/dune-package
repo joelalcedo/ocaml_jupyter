@@ -1,0 +1,2371 @@
+(lang dune 3.19)
+(name merlin-lib)
+(version 4.16-414)
+(sections
+ (lib .)
+ (libexec .)
+ (doc ../../doc/merlin-lib)
+ (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   analysis/browse_misc.ml
+   analysis/browse_tree.ml
+   analysis/browse_tree.mli
+   analysis/completion.ml
+   analysis/completion.mli
+   analysis/construct.ml
+   analysis/construct.mli
+   analysis/context.ml
+   analysis/context.mli
+   analysis/destruct.ml
+   analysis/destruct.mli
+   analysis/expansion.ml
+   analysis/expansion.mli
+   analysis/jump.ml
+   analysis/jump.mli
+   analysis/locate.ml
+   analysis/locate.mli
+   analysis/merlin_analysis.a
+   analysis/merlin_analysis.cma
+   analysis/merlin_analysis.cmi
+   analysis/merlin_analysis.cmt
+   analysis/merlin_analysis.cmx
+   analysis/merlin_analysis.cmxa
+   analysis/merlin_analysis.ml
+   analysis/merlin_analysis__Browse_misc.cmi
+   analysis/merlin_analysis__Browse_misc.cmt
+   analysis/merlin_analysis__Browse_misc.cmx
+   analysis/merlin_analysis__Browse_tree.cmi
+   analysis/merlin_analysis__Browse_tree.cmt
+   analysis/merlin_analysis__Browse_tree.cmti
+   analysis/merlin_analysis__Browse_tree.cmx
+   analysis/merlin_analysis__Completion.cmi
+   analysis/merlin_analysis__Completion.cmt
+   analysis/merlin_analysis__Completion.cmti
+   analysis/merlin_analysis__Completion.cmx
+   analysis/merlin_analysis__Construct.cmi
+   analysis/merlin_analysis__Construct.cmt
+   analysis/merlin_analysis__Construct.cmti
+   analysis/merlin_analysis__Construct.cmx
+   analysis/merlin_analysis__Context.cmi
+   analysis/merlin_analysis__Context.cmt
+   analysis/merlin_analysis__Context.cmti
+   analysis/merlin_analysis__Context.cmx
+   analysis/merlin_analysis__Destruct.cmi
+   analysis/merlin_analysis__Destruct.cmt
+   analysis/merlin_analysis__Destruct.cmti
+   analysis/merlin_analysis__Destruct.cmx
+   analysis/merlin_analysis__Expansion.cmi
+   analysis/merlin_analysis__Expansion.cmt
+   analysis/merlin_analysis__Expansion.cmti
+   analysis/merlin_analysis__Expansion.cmx
+   analysis/merlin_analysis__Jump.cmi
+   analysis/merlin_analysis__Jump.cmt
+   analysis/merlin_analysis__Jump.cmti
+   analysis/merlin_analysis__Jump.cmx
+   analysis/merlin_analysis__Locate.cmi
+   analysis/merlin_analysis__Locate.cmt
+   analysis/merlin_analysis__Locate.cmti
+   analysis/merlin_analysis__Locate.cmx
+   analysis/merlin_analysis__Misc_utils.cmi
+   analysis/merlin_analysis__Misc_utils.cmt
+   analysis/merlin_analysis__Misc_utils.cmti
+   analysis/merlin_analysis__Misc_utils.cmx
+   analysis/merlin_analysis__Namespaced_path.cmi
+   analysis/merlin_analysis__Namespaced_path.cmt
+   analysis/merlin_analysis__Namespaced_path.cmti
+   analysis/merlin_analysis__Namespaced_path.cmx
+   analysis/merlin_analysis__Ocamldoc.cmi
+   analysis/merlin_analysis__Ocamldoc.cmt
+   analysis/merlin_analysis__Ocamldoc.cmx
+   analysis/merlin_analysis__Outline.cmi
+   analysis/merlin_analysis__Outline.cmt
+   analysis/merlin_analysis__Outline.cmti
+   analysis/merlin_analysis__Outline.cmx
+   analysis/merlin_analysis__Polarity_search.cmi
+   analysis/merlin_analysis__Polarity_search.cmt
+   analysis/merlin_analysis__Polarity_search.cmx
+   analysis/merlin_analysis__Ptyp_of_type.cmi
+   analysis/merlin_analysis__Ptyp_of_type.cmt
+   analysis/merlin_analysis__Ptyp_of_type.cmti
+   analysis/merlin_analysis__Ptyp_of_type.cmx
+   analysis/merlin_analysis__Refactor_open.cmi
+   analysis/merlin_analysis__Refactor_open.cmt
+   analysis/merlin_analysis__Refactor_open.cmti
+   analysis/merlin_analysis__Refactor_open.cmx
+   analysis/merlin_analysis__Syntax_doc.cmi
+   analysis/merlin_analysis__Syntax_doc.cmt
+   analysis/merlin_analysis__Syntax_doc.cmti
+   analysis/merlin_analysis__Syntax_doc.cmx
+   analysis/merlin_analysis__Tail_analysis.cmi
+   analysis/merlin_analysis__Tail_analysis.cmt
+   analysis/merlin_analysis__Tail_analysis.cmti
+   analysis/merlin_analysis__Tail_analysis.cmx
+   analysis/merlin_analysis__Type_enclosing.cmi
+   analysis/merlin_analysis__Type_enclosing.cmt
+   analysis/merlin_analysis__Type_enclosing.cmti
+   analysis/merlin_analysis__Type_enclosing.cmx
+   analysis/merlin_analysis__Type_utils.cmi
+   analysis/merlin_analysis__Type_utils.cmt
+   analysis/merlin_analysis__Type_utils.cmti
+   analysis/merlin_analysis__Type_utils.cmx
+   analysis/misc_utils.ml
+   analysis/misc_utils.mli
+   analysis/namespaced_path.ml
+   analysis/namespaced_path.mli
+   analysis/ocamldoc.ml
+   analysis/outline.ml
+   analysis/outline.mli
+   analysis/polarity_search.ml
+   analysis/ptyp_of_type.ml
+   analysis/ptyp_of_type.mli
+   analysis/refactor_open.ml
+   analysis/refactor_open.mli
+   analysis/syntax_doc.ml
+   analysis/syntax_doc.mli
+   analysis/tail_analysis.ml
+   analysis/tail_analysis.mli
+   analysis/type_enclosing.ml
+   analysis/type_enclosing.mli
+   analysis/type_utils.ml
+   analysis/type_utils.mli
+   commands/merlin_commands.a
+   commands/merlin_commands.cma
+   commands/merlin_commands.cmi
+   commands/merlin_commands.cmt
+   commands/merlin_commands.cmx
+   commands/merlin_commands.cmxa
+   commands/merlin_commands.ml
+   commands/merlin_commands__New_commands.cmi
+   commands/merlin_commands__New_commands.cmt
+   commands/merlin_commands__New_commands.cmti
+   commands/merlin_commands__New_commands.cmx
+   commands/merlin_commands__Query_json.cmi
+   commands/merlin_commands__Query_json.cmt
+   commands/merlin_commands__Query_json.cmx
+   commands/new_commands.ml
+   commands/new_commands.mli
+   commands/query_json.ml
+   config/merlin_config.a
+   config/merlin_config.cma
+   config/merlin_config.cmi
+   config/merlin_config.cmt
+   config/merlin_config.cmx
+   config/merlin_config.cmxa
+   config/merlin_config.ml
+   dot_protocol/merlin_dot_protocol.a
+   dot_protocol/merlin_dot_protocol.cma
+   dot_protocol/merlin_dot_protocol.cmi
+   dot_protocol/merlin_dot_protocol.cmt
+   dot_protocol/merlin_dot_protocol.cmti
+   dot_protocol/merlin_dot_protocol.cmx
+   dot_protocol/merlin_dot_protocol.cmxa
+   dot_protocol/merlin_dot_protocol.ml
+   dot_protocol/merlin_dot_protocol.mli
+   dune-package
+   extend/extend_driver.ml
+   extend/extend_driver.mli
+   extend/extend_main.ml
+   extend/extend_main.mli
+   extend/extend_protocol.ml
+   extend/merlin_extend.a
+   extend/merlin_extend.cma
+   extend/merlin_extend.cmi
+   extend/merlin_extend.cmt
+   extend/merlin_extend.cmx
+   extend/merlin_extend.cmxa
+   extend/merlin_extend.ml
+   extend/merlin_extend__Extend_driver.cmi
+   extend/merlin_extend__Extend_driver.cmt
+   extend/merlin_extend__Extend_driver.cmti
+   extend/merlin_extend__Extend_driver.cmx
+   extend/merlin_extend__Extend_main.cmi
+   extend/merlin_extend__Extend_main.cmt
+   extend/merlin_extend__Extend_main.cmti
+   extend/merlin_extend__Extend_main.cmx
+   extend/merlin_extend__Extend_protocol.cmi
+   extend/merlin_extend__Extend_protocol.cmt
+   extend/merlin_extend__Extend_protocol.cmx
+   kernel/extension.ml
+   kernel/extension.mli
+   kernel/mbrowse.ml
+   kernel/mbrowse.mli
+   kernel/mconfig.ml
+   kernel/mconfig.mli
+   kernel/mconfig_dot.ml
+   kernel/mconfig_dot.mli
+   kernel/merlin_kernel.a
+   kernel/merlin_kernel.cma
+   kernel/merlin_kernel.cmi
+   kernel/merlin_kernel.cmt
+   kernel/merlin_kernel.cmx
+   kernel/merlin_kernel.cmxa
+   kernel/merlin_kernel.ml
+   kernel/merlin_kernel__Extension.cmi
+   kernel/merlin_kernel__Extension.cmt
+   kernel/merlin_kernel__Extension.cmti
+   kernel/merlin_kernel__Extension.cmx
+   kernel/merlin_kernel__Mbrowse.cmi
+   kernel/merlin_kernel__Mbrowse.cmt
+   kernel/merlin_kernel__Mbrowse.cmti
+   kernel/merlin_kernel__Mbrowse.cmx
+   kernel/merlin_kernel__Mconfig.cmi
+   kernel/merlin_kernel__Mconfig.cmt
+   kernel/merlin_kernel__Mconfig.cmti
+   kernel/merlin_kernel__Mconfig.cmx
+   kernel/merlin_kernel__Mconfig_dot.cmi
+   kernel/merlin_kernel__Mconfig_dot.cmt
+   kernel/merlin_kernel__Mconfig_dot.cmti
+   kernel/merlin_kernel__Mconfig_dot.cmx
+   kernel/merlin_kernel__Mocaml.cmi
+   kernel/merlin_kernel__Mocaml.cmt
+   kernel/merlin_kernel__Mocaml.cmti
+   kernel/merlin_kernel__Mocaml.cmx
+   kernel/merlin_kernel__Mpipeline.cmi
+   kernel/merlin_kernel__Mpipeline.cmt
+   kernel/merlin_kernel__Mpipeline.cmti
+   kernel/merlin_kernel__Mpipeline.cmx
+   kernel/merlin_kernel__Mppx.cmi
+   kernel/merlin_kernel__Mppx.cmt
+   kernel/merlin_kernel__Mppx.cmti
+   kernel/merlin_kernel__Mppx.cmx
+   kernel/merlin_kernel__Mreader.cmi
+   kernel/merlin_kernel__Mreader.cmt
+   kernel/merlin_kernel__Mreader.cmti
+   kernel/merlin_kernel__Mreader.cmx
+   kernel/merlin_kernel__Mreader_explain.cmi
+   kernel/merlin_kernel__Mreader_explain.cmt
+   kernel/merlin_kernel__Mreader_explain.cmx
+   kernel/merlin_kernel__Mreader_extend.cmi
+   kernel/merlin_kernel__Mreader_extend.cmt
+   kernel/merlin_kernel__Mreader_extend.cmti
+   kernel/merlin_kernel__Mreader_extend.cmx
+   kernel/merlin_kernel__Mreader_lexer.cmi
+   kernel/merlin_kernel__Mreader_lexer.cmt
+   kernel/merlin_kernel__Mreader_lexer.cmti
+   kernel/merlin_kernel__Mreader_lexer.cmx
+   kernel/merlin_kernel__Mreader_parser.cmi
+   kernel/merlin_kernel__Mreader_parser.cmt
+   kernel/merlin_kernel__Mreader_parser.cmti
+   kernel/merlin_kernel__Mreader_parser.cmx
+   kernel/merlin_kernel__Mreader_recover.cmi
+   kernel/merlin_kernel__Mreader_recover.cmt
+   kernel/merlin_kernel__Mreader_recover.cmti
+   kernel/merlin_kernel__Mreader_recover.cmx
+   kernel/merlin_kernel__Msource.cmi
+   kernel/merlin_kernel__Msource.cmt
+   kernel/merlin_kernel__Msource.cmti
+   kernel/merlin_kernel__Msource.cmx
+   kernel/merlin_kernel__Mtyper.cmi
+   kernel/merlin_kernel__Mtyper.cmt
+   kernel/merlin_kernel__Mtyper.cmti
+   kernel/merlin_kernel__Mtyper.cmx
+   kernel/merlin_kernel__Phase_cache.cmi
+   kernel/merlin_kernel__Phase_cache.cmt
+   kernel/merlin_kernel__Phase_cache.cmti
+   kernel/merlin_kernel__Phase_cache.cmx
+   kernel/merlin_kernel__Pparse.cmi
+   kernel/merlin_kernel__Pparse.cmt
+   kernel/merlin_kernel__Pparse.cmti
+   kernel/merlin_kernel__Pparse.cmx
+   kernel/merlin_kernel__Standard_library.cmi
+   kernel/merlin_kernel__Standard_library.cmt
+   kernel/merlin_kernel__Standard_library.cmx
+   kernel/mocaml.ml
+   kernel/mocaml.mli
+   kernel/mpipeline.ml
+   kernel/mpipeline.mli
+   kernel/mppx.ml
+   kernel/mppx.mli
+   kernel/mreader.ml
+   kernel/mreader.mli
+   kernel/mreader_explain.ml
+   kernel/mreader_extend.ml
+   kernel/mreader_extend.mli
+   kernel/mreader_lexer.ml
+   kernel/mreader_lexer.mli
+   kernel/mreader_parser.ml
+   kernel/mreader_parser.mli
+   kernel/mreader_recover.ml
+   kernel/mreader_recover.mli
+   kernel/msource.ml
+   kernel/msource.mli
+   kernel/mtyper.ml
+   kernel/mtyper.mli
+   kernel/phase_cache.ml
+   kernel/phase_cache.mli
+   kernel/pparse.ml
+   kernel/pparse.mli
+   kernel/standard_library.ml
+   ocaml_merlin_specific/browse_raw.ml
+   ocaml_merlin_specific/browse_raw.mli
+   ocaml_merlin_specific/merlin_specific.a
+   ocaml_merlin_specific/merlin_specific.cma
+   ocaml_merlin_specific/merlin_specific.cmi
+   ocaml_merlin_specific/merlin_specific.cmt
+   ocaml_merlin_specific/merlin_specific.cmx
+   ocaml_merlin_specific/merlin_specific.cmxa
+   ocaml_merlin_specific/merlin_specific.ml
+   ocaml_merlin_specific/merlin_specific__Browse_raw.cmi
+   ocaml_merlin_specific/merlin_specific__Browse_raw.cmt
+   ocaml_merlin_specific/merlin_specific__Browse_raw.cmti
+   ocaml_merlin_specific/merlin_specific__Browse_raw.cmx
+   ocaml_merlin_specific/merlin_specific__Tast_helper.cmi
+   ocaml_merlin_specific/merlin_specific__Tast_helper.cmt
+   ocaml_merlin_specific/merlin_specific__Tast_helper.cmx
+   ocaml_merlin_specific/merlin_specific__Typer_raw.cmi
+   ocaml_merlin_specific/merlin_specific__Typer_raw.cmt
+   ocaml_merlin_specific/merlin_specific__Typer_raw.cmti
+   ocaml_merlin_specific/merlin_specific__Typer_raw.cmx
+   ocaml_merlin_specific/tast_helper.ml
+   ocaml_merlin_specific/typer_raw.ml
+   ocaml_merlin_specific/typer_raw.mli
+   ocaml_parsing/ast_helper.ml
+   ocaml_parsing/ast_helper.mli
+   ocaml_parsing/ast_iterator.ml
+   ocaml_parsing/ast_iterator.mli
+   ocaml_parsing/ast_mapper.ml
+   ocaml_parsing/ast_mapper.mli
+   ocaml_parsing/asttypes.mli
+   ocaml_parsing/attr_helper.ml
+   ocaml_parsing/attr_helper.mli
+   ocaml_parsing/builtin_attributes.ml
+   ocaml_parsing/builtin_attributes.mli
+   ocaml_parsing/docstrings.ml
+   ocaml_parsing/docstrings.mli
+   ocaml_parsing/extend_helper.ml
+   ocaml_parsing/extend_helper.mli
+   ocaml_parsing/fake.ml
+   ocaml_parsing/fake.mli
+   ocaml_parsing/location.ml
+   ocaml_parsing/location.mli
+   ocaml_parsing/location_aux.ml
+   ocaml_parsing/location_aux.mli
+   ocaml_parsing/longident.ml
+   ocaml_parsing/longident.mli
+   ocaml_parsing/msupport_parsing.ml
+   ocaml_parsing/ocaml_parsing.a
+   ocaml_parsing/ocaml_parsing.cma
+   ocaml_parsing/ocaml_parsing.cmi
+   ocaml_parsing/ocaml_parsing.cmt
+   ocaml_parsing/ocaml_parsing.cmx
+   ocaml_parsing/ocaml_parsing.cmxa
+   ocaml_parsing/ocaml_parsing.ml
+   ocaml_parsing/ocaml_parsing__Ast_helper.cmi
+   ocaml_parsing/ocaml_parsing__Ast_helper.cmt
+   ocaml_parsing/ocaml_parsing__Ast_helper.cmti
+   ocaml_parsing/ocaml_parsing__Ast_helper.cmx
+   ocaml_parsing/ocaml_parsing__Ast_iterator.cmi
+   ocaml_parsing/ocaml_parsing__Ast_iterator.cmt
+   ocaml_parsing/ocaml_parsing__Ast_iterator.cmti
+   ocaml_parsing/ocaml_parsing__Ast_iterator.cmx
+   ocaml_parsing/ocaml_parsing__Ast_mapper.cmi
+   ocaml_parsing/ocaml_parsing__Ast_mapper.cmt
+   ocaml_parsing/ocaml_parsing__Ast_mapper.cmti
+   ocaml_parsing/ocaml_parsing__Ast_mapper.cmx
+   ocaml_parsing/ocaml_parsing__Asttypes.cmi
+   ocaml_parsing/ocaml_parsing__Asttypes.cmti
+   ocaml_parsing/ocaml_parsing__Attr_helper.cmi
+   ocaml_parsing/ocaml_parsing__Attr_helper.cmt
+   ocaml_parsing/ocaml_parsing__Attr_helper.cmti
+   ocaml_parsing/ocaml_parsing__Attr_helper.cmx
+   ocaml_parsing/ocaml_parsing__Builtin_attributes.cmi
+   ocaml_parsing/ocaml_parsing__Builtin_attributes.cmt
+   ocaml_parsing/ocaml_parsing__Builtin_attributes.cmti
+   ocaml_parsing/ocaml_parsing__Builtin_attributes.cmx
+   ocaml_parsing/ocaml_parsing__Docstrings.cmi
+   ocaml_parsing/ocaml_parsing__Docstrings.cmt
+   ocaml_parsing/ocaml_parsing__Docstrings.cmti
+   ocaml_parsing/ocaml_parsing__Docstrings.cmx
+   ocaml_parsing/ocaml_parsing__Extend_helper.cmi
+   ocaml_parsing/ocaml_parsing__Extend_helper.cmt
+   ocaml_parsing/ocaml_parsing__Extend_helper.cmti
+   ocaml_parsing/ocaml_parsing__Extend_helper.cmx
+   ocaml_parsing/ocaml_parsing__Fake.cmi
+   ocaml_parsing/ocaml_parsing__Fake.cmt
+   ocaml_parsing/ocaml_parsing__Fake.cmti
+   ocaml_parsing/ocaml_parsing__Fake.cmx
+   ocaml_parsing/ocaml_parsing__Location.cmi
+   ocaml_parsing/ocaml_parsing__Location.cmt
+   ocaml_parsing/ocaml_parsing__Location.cmti
+   ocaml_parsing/ocaml_parsing__Location.cmx
+   ocaml_parsing/ocaml_parsing__Location_aux.cmi
+   ocaml_parsing/ocaml_parsing__Location_aux.cmt
+   ocaml_parsing/ocaml_parsing__Location_aux.cmti
+   ocaml_parsing/ocaml_parsing__Location_aux.cmx
+   ocaml_parsing/ocaml_parsing__Longident.cmi
+   ocaml_parsing/ocaml_parsing__Longident.cmt
+   ocaml_parsing/ocaml_parsing__Longident.cmti
+   ocaml_parsing/ocaml_parsing__Longident.cmx
+   ocaml_parsing/ocaml_parsing__Msupport_parsing.cmi
+   ocaml_parsing/ocaml_parsing__Msupport_parsing.cmt
+   ocaml_parsing/ocaml_parsing__Msupport_parsing.cmx
+   ocaml_parsing/ocaml_parsing__Parsetree.cmi
+   ocaml_parsing/ocaml_parsing__Parsetree.cmti
+   ocaml_parsing/ocaml_parsing__Pprintast.cmi
+   ocaml_parsing/ocaml_parsing__Pprintast.cmt
+   ocaml_parsing/ocaml_parsing__Pprintast.cmti
+   ocaml_parsing/ocaml_parsing__Pprintast.cmx
+   ocaml_parsing/ocaml_parsing__Printast.cmi
+   ocaml_parsing/ocaml_parsing__Printast.cmt
+   ocaml_parsing/ocaml_parsing__Printast.cmti
+   ocaml_parsing/ocaml_parsing__Printast.cmx
+   ocaml_parsing/ocaml_parsing__Syntaxerr.cmi
+   ocaml_parsing/ocaml_parsing__Syntaxerr.cmt
+   ocaml_parsing/ocaml_parsing__Syntaxerr.cmti
+   ocaml_parsing/ocaml_parsing__Syntaxerr.cmx
+   ocaml_parsing/parsetree.mli
+   ocaml_parsing/pprintast.ml
+   ocaml_parsing/pprintast.mli
+   ocaml_parsing/printast.ml
+   ocaml_parsing/printast.mli
+   ocaml_parsing/syntaxerr.ml
+   ocaml_parsing/syntaxerr.mli
+   ocaml_preprocess/lexer_ident.ml
+   ocaml_preprocess/lexer_ident.mli
+   ocaml_preprocess/lexer_raw.ml
+   ocaml_preprocess/lexer_raw.mli
+   ocaml_preprocess/menhirLib.ml
+   ocaml_preprocess/menhirLib.mli
+   ocaml_preprocess/ocaml_preprocess.a
+   ocaml_preprocess/ocaml_preprocess.cma
+   ocaml_preprocess/ocaml_preprocess.cmi
+   ocaml_preprocess/ocaml_preprocess.cmt
+   ocaml_preprocess/ocaml_preprocess.cmx
+   ocaml_preprocess/ocaml_preprocess.cmxa
+   ocaml_preprocess/ocaml_preprocess.ml
+   ocaml_preprocess/ocaml_preprocess__Lexer_ident.cmi
+   ocaml_preprocess/ocaml_preprocess__Lexer_ident.cmt
+   ocaml_preprocess/ocaml_preprocess__Lexer_ident.cmti
+   ocaml_preprocess/ocaml_preprocess__Lexer_ident.cmx
+   ocaml_preprocess/ocaml_preprocess__Lexer_raw.cmi
+   ocaml_preprocess/ocaml_preprocess__Lexer_raw.cmt
+   ocaml_preprocess/ocaml_preprocess__Lexer_raw.cmti
+   ocaml_preprocess/ocaml_preprocess__Lexer_raw.cmx
+   ocaml_preprocess/ocaml_preprocess__MenhirLib.cmi
+   ocaml_preprocess/ocaml_preprocess__MenhirLib.cmt
+   ocaml_preprocess/ocaml_preprocess__MenhirLib.cmti
+   ocaml_preprocess/ocaml_preprocess__MenhirLib.cmx
+   ocaml_preprocess/ocaml_preprocess__Parser_explain.cmi
+   ocaml_preprocess/ocaml_preprocess__Parser_explain.cmt
+   ocaml_preprocess/ocaml_preprocess__Parser_explain.cmx
+   ocaml_preprocess/ocaml_preprocess__Parser_printer.cmi
+   ocaml_preprocess/ocaml_preprocess__Parser_printer.cmt
+   ocaml_preprocess/ocaml_preprocess__Parser_printer.cmti
+   ocaml_preprocess/ocaml_preprocess__Parser_printer.cmx
+   ocaml_preprocess/ocaml_preprocess__Parser_raw.cmi
+   ocaml_preprocess/ocaml_preprocess__Parser_raw.cmt
+   ocaml_preprocess/ocaml_preprocess__Parser_raw.cmti
+   ocaml_preprocess/ocaml_preprocess__Parser_raw.cmx
+   ocaml_preprocess/ocaml_preprocess__Parser_recover.cmi
+   ocaml_preprocess/ocaml_preprocess__Parser_recover.cmt
+   ocaml_preprocess/ocaml_preprocess__Parser_recover.cmti
+   ocaml_preprocess/ocaml_preprocess__Parser_recover.cmx
+   ocaml_preprocess/parser_explain.ml
+   ocaml_preprocess/parser_printer.ml
+   ocaml_preprocess/parser_printer.mli
+   ocaml_preprocess/parser_raw.ml
+   ocaml_preprocess/parser_raw.mli
+   ocaml_preprocess/parser_recover.ml
+   ocaml_preprocess/parser_recover.mli
+   ocaml_typing/annot.mli
+   ocaml_typing/btype.ml
+   ocaml_typing/btype.mli
+   ocaml_typing/cmi_cache.ml
+   ocaml_typing/cmi_format.ml
+   ocaml_typing/cmi_format.mli
+   ocaml_typing/cmt_cache.ml
+   ocaml_typing/cmt_format.ml
+   ocaml_typing/cmt_format.mli
+   ocaml_typing/ctype.ml
+   ocaml_typing/ctype.mli
+   ocaml_typing/datarepr.ml
+   ocaml_typing/datarepr.mli
+   ocaml_typing/env.ml
+   ocaml_typing/env.mli
+   ocaml_typing/envaux.ml
+   ocaml_typing/envaux.mli
+   ocaml_typing/errortrace.ml
+   ocaml_typing/errortrace.mli
+   ocaml_typing/ident.ml
+   ocaml_typing/ident.mli
+   ocaml_typing/includeclass.ml
+   ocaml_typing/includeclass.mli
+   ocaml_typing/includecore.ml
+   ocaml_typing/includecore.mli
+   ocaml_typing/includemod.ml
+   ocaml_typing/includemod.mli
+   ocaml_typing/includemod_errorprinter.ml
+   ocaml_typing/includemod_errorprinter.mli
+   ocaml_typing/magic_numbers.ml
+   ocaml_typing/msupport.ml
+   ocaml_typing/msupport.mli
+   ocaml_typing/mtype.ml
+   ocaml_typing/mtype.mli
+   ocaml_typing/natural.ml
+   ocaml_typing/natural.mli
+   ocaml_typing/ocaml_typing.a
+   ocaml_typing/ocaml_typing.cma
+   ocaml_typing/ocaml_typing.cmi
+   ocaml_typing/ocaml_typing.cmt
+   ocaml_typing/ocaml_typing.cmx
+   ocaml_typing/ocaml_typing.cmxa
+   ocaml_typing/ocaml_typing.ml
+   ocaml_typing/ocaml_typing__Annot.cmi
+   ocaml_typing/ocaml_typing__Annot.cmti
+   ocaml_typing/ocaml_typing__Btype.cmi
+   ocaml_typing/ocaml_typing__Btype.cmt
+   ocaml_typing/ocaml_typing__Btype.cmti
+   ocaml_typing/ocaml_typing__Btype.cmx
+   ocaml_typing/ocaml_typing__Cmi_cache.cmi
+   ocaml_typing/ocaml_typing__Cmi_cache.cmt
+   ocaml_typing/ocaml_typing__Cmi_cache.cmx
+   ocaml_typing/ocaml_typing__Cmi_format.cmi
+   ocaml_typing/ocaml_typing__Cmi_format.cmt
+   ocaml_typing/ocaml_typing__Cmi_format.cmti
+   ocaml_typing/ocaml_typing__Cmi_format.cmx
+   ocaml_typing/ocaml_typing__Cmt_cache.cmi
+   ocaml_typing/ocaml_typing__Cmt_cache.cmt
+   ocaml_typing/ocaml_typing__Cmt_cache.cmx
+   ocaml_typing/ocaml_typing__Cmt_format.cmi
+   ocaml_typing/ocaml_typing__Cmt_format.cmt
+   ocaml_typing/ocaml_typing__Cmt_format.cmti
+   ocaml_typing/ocaml_typing__Cmt_format.cmx
+   ocaml_typing/ocaml_typing__Ctype.cmi
+   ocaml_typing/ocaml_typing__Ctype.cmt
+   ocaml_typing/ocaml_typing__Ctype.cmti
+   ocaml_typing/ocaml_typing__Ctype.cmx
+   ocaml_typing/ocaml_typing__Datarepr.cmi
+   ocaml_typing/ocaml_typing__Datarepr.cmt
+   ocaml_typing/ocaml_typing__Datarepr.cmti
+   ocaml_typing/ocaml_typing__Datarepr.cmx
+   ocaml_typing/ocaml_typing__Env.cmi
+   ocaml_typing/ocaml_typing__Env.cmt
+   ocaml_typing/ocaml_typing__Env.cmti
+   ocaml_typing/ocaml_typing__Env.cmx
+   ocaml_typing/ocaml_typing__Envaux.cmi
+   ocaml_typing/ocaml_typing__Envaux.cmt
+   ocaml_typing/ocaml_typing__Envaux.cmti
+   ocaml_typing/ocaml_typing__Envaux.cmx
+   ocaml_typing/ocaml_typing__Errortrace.cmi
+   ocaml_typing/ocaml_typing__Errortrace.cmt
+   ocaml_typing/ocaml_typing__Errortrace.cmti
+   ocaml_typing/ocaml_typing__Errortrace.cmx
+   ocaml_typing/ocaml_typing__Ident.cmi
+   ocaml_typing/ocaml_typing__Ident.cmt
+   ocaml_typing/ocaml_typing__Ident.cmti
+   ocaml_typing/ocaml_typing__Ident.cmx
+   ocaml_typing/ocaml_typing__Includeclass.cmi
+   ocaml_typing/ocaml_typing__Includeclass.cmt
+   ocaml_typing/ocaml_typing__Includeclass.cmti
+   ocaml_typing/ocaml_typing__Includeclass.cmx
+   ocaml_typing/ocaml_typing__Includecore.cmi
+   ocaml_typing/ocaml_typing__Includecore.cmt
+   ocaml_typing/ocaml_typing__Includecore.cmti
+   ocaml_typing/ocaml_typing__Includecore.cmx
+   ocaml_typing/ocaml_typing__Includemod.cmi
+   ocaml_typing/ocaml_typing__Includemod.cmt
+   ocaml_typing/ocaml_typing__Includemod.cmti
+   ocaml_typing/ocaml_typing__Includemod.cmx
+   ocaml_typing/ocaml_typing__Includemod_errorprinter.cmi
+   ocaml_typing/ocaml_typing__Includemod_errorprinter.cmt
+   ocaml_typing/ocaml_typing__Includemod_errorprinter.cmti
+   ocaml_typing/ocaml_typing__Includemod_errorprinter.cmx
+   ocaml_typing/ocaml_typing__Magic_numbers.cmi
+   ocaml_typing/ocaml_typing__Magic_numbers.cmt
+   ocaml_typing/ocaml_typing__Magic_numbers.cmx
+   ocaml_typing/ocaml_typing__Msupport.cmi
+   ocaml_typing/ocaml_typing__Msupport.cmt
+   ocaml_typing/ocaml_typing__Msupport.cmti
+   ocaml_typing/ocaml_typing__Msupport.cmx
+   ocaml_typing/ocaml_typing__Mtype.cmi
+   ocaml_typing/ocaml_typing__Mtype.cmt
+   ocaml_typing/ocaml_typing__Mtype.cmti
+   ocaml_typing/ocaml_typing__Mtype.cmx
+   ocaml_typing/ocaml_typing__Natural.cmi
+   ocaml_typing/ocaml_typing__Natural.cmt
+   ocaml_typing/ocaml_typing__Natural.cmti
+   ocaml_typing/ocaml_typing__Natural.cmx
+   ocaml_typing/ocaml_typing__Oprint.cmi
+   ocaml_typing/ocaml_typing__Oprint.cmt
+   ocaml_typing/ocaml_typing__Oprint.cmti
+   ocaml_typing/ocaml_typing__Oprint.cmx
+   ocaml_typing/ocaml_typing__Outcometree.cmi
+   ocaml_typing/ocaml_typing__Outcometree.cmti
+   ocaml_typing/ocaml_typing__Parmatch.cmi
+   ocaml_typing/ocaml_typing__Parmatch.cmt
+   ocaml_typing/ocaml_typing__Parmatch.cmti
+   ocaml_typing/ocaml_typing__Parmatch.cmx
+   ocaml_typing/ocaml_typing__Path.cmi
+   ocaml_typing/ocaml_typing__Path.cmt
+   ocaml_typing/ocaml_typing__Path.cmti
+   ocaml_typing/ocaml_typing__Path.cmx
+   ocaml_typing/ocaml_typing__Patterns.cmi
+   ocaml_typing/ocaml_typing__Patterns.cmt
+   ocaml_typing/ocaml_typing__Patterns.cmti
+   ocaml_typing/ocaml_typing__Patterns.cmx
+   ocaml_typing/ocaml_typing__Persistent_env.cmi
+   ocaml_typing/ocaml_typing__Persistent_env.cmt
+   ocaml_typing/ocaml_typing__Persistent_env.cmti
+   ocaml_typing/ocaml_typing__Persistent_env.cmx
+   ocaml_typing/ocaml_typing__Predef.cmi
+   ocaml_typing/ocaml_typing__Predef.cmt
+   ocaml_typing/ocaml_typing__Predef.cmti
+   ocaml_typing/ocaml_typing__Predef.cmx
+   ocaml_typing/ocaml_typing__Primitive.cmi
+   ocaml_typing/ocaml_typing__Primitive.cmt
+   ocaml_typing/ocaml_typing__Primitive.cmti
+   ocaml_typing/ocaml_typing__Primitive.cmx
+   ocaml_typing/ocaml_typing__Printpat.cmi
+   ocaml_typing/ocaml_typing__Printpat.cmt
+   ocaml_typing/ocaml_typing__Printpat.cmti
+   ocaml_typing/ocaml_typing__Printpat.cmx
+   ocaml_typing/ocaml_typing__Printtyp.cmi
+   ocaml_typing/ocaml_typing__Printtyp.cmt
+   ocaml_typing/ocaml_typing__Printtyp.cmti
+   ocaml_typing/ocaml_typing__Printtyp.cmx
+   ocaml_typing/ocaml_typing__Printtyped.cmi
+   ocaml_typing/ocaml_typing__Printtyped.cmt
+   ocaml_typing/ocaml_typing__Printtyped.cmti
+   ocaml_typing/ocaml_typing__Printtyped.cmx
+   ocaml_typing/ocaml_typing__Rec_check.cmi
+   ocaml_typing/ocaml_typing__Rec_check.cmt
+   ocaml_typing/ocaml_typing__Rec_check.cmti
+   ocaml_typing/ocaml_typing__Rec_check.cmx
+   ocaml_typing/ocaml_typing__Saved_parts.cmi
+   ocaml_typing/ocaml_typing__Saved_parts.cmt
+   ocaml_typing/ocaml_typing__Saved_parts.cmti
+   ocaml_typing/ocaml_typing__Saved_parts.cmx
+   ocaml_typing/ocaml_typing__Shape.cmi
+   ocaml_typing/ocaml_typing__Shape.cmt
+   ocaml_typing/ocaml_typing__Shape.cmti
+   ocaml_typing/ocaml_typing__Shape.cmx
+   ocaml_typing/ocaml_typing__Short_paths.cmi
+   ocaml_typing/ocaml_typing__Short_paths.cmt
+   ocaml_typing/ocaml_typing__Short_paths.cmti
+   ocaml_typing/ocaml_typing__Short_paths.cmx
+   ocaml_typing/ocaml_typing__Short_paths_graph.cmi
+   ocaml_typing/ocaml_typing__Short_paths_graph.cmt
+   ocaml_typing/ocaml_typing__Short_paths_graph.cmti
+   ocaml_typing/ocaml_typing__Short_paths_graph.cmx
+   ocaml_typing/ocaml_typing__Signature_group.cmi
+   ocaml_typing/ocaml_typing__Signature_group.cmt
+   ocaml_typing/ocaml_typing__Signature_group.cmti
+   ocaml_typing/ocaml_typing__Signature_group.cmx
+   ocaml_typing/ocaml_typing__Stypes.cmi
+   ocaml_typing/ocaml_typing__Stypes.cmt
+   ocaml_typing/ocaml_typing__Stypes.cmti
+   ocaml_typing/ocaml_typing__Stypes.cmx
+   ocaml_typing/ocaml_typing__Subst.cmi
+   ocaml_typing/ocaml_typing__Subst.cmt
+   ocaml_typing/ocaml_typing__Subst.cmti
+   ocaml_typing/ocaml_typing__Subst.cmx
+   ocaml_typing/ocaml_typing__Tast_iterator.cmi
+   ocaml_typing/ocaml_typing__Tast_iterator.cmt
+   ocaml_typing/ocaml_typing__Tast_iterator.cmti
+   ocaml_typing/ocaml_typing__Tast_iterator.cmx
+   ocaml_typing/ocaml_typing__Tast_mapper.cmi
+   ocaml_typing/ocaml_typing__Tast_mapper.cmt
+   ocaml_typing/ocaml_typing__Tast_mapper.cmti
+   ocaml_typing/ocaml_typing__Tast_mapper.cmx
+   ocaml_typing/ocaml_typing__Type_immediacy.cmi
+   ocaml_typing/ocaml_typing__Type_immediacy.cmt
+   ocaml_typing/ocaml_typing__Type_immediacy.cmti
+   ocaml_typing/ocaml_typing__Type_immediacy.cmx
+   ocaml_typing/ocaml_typing__Typeclass.cmi
+   ocaml_typing/ocaml_typing__Typeclass.cmt
+   ocaml_typing/ocaml_typing__Typeclass.cmti
+   ocaml_typing/ocaml_typing__Typeclass.cmx
+   ocaml_typing/ocaml_typing__Typecore.cmi
+   ocaml_typing/ocaml_typing__Typecore.cmt
+   ocaml_typing/ocaml_typing__Typecore.cmti
+   ocaml_typing/ocaml_typing__Typecore.cmx
+   ocaml_typing/ocaml_typing__Typedecl.cmi
+   ocaml_typing/ocaml_typing__Typedecl.cmt
+   ocaml_typing/ocaml_typing__Typedecl.cmti
+   ocaml_typing/ocaml_typing__Typedecl.cmx
+   ocaml_typing/ocaml_typing__Typedecl_immediacy.cmi
+   ocaml_typing/ocaml_typing__Typedecl_immediacy.cmt
+   ocaml_typing/ocaml_typing__Typedecl_immediacy.cmti
+   ocaml_typing/ocaml_typing__Typedecl_immediacy.cmx
+   ocaml_typing/ocaml_typing__Typedecl_properties.cmi
+   ocaml_typing/ocaml_typing__Typedecl_properties.cmt
+   ocaml_typing/ocaml_typing__Typedecl_properties.cmti
+   ocaml_typing/ocaml_typing__Typedecl_properties.cmx
+   ocaml_typing/ocaml_typing__Typedecl_separability.cmi
+   ocaml_typing/ocaml_typing__Typedecl_separability.cmt
+   ocaml_typing/ocaml_typing__Typedecl_separability.cmti
+   ocaml_typing/ocaml_typing__Typedecl_separability.cmx
+   ocaml_typing/ocaml_typing__Typedecl_unboxed.cmi
+   ocaml_typing/ocaml_typing__Typedecl_unboxed.cmt
+   ocaml_typing/ocaml_typing__Typedecl_unboxed.cmti
+   ocaml_typing/ocaml_typing__Typedecl_unboxed.cmx
+   ocaml_typing/ocaml_typing__Typedecl_variance.cmi
+   ocaml_typing/ocaml_typing__Typedecl_variance.cmt
+   ocaml_typing/ocaml_typing__Typedecl_variance.cmti
+   ocaml_typing/ocaml_typing__Typedecl_variance.cmx
+   ocaml_typing/ocaml_typing__Typedtree.cmi
+   ocaml_typing/ocaml_typing__Typedtree.cmt
+   ocaml_typing/ocaml_typing__Typedtree.cmti
+   ocaml_typing/ocaml_typing__Typedtree.cmx
+   ocaml_typing/ocaml_typing__Typemod.cmi
+   ocaml_typing/ocaml_typing__Typemod.cmt
+   ocaml_typing/ocaml_typing__Typemod.cmti
+   ocaml_typing/ocaml_typing__Typemod.cmx
+   ocaml_typing/ocaml_typing__Typeopt.cmi
+   ocaml_typing/ocaml_typing__Typeopt.cmt
+   ocaml_typing/ocaml_typing__Typeopt.cmti
+   ocaml_typing/ocaml_typing__Typeopt.cmx
+   ocaml_typing/ocaml_typing__Types.cmi
+   ocaml_typing/ocaml_typing__Types.cmt
+   ocaml_typing/ocaml_typing__Types.cmti
+   ocaml_typing/ocaml_typing__Types.cmx
+   ocaml_typing/ocaml_typing__Typetexp.cmi
+   ocaml_typing/ocaml_typing__Typetexp.cmt
+   ocaml_typing/ocaml_typing__Typetexp.cmti
+   ocaml_typing/ocaml_typing__Typetexp.cmx
+   ocaml_typing/ocaml_typing__Untypeast.cmi
+   ocaml_typing/ocaml_typing__Untypeast.cmt
+   ocaml_typing/ocaml_typing__Untypeast.cmti
+   ocaml_typing/ocaml_typing__Untypeast.cmx
+   ocaml_typing/oprint.ml
+   ocaml_typing/oprint.mli
+   ocaml_typing/outcometree.mli
+   ocaml_typing/parmatch.ml
+   ocaml_typing/parmatch.mli
+   ocaml_typing/path.ml
+   ocaml_typing/path.mli
+   ocaml_typing/patterns.ml
+   ocaml_typing/patterns.mli
+   ocaml_typing/persistent_env.ml
+   ocaml_typing/persistent_env.mli
+   ocaml_typing/predef.ml
+   ocaml_typing/predef.mli
+   ocaml_typing/primitive.ml
+   ocaml_typing/primitive.mli
+   ocaml_typing/printpat.ml
+   ocaml_typing/printpat.mli
+   ocaml_typing/printtyp.ml
+   ocaml_typing/printtyp.mli
+   ocaml_typing/printtyped.ml
+   ocaml_typing/printtyped.mli
+   ocaml_typing/rec_check.ml
+   ocaml_typing/rec_check.mli
+   ocaml_typing/saved_parts.ml
+   ocaml_typing/saved_parts.mli
+   ocaml_typing/shape.ml
+   ocaml_typing/shape.mli
+   ocaml_typing/short_paths.ml
+   ocaml_typing/short_paths.mli
+   ocaml_typing/short_paths_graph.ml
+   ocaml_typing/short_paths_graph.mli
+   ocaml_typing/signature_group.ml
+   ocaml_typing/signature_group.mli
+   ocaml_typing/stypes.ml
+   ocaml_typing/stypes.mli
+   ocaml_typing/subst.ml
+   ocaml_typing/subst.mli
+   ocaml_typing/tast_iterator.ml
+   ocaml_typing/tast_iterator.mli
+   ocaml_typing/tast_mapper.ml
+   ocaml_typing/tast_mapper.mli
+   ocaml_typing/type_immediacy.ml
+   ocaml_typing/type_immediacy.mli
+   ocaml_typing/typeclass.ml
+   ocaml_typing/typeclass.mli
+   ocaml_typing/typecore.ml
+   ocaml_typing/typecore.mli
+   ocaml_typing/typedecl.ml
+   ocaml_typing/typedecl.mli
+   ocaml_typing/typedecl_immediacy.ml
+   ocaml_typing/typedecl_immediacy.mli
+   ocaml_typing/typedecl_properties.ml
+   ocaml_typing/typedecl_properties.mli
+   ocaml_typing/typedecl_separability.ml
+   ocaml_typing/typedecl_separability.mli
+   ocaml_typing/typedecl_unboxed.ml
+   ocaml_typing/typedecl_unboxed.mli
+   ocaml_typing/typedecl_variance.ml
+   ocaml_typing/typedecl_variance.mli
+   ocaml_typing/typedtree.ml
+   ocaml_typing/typedtree.mli
+   ocaml_typing/typemod.ml
+   ocaml_typing/typemod.mli
+   ocaml_typing/typeopt.ml
+   ocaml_typing/typeopt.mli
+   ocaml_typing/types.ml
+   ocaml_typing/types.mli
+   ocaml_typing/typetexp.ml
+   ocaml_typing/typetexp.mli
+   ocaml_typing/untypeast.ml
+   ocaml_typing/untypeast.mli
+   ocaml_utils/build_path_prefix_map.ml
+   ocaml_utils/build_path_prefix_map.mli
+   ocaml_utils/clflags.ml
+   ocaml_utils/clflags.mli
+   ocaml_utils/config.ml
+   ocaml_utils/config.mli
+   ocaml_utils/consistbl.ml
+   ocaml_utils/consistbl.mli
+   ocaml_utils/diffing.ml
+   ocaml_utils/diffing.mli
+   ocaml_utils/diffing_with_keys.ml
+   ocaml_utils/diffing_with_keys.mli
+   ocaml_utils/directory_content_cache.ml
+   ocaml_utils/identifiable.ml
+   ocaml_utils/identifiable.mli
+   ocaml_utils/lazy_backtrack.ml
+   ocaml_utils/lazy_backtrack.mli
+   ocaml_utils/load_path.ml
+   ocaml_utils/load_path.mli
+   ocaml_utils/local_store.ml
+   ocaml_utils/local_store.mli
+   ocaml_utils/ocaml_utils.a
+   ocaml_utils/ocaml_utils.cma
+   ocaml_utils/ocaml_utils.cmi
+   ocaml_utils/ocaml_utils.cmt
+   ocaml_utils/ocaml_utils.cmx
+   ocaml_utils/ocaml_utils.cmxa
+   ocaml_utils/ocaml_utils.ml
+   ocaml_utils/ocaml_utils__Build_path_prefix_map.cmi
+   ocaml_utils/ocaml_utils__Build_path_prefix_map.cmt
+   ocaml_utils/ocaml_utils__Build_path_prefix_map.cmti
+   ocaml_utils/ocaml_utils__Build_path_prefix_map.cmx
+   ocaml_utils/ocaml_utils__Clflags.cmi
+   ocaml_utils/ocaml_utils__Clflags.cmt
+   ocaml_utils/ocaml_utils__Clflags.cmti
+   ocaml_utils/ocaml_utils__Clflags.cmx
+   ocaml_utils/ocaml_utils__Config.cmi
+   ocaml_utils/ocaml_utils__Config.cmt
+   ocaml_utils/ocaml_utils__Config.cmti
+   ocaml_utils/ocaml_utils__Config.cmx
+   ocaml_utils/ocaml_utils__Consistbl.cmi
+   ocaml_utils/ocaml_utils__Consistbl.cmt
+   ocaml_utils/ocaml_utils__Consistbl.cmti
+   ocaml_utils/ocaml_utils__Consistbl.cmx
+   ocaml_utils/ocaml_utils__Diffing.cmi
+   ocaml_utils/ocaml_utils__Diffing.cmt
+   ocaml_utils/ocaml_utils__Diffing.cmti
+   ocaml_utils/ocaml_utils__Diffing.cmx
+   ocaml_utils/ocaml_utils__Diffing_with_keys.cmi
+   ocaml_utils/ocaml_utils__Diffing_with_keys.cmt
+   ocaml_utils/ocaml_utils__Diffing_with_keys.cmti
+   ocaml_utils/ocaml_utils__Diffing_with_keys.cmx
+   ocaml_utils/ocaml_utils__Directory_content_cache.cmi
+   ocaml_utils/ocaml_utils__Directory_content_cache.cmt
+   ocaml_utils/ocaml_utils__Directory_content_cache.cmx
+   ocaml_utils/ocaml_utils__Identifiable.cmi
+   ocaml_utils/ocaml_utils__Identifiable.cmt
+   ocaml_utils/ocaml_utils__Identifiable.cmti
+   ocaml_utils/ocaml_utils__Identifiable.cmx
+   ocaml_utils/ocaml_utils__Lazy_backtrack.cmi
+   ocaml_utils/ocaml_utils__Lazy_backtrack.cmt
+   ocaml_utils/ocaml_utils__Lazy_backtrack.cmti
+   ocaml_utils/ocaml_utils__Lazy_backtrack.cmx
+   ocaml_utils/ocaml_utils__Load_path.cmi
+   ocaml_utils/ocaml_utils__Load_path.cmt
+   ocaml_utils/ocaml_utils__Load_path.cmti
+   ocaml_utils/ocaml_utils__Load_path.cmx
+   ocaml_utils/ocaml_utils__Local_store.cmi
+   ocaml_utils/ocaml_utils__Local_store.cmt
+   ocaml_utils/ocaml_utils__Local_store.cmti
+   ocaml_utils/ocaml_utils__Local_store.cmx
+   ocaml_utils/ocaml_utils__Tbl.cmi
+   ocaml_utils/ocaml_utils__Tbl.cmt
+   ocaml_utils/ocaml_utils__Tbl.cmti
+   ocaml_utils/ocaml_utils__Tbl.cmx
+   ocaml_utils/ocaml_utils__Warnings.cmi
+   ocaml_utils/ocaml_utils__Warnings.cmt
+   ocaml_utils/ocaml_utils__Warnings.cmti
+   ocaml_utils/ocaml_utils__Warnings.cmx
+   ocaml_utils/tbl.ml
+   ocaml_utils/tbl.mli
+   ocaml_utils/warnings.ml
+   ocaml_utils/warnings.mli
+   opam
+   os_ipc/libos_ipc_stubs.a
+   os_ipc/os_ipc.a
+   os_ipc/os_ipc.cma
+   os_ipc/os_ipc.cmi
+   os_ipc/os_ipc.cmt
+   os_ipc/os_ipc.cmx
+   os_ipc/os_ipc.cmxa
+   os_ipc/os_ipc.ml
+   query_commands/query_commands.a
+   query_commands/query_commands.cma
+   query_commands/query_commands.cmi
+   query_commands/query_commands.cmt
+   query_commands/query_commands.cmti
+   query_commands/query_commands.cmx
+   query_commands/query_commands.cmxa
+   query_commands/query_commands.ml
+   query_commands/query_commands.mli
+   query_protocol/query_protocol.a
+   query_protocol/query_protocol.cma
+   query_protocol/query_protocol.cmi
+   query_protocol/query_protocol.cmt
+   query_protocol/query_protocol.cmx
+   query_protocol/query_protocol.cmxa
+   query_protocol/query_protocol.ml
+   utils/file_cache.ml
+   utils/file_cache.mli
+   utils/file_id.ml
+   utils/file_id.mli
+   utils/lib_config.ml
+   utils/lib_config.mli
+   utils/libmerlin_utils_stubs.a
+   utils/logger.ml
+   utils/logger.mli
+   utils/marg.ml
+   utils/marg.mli
+   utils/merlin_utils.a
+   utils/merlin_utils.cma
+   utils/merlin_utils.cmi
+   utils/merlin_utils.cmt
+   utils/merlin_utils.cmx
+   utils/merlin_utils.cmxa
+   utils/merlin_utils.ml
+   utils/merlin_utils__File_cache.cmi
+   utils/merlin_utils__File_cache.cmt
+   utils/merlin_utils__File_cache.cmti
+   utils/merlin_utils__File_cache.cmx
+   utils/merlin_utils__File_id.cmi
+   utils/merlin_utils__File_id.cmt
+   utils/merlin_utils__File_id.cmti
+   utils/merlin_utils__File_id.cmx
+   utils/merlin_utils__Lib_config.cmi
+   utils/merlin_utils__Lib_config.cmt
+   utils/merlin_utils__Lib_config.cmti
+   utils/merlin_utils__Lib_config.cmx
+   utils/merlin_utils__Logger.cmi
+   utils/merlin_utils__Logger.cmt
+   utils/merlin_utils__Logger.cmti
+   utils/merlin_utils__Logger.cmx
+   utils/merlin_utils__Marg.cmi
+   utils/merlin_utils__Marg.cmt
+   utils/merlin_utils__Marg.cmti
+   utils/merlin_utils__Marg.cmx
+   utils/merlin_utils__Misc.cmi
+   utils/merlin_utils__Misc.cmt
+   utils/merlin_utils__Misc.cmti
+   utils/merlin_utils__Misc.cmx
+   utils/merlin_utils__Ppxsetup.cmi
+   utils/merlin_utils__Ppxsetup.cmt
+   utils/merlin_utils__Ppxsetup.cmti
+   utils/merlin_utils__Ppxsetup.cmx
+   utils/merlin_utils__Sexp.cmi
+   utils/merlin_utils__Sexp.cmt
+   utils/merlin_utils__Sexp.cmti
+   utils/merlin_utils__Sexp.cmx
+   utils/merlin_utils__Stamped_hashtable.cmi
+   utils/merlin_utils__Stamped_hashtable.cmt
+   utils/merlin_utils__Stamped_hashtable.cmti
+   utils/merlin_utils__Stamped_hashtable.cmx
+   utils/merlin_utils__Std.cmi
+   utils/merlin_utils__Std.cmt
+   utils/merlin_utils__Std.cmx
+   utils/misc.ml
+   utils/misc.mli
+   utils/ppxsetup.ml
+   utils/ppxsetup.mli
+   utils/sexp.ml
+   utils/sexp.mli
+   utils/stamped_hashtable.ml
+   utils/stamped_hashtable.mli
+   utils/std.ml))
+ (libexec
+  (analysis/merlin_analysis.cmxs
+   commands/merlin_commands.cmxs
+   config/merlin_config.cmxs
+   dot_protocol/merlin_dot_protocol.cmxs
+   extend/merlin_extend.cmxs
+   kernel/merlin_kernel.cmxs
+   ocaml_merlin_specific/merlin_specific.cmxs
+   ocaml_parsing/ocaml_parsing.cmxs
+   ocaml_preprocess/ocaml_preprocess.cmxs
+   ocaml_typing/ocaml_typing.cmxs
+   ocaml_utils/ocaml_utils.cmxs
+   os_ipc/os_ipc.cmxs
+   query_commands/query_commands.cmxs
+   query_protocol/query_protocol.cmxs
+   utils/merlin_utils.cmxs))
+ (doc (CHANGES.md LICENSE README.md))
+ (stublibs (dllmerlin_utils_stubs.so dllos_ipc_stubs.so)))
+(library
+ (name merlin-lib.analysis)
+ (kind normal)
+ (archives
+  (byte analysis/merlin_analysis.cma)
+  (native analysis/merlin_analysis.cmxa))
+ (plugins
+  (byte analysis/merlin_analysis.cma)
+  (native analysis/merlin_analysis.cmxs))
+ (native_archives analysis/merlin_analysis.a)
+ (requires
+  merlin-lib.config
+  merlin-lib.ocaml_merlin_specific
+  merlin-lib.extend
+  merlin-lib.kernel
+  merlin-lib.utils
+  merlin-lib.ocaml_parsing
+  merlin-lib.ocaml_preprocess
+  merlin-lib.query_protocol
+  merlin-lib.ocaml_typing
+  merlin-lib.ocaml_utils)
+ (main_module_name Merlin_analysis)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_analysis)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Merlin_analysis)
+      (impl (path analysis/merlin_analysis.ml-gen))))
+    (name Merlin_analysis)
+    (modules
+     (module
+      (obj_name merlin_analysis__Browse_misc)
+      (visibility public)
+      (source (path Browse_misc) (impl (path analysis/browse_misc.ml))))
+     (module
+      (obj_name merlin_analysis__Browse_tree)
+      (visibility public)
+      (source
+       (path Browse_tree)
+       (intf (path analysis/browse_tree.mli))
+       (impl (path analysis/browse_tree.ml))))
+     (module
+      (obj_name merlin_analysis__Completion)
+      (visibility public)
+      (source
+       (path Completion)
+       (intf (path analysis/completion.mli))
+       (impl (path analysis/completion.ml))))
+     (module
+      (obj_name merlin_analysis__Construct)
+      (visibility public)
+      (source
+       (path Construct)
+       (intf (path analysis/construct.mli))
+       (impl (path analysis/construct.ml))))
+     (module
+      (obj_name merlin_analysis__Context)
+      (visibility public)
+      (source
+       (path Context)
+       (intf (path analysis/context.mli))
+       (impl (path analysis/context.ml))))
+     (module
+      (obj_name merlin_analysis__Destruct)
+      (visibility public)
+      (source
+       (path Destruct)
+       (intf (path analysis/destruct.mli))
+       (impl (path analysis/destruct.ml))))
+     (module
+      (obj_name merlin_analysis__Expansion)
+      (visibility public)
+      (source
+       (path Expansion)
+       (intf (path analysis/expansion.mli))
+       (impl (path analysis/expansion.ml))))
+     (module
+      (obj_name merlin_analysis__Jump)
+      (visibility public)
+      (source
+       (path Jump)
+       (intf (path analysis/jump.mli))
+       (impl (path analysis/jump.ml))))
+     (module
+      (obj_name merlin_analysis__Locate)
+      (visibility public)
+      (source
+       (path Locate)
+       (intf (path analysis/locate.mli))
+       (impl (path analysis/locate.ml))))
+     (module
+      (obj_name merlin_analysis__Misc_utils)
+      (visibility public)
+      (source
+       (path Misc_utils)
+       (intf (path analysis/misc_utils.mli))
+       (impl (path analysis/misc_utils.ml))))
+     (module
+      (obj_name merlin_analysis__Namespaced_path)
+      (visibility public)
+      (source
+       (path Namespaced_path)
+       (intf (path analysis/namespaced_path.mli))
+       (impl (path analysis/namespaced_path.ml))))
+     (module
+      (obj_name merlin_analysis__Ocamldoc)
+      (visibility public)
+      (source (path Ocamldoc) (impl (path analysis/ocamldoc.ml))))
+     (module
+      (obj_name merlin_analysis__Outline)
+      (visibility public)
+      (source
+       (path Outline)
+       (intf (path analysis/outline.mli))
+       (impl (path analysis/outline.ml))))
+     (module
+      (obj_name merlin_analysis__Polarity_search)
+      (visibility public)
+      (source
+       (path Polarity_search)
+       (impl (path analysis/polarity_search.ml))))
+     (module
+      (obj_name merlin_analysis__Ptyp_of_type)
+      (visibility public)
+      (source
+       (path Ptyp_of_type)
+       (intf (path analysis/ptyp_of_type.mli))
+       (impl (path analysis/ptyp_of_type.ml))))
+     (module
+      (obj_name merlin_analysis__Refactor_open)
+      (visibility public)
+      (source
+       (path Refactor_open)
+       (intf (path analysis/refactor_open.mli))
+       (impl (path analysis/refactor_open.ml))))
+     (module
+      (obj_name merlin_analysis__Syntax_doc)
+      (visibility public)
+      (source
+       (path Syntax_doc)
+       (intf (path analysis/syntax_doc.mli))
+       (impl (path analysis/syntax_doc.ml))))
+     (module
+      (obj_name merlin_analysis__Tail_analysis)
+      (visibility public)
+      (source
+       (path Tail_analysis)
+       (intf (path analysis/tail_analysis.mli))
+       (impl (path analysis/tail_analysis.ml))))
+     (module
+      (obj_name merlin_analysis__Type_enclosing)
+      (visibility public)
+      (source
+       (path Type_enclosing)
+       (intf (path analysis/type_enclosing.mli))
+       (impl (path analysis/type_enclosing.ml))))
+     (module
+      (obj_name merlin_analysis__Type_utils)
+      (visibility public)
+      (source
+       (path Type_utils)
+       (intf (path analysis/type_utils.mli))
+       (impl (path analysis/type_utils.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.commands)
+ (kind normal)
+ (archives
+  (byte commands/merlin_commands.cma)
+  (native commands/merlin_commands.cmxa))
+ (plugins
+  (byte commands/merlin_commands.cma)
+  (native commands/merlin_commands.cmxs))
+ (native_archives commands/merlin_commands.a)
+ (requires
+  merlin-lib.ocaml_parsing
+  merlin-lib.utils
+  merlin-lib.kernel
+  merlin-lib.query_protocol
+  merlin-lib.query_commands)
+ (main_module_name Merlin_commands)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_commands)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Merlin_commands)
+      (impl (path commands/merlin_commands.ml-gen))))
+    (name Merlin_commands)
+    (modules
+     (module
+      (obj_name merlin_commands__New_commands)
+      (visibility public)
+      (source
+       (path New_commands)
+       (intf (path commands/new_commands.mli))
+       (impl (path commands/new_commands.ml))))
+     (module
+      (obj_name merlin_commands__Query_json)
+      (visibility public)
+      (source (path Query_json) (impl (path commands/query_json.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.config)
+ (kind normal)
+ (archives (byte config/merlin_config.cma) (native config/merlin_config.cmxa))
+ (plugins (byte config/merlin_config.cma) (native config/merlin_config.cmxs))
+ (native_archives config/merlin_config.a)
+ (main_module_name Merlin_config)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name merlin_config)
+   (visibility public)
+   (source (path Merlin_config) (impl (path config/merlin_config.ml))))))
+(library
+ (name merlin-lib.dot_protocol)
+ (kind normal)
+ (archives
+  (byte dot_protocol/merlin_dot_protocol.cma)
+  (native dot_protocol/merlin_dot_protocol.cmxa))
+ (plugins
+  (byte dot_protocol/merlin_dot_protocol.cma)
+  (native dot_protocol/merlin_dot_protocol.cmxs))
+ (native_archives dot_protocol/merlin_dot_protocol.a)
+ (requires merlin-lib.utils csexp)
+ (main_module_name Merlin_dot_protocol)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name merlin_dot_protocol)
+   (visibility public)
+   (source
+    (path Merlin_dot_protocol)
+    (intf (path dot_protocol/merlin_dot_protocol.mli))
+    (impl (path dot_protocol/merlin_dot_protocol.ml))))))
+(library
+ (name merlin-lib.extend)
+ (kind normal)
+ (archives (byte extend/merlin_extend.cma) (native extend/merlin_extend.cmxa))
+ (plugins (byte extend/merlin_extend.cma) (native extend/merlin_extend.cmxs))
+ (native_archives extend/merlin_extend.a)
+ (requires
+  merlin-lib.ocaml_parsing
+  merlin-lib.ocaml_typing
+  unix
+  merlin-lib.ocaml_utils)
+ (main_module_name Merlin_extend)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_extend)
+     (visibility public)
+     (kind alias)
+     (source (path Merlin_extend) (impl (path extend/merlin_extend.ml-gen))))
+    (name Merlin_extend)
+    (modules
+     (module
+      (obj_name merlin_extend__Extend_driver)
+      (visibility public)
+      (source
+       (path Extend_driver)
+       (intf (path extend/extend_driver.mli))
+       (impl (path extend/extend_driver.ml))))
+     (module
+      (obj_name merlin_extend__Extend_main)
+      (visibility public)
+      (source
+       (path Extend_main)
+       (intf (path extend/extend_main.mli))
+       (impl (path extend/extend_main.ml))))
+     (module
+      (obj_name merlin_extend__Extend_protocol)
+      (visibility public)
+      (source (path Extend_protocol) (impl (path extend/extend_protocol.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.kernel)
+ (kind normal)
+ (archives (byte kernel/merlin_kernel.cma) (native kernel/merlin_kernel.cmxa))
+ (plugins (byte kernel/merlin_kernel.cma) (native kernel/merlin_kernel.cmxs))
+ (native_archives kernel/merlin_kernel.a)
+ (requires
+  merlin-lib.config
+  merlin-lib.os_ipc
+  merlin-lib.ocaml_parsing
+  merlin-lib.ocaml_preprocess
+  merlin-lib.ocaml_typing
+  merlin-lib.ocaml_utils
+  merlin-lib.extend
+  merlin-lib.ocaml_merlin_specific
+  merlin-lib.utils
+  merlin-lib.dot_protocol)
+ (main_module_name Merlin_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_kernel)
+     (visibility public)
+     (kind alias)
+     (source (path Merlin_kernel) (impl (path kernel/merlin_kernel.ml-gen))))
+    (name Merlin_kernel)
+    (modules
+     (module
+      (obj_name merlin_kernel__Extension)
+      (visibility public)
+      (source
+       (path Extension)
+       (intf (path kernel/extension.mli))
+       (impl (path kernel/extension.ml))))
+     (module
+      (obj_name merlin_kernel__Mbrowse)
+      (visibility public)
+      (source
+       (path Mbrowse)
+       (intf (path kernel/mbrowse.mli))
+       (impl (path kernel/mbrowse.ml))))
+     (module
+      (obj_name merlin_kernel__Mconfig)
+      (visibility public)
+      (source
+       (path Mconfig)
+       (intf (path kernel/mconfig.mli))
+       (impl (path kernel/mconfig.ml))))
+     (module
+      (obj_name merlin_kernel__Mconfig_dot)
+      (visibility public)
+      (source
+       (path Mconfig_dot)
+       (intf (path kernel/mconfig_dot.mli))
+       (impl (path kernel/mconfig_dot.ml))))
+     (module
+      (obj_name merlin_kernel__Mocaml)
+      (visibility public)
+      (source
+       (path Mocaml)
+       (intf (path kernel/mocaml.mli))
+       (impl (path kernel/mocaml.ml))))
+     (module
+      (obj_name merlin_kernel__Mpipeline)
+      (visibility public)
+      (source
+       (path Mpipeline)
+       (intf (path kernel/mpipeline.mli))
+       (impl (path kernel/mpipeline.ml))))
+     (module
+      (obj_name merlin_kernel__Mppx)
+      (visibility public)
+      (source
+       (path Mppx)
+       (intf (path kernel/mppx.mli))
+       (impl (path kernel/mppx.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader)
+      (visibility public)
+      (source
+       (path Mreader)
+       (intf (path kernel/mreader.mli))
+       (impl (path kernel/mreader.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader_explain)
+      (visibility public)
+      (source (path Mreader_explain) (impl (path kernel/mreader_explain.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader_extend)
+      (visibility public)
+      (source
+       (path Mreader_extend)
+       (intf (path kernel/mreader_extend.mli))
+       (impl (path kernel/mreader_extend.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader_lexer)
+      (visibility public)
+      (source
+       (path Mreader_lexer)
+       (intf (path kernel/mreader_lexer.mli))
+       (impl (path kernel/mreader_lexer.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader_parser)
+      (visibility public)
+      (source
+       (path Mreader_parser)
+       (intf (path kernel/mreader_parser.mli))
+       (impl (path kernel/mreader_parser.ml))))
+     (module
+      (obj_name merlin_kernel__Mreader_recover)
+      (visibility public)
+      (source
+       (path Mreader_recover)
+       (intf (path kernel/mreader_recover.mli))
+       (impl (path kernel/mreader_recover.ml))))
+     (module
+      (obj_name merlin_kernel__Msource)
+      (visibility public)
+      (source
+       (path Msource)
+       (intf (path kernel/msource.mli))
+       (impl (path kernel/msource.ml))))
+     (module
+      (obj_name merlin_kernel__Mtyper)
+      (visibility public)
+      (source
+       (path Mtyper)
+       (intf (path kernel/mtyper.mli))
+       (impl (path kernel/mtyper.ml))))
+     (module
+      (obj_name merlin_kernel__Phase_cache)
+      (visibility public)
+      (source
+       (path Phase_cache)
+       (intf (path kernel/phase_cache.mli))
+       (impl (path kernel/phase_cache.ml))))
+     (module
+      (obj_name merlin_kernel__Pparse)
+      (visibility public)
+      (source
+       (path Pparse)
+       (intf (path kernel/pparse.mli))
+       (impl (path kernel/pparse.ml))))
+     (module
+      (obj_name merlin_kernel__Standard_library)
+      (visibility public)
+      (source
+       (path Standard_library)
+       (impl (path kernel/standard_library.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.ocaml_merlin_specific)
+ (kind normal)
+ (archives
+  (byte ocaml_merlin_specific/merlin_specific.cma)
+  (native ocaml_merlin_specific/merlin_specific.cmxa))
+ (plugins
+  (byte ocaml_merlin_specific/merlin_specific.cma)
+  (native ocaml_merlin_specific/merlin_specific.cmxs))
+ (native_archives ocaml_merlin_specific/merlin_specific.a)
+ (requires
+  merlin-lib.utils
+  merlin-lib.ocaml_parsing
+  merlin-lib.ocaml_preprocess
+  merlin-lib.ocaml_typing
+  merlin-lib.ocaml_utils)
+ (main_module_name Merlin_specific)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_specific)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Merlin_specific)
+      (impl (path ocaml_merlin_specific/merlin_specific.ml-gen))))
+    (name Merlin_specific)
+    (modules
+     (module
+      (obj_name merlin_specific__Browse_raw)
+      (visibility public)
+      (source
+       (path Browse_raw)
+       (intf (path ocaml_merlin_specific/browse_raw.mli))
+       (impl (path ocaml_merlin_specific/browse_raw.ml))))
+     (module
+      (obj_name merlin_specific__Tast_helper)
+      (visibility public)
+      (source
+       (path Tast_helper)
+       (impl (path ocaml_merlin_specific/tast_helper.ml))))
+     (module
+      (obj_name merlin_specific__Typer_raw)
+      (visibility public)
+      (source
+       (path Typer_raw)
+       (intf (path ocaml_merlin_specific/typer_raw.mli))
+       (impl (path ocaml_merlin_specific/typer_raw.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.ocaml_parsing)
+ (kind normal)
+ (archives
+  (byte ocaml_parsing/ocaml_parsing.cma)
+  (native ocaml_parsing/ocaml_parsing.cmxa))
+ (plugins
+  (byte ocaml_parsing/ocaml_parsing.cma)
+  (native ocaml_parsing/ocaml_parsing.cmxs))
+ (native_archives ocaml_parsing/ocaml_parsing.a)
+ (requires merlin-lib.utils merlin-lib.ocaml_utils)
+ (main_module_name Ocaml_parsing)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocaml_parsing)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ocaml_parsing)
+      (impl (path ocaml_parsing/ocaml_parsing.ml-gen))))
+    (name Ocaml_parsing)
+    (modules
+     (module
+      (obj_name ocaml_parsing__Ast_helper)
+      (visibility public)
+      (source
+       (path Ast_helper)
+       (intf (path ocaml_parsing/ast_helper.mli))
+       (impl (path ocaml_parsing/ast_helper.ml))))
+     (module
+      (obj_name ocaml_parsing__Ast_iterator)
+      (visibility public)
+      (source
+       (path Ast_iterator)
+       (intf (path ocaml_parsing/ast_iterator.mli))
+       (impl (path ocaml_parsing/ast_iterator.ml))))
+     (module
+      (obj_name ocaml_parsing__Ast_mapper)
+      (visibility public)
+      (source
+       (path Ast_mapper)
+       (intf (path ocaml_parsing/ast_mapper.mli))
+       (impl (path ocaml_parsing/ast_mapper.ml))))
+     (module
+      (obj_name ocaml_parsing__Asttypes)
+      (visibility public)
+      (source (path Asttypes) (intf (path ocaml_parsing/asttypes.mli))))
+     (module
+      (obj_name ocaml_parsing__Attr_helper)
+      (visibility public)
+      (source
+       (path Attr_helper)
+       (intf (path ocaml_parsing/attr_helper.mli))
+       (impl (path ocaml_parsing/attr_helper.ml))))
+     (module
+      (obj_name ocaml_parsing__Builtin_attributes)
+      (visibility public)
+      (source
+       (path Builtin_attributes)
+       (intf (path ocaml_parsing/builtin_attributes.mli))
+       (impl (path ocaml_parsing/builtin_attributes.ml))))
+     (module
+      (obj_name ocaml_parsing__Docstrings)
+      (visibility public)
+      (source
+       (path Docstrings)
+       (intf (path ocaml_parsing/docstrings.mli))
+       (impl (path ocaml_parsing/docstrings.ml))))
+     (module
+      (obj_name ocaml_parsing__Extend_helper)
+      (visibility public)
+      (source
+       (path Extend_helper)
+       (intf (path ocaml_parsing/extend_helper.mli))
+       (impl (path ocaml_parsing/extend_helper.ml))))
+     (module
+      (obj_name ocaml_parsing__Fake)
+      (visibility public)
+      (source
+       (path Fake)
+       (intf (path ocaml_parsing/fake.mli))
+       (impl (path ocaml_parsing/fake.ml))))
+     (module
+      (obj_name ocaml_parsing__Location)
+      (visibility public)
+      (source
+       (path Location)
+       (intf (path ocaml_parsing/location.mli))
+       (impl (path ocaml_parsing/location.ml))))
+     (module
+      (obj_name ocaml_parsing__Location_aux)
+      (visibility public)
+      (source
+       (path Location_aux)
+       (intf (path ocaml_parsing/location_aux.mli))
+       (impl (path ocaml_parsing/location_aux.ml))))
+     (module
+      (obj_name ocaml_parsing__Longident)
+      (visibility public)
+      (source
+       (path Longident)
+       (intf (path ocaml_parsing/longident.mli))
+       (impl (path ocaml_parsing/longident.ml))))
+     (module
+      (obj_name ocaml_parsing__Msupport_parsing)
+      (visibility public)
+      (source
+       (path Msupport_parsing)
+       (impl (path ocaml_parsing/msupport_parsing.ml))))
+     (module
+      (obj_name ocaml_parsing__Parsetree)
+      (visibility public)
+      (source (path Parsetree) (intf (path ocaml_parsing/parsetree.mli))))
+     (module
+      (obj_name ocaml_parsing__Pprintast)
+      (visibility public)
+      (source
+       (path Pprintast)
+       (intf (path ocaml_parsing/pprintast.mli))
+       (impl (path ocaml_parsing/pprintast.ml))))
+     (module
+      (obj_name ocaml_parsing__Printast)
+      (visibility public)
+      (source
+       (path Printast)
+       (intf (path ocaml_parsing/printast.mli))
+       (impl (path ocaml_parsing/printast.ml))))
+     (module
+      (obj_name ocaml_parsing__Syntaxerr)
+      (visibility public)
+      (source
+       (path Syntaxerr)
+       (intf (path ocaml_parsing/syntaxerr.mli))
+       (impl (path ocaml_parsing/syntaxerr.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.ocaml_preprocess)
+ (kind normal)
+ (archives
+  (byte ocaml_preprocess/ocaml_preprocess.cma)
+  (native ocaml_preprocess/ocaml_preprocess.cmxa))
+ (plugins
+  (byte ocaml_preprocess/ocaml_preprocess.cma)
+  (native ocaml_preprocess/ocaml_preprocess.cmxs))
+ (native_archives ocaml_preprocess/ocaml_preprocess.a)
+ (requires merlin-lib.ocaml_parsing merlin-lib.ocaml_utils merlin-lib.utils)
+ (main_module_name Ocaml_preprocess)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocaml_preprocess)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ocaml_preprocess)
+      (impl (path ocaml_preprocess/ocaml_preprocess.ml-gen))))
+    (name Ocaml_preprocess)
+    (modules
+     (module
+      (obj_name ocaml_preprocess__Lexer_ident)
+      (visibility public)
+      (source
+       (path Lexer_ident)
+       (intf (path ocaml_preprocess/lexer_ident.mli))
+       (impl (path ocaml_preprocess/lexer_ident.ml))))
+     (module
+      (obj_name ocaml_preprocess__Lexer_raw)
+      (visibility public)
+      (source
+       (path Lexer_raw)
+       (intf (path ocaml_preprocess/lexer_raw.mli))
+       (impl (path ocaml_preprocess/lexer_raw.ml))))
+     (module
+      (obj_name ocaml_preprocess__MenhirLib)
+      (visibility public)
+      (source
+       (path MenhirLib)
+       (intf (path ocaml_preprocess/menhirLib.mli))
+       (impl (path ocaml_preprocess/menhirLib.ml))))
+     (module
+      (obj_name ocaml_preprocess__Parser_explain)
+      (visibility public)
+      (source
+       (path Parser_explain)
+       (impl (path ocaml_preprocess/parser_explain.ml))))
+     (module
+      (obj_name ocaml_preprocess__Parser_printer)
+      (visibility public)
+      (source
+       (path Parser_printer)
+       (intf (path ocaml_preprocess/parser_printer.mli))
+       (impl (path ocaml_preprocess/parser_printer.ml))))
+     (module
+      (obj_name ocaml_preprocess__Parser_raw)
+      (visibility public)
+      (source
+       (path Parser_raw)
+       (intf (path ocaml_preprocess/parser_raw.mli))
+       (impl (path ocaml_preprocess/parser_raw.ml))))
+     (module
+      (obj_name ocaml_preprocess__Parser_recover)
+      (visibility public)
+      (source
+       (path Parser_recover)
+       (intf (path ocaml_preprocess/parser_recover.mli))
+       (impl (path ocaml_preprocess/parser_recover.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.ocaml_typing)
+ (kind normal)
+ (archives
+  (byte ocaml_typing/ocaml_typing.cma)
+  (native ocaml_typing/ocaml_typing.cmxa))
+ (plugins
+  (byte ocaml_typing/ocaml_typing.cma)
+  (native ocaml_typing/ocaml_typing.cmxs))
+ (native_archives ocaml_typing/ocaml_typing.a)
+ (requires merlin-lib.utils merlin-lib.ocaml_parsing merlin-lib.ocaml_utils)
+ (main_module_name Ocaml_typing)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocaml_typing)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ocaml_typing)
+      (impl (path ocaml_typing/ocaml_typing.ml-gen))))
+    (name Ocaml_typing)
+    (modules
+     (module
+      (obj_name ocaml_typing__Annot)
+      (visibility public)
+      (source (path Annot) (intf (path ocaml_typing/annot.mli))))
+     (module
+      (obj_name ocaml_typing__Btype)
+      (visibility public)
+      (source
+       (path Btype)
+       (intf (path ocaml_typing/btype.mli))
+       (impl (path ocaml_typing/btype.ml))))
+     (module
+      (obj_name ocaml_typing__Cmi_cache)
+      (visibility public)
+      (source (path Cmi_cache) (impl (path ocaml_typing/cmi_cache.ml))))
+     (module
+      (obj_name ocaml_typing__Cmi_format)
+      (visibility public)
+      (source
+       (path Cmi_format)
+       (intf (path ocaml_typing/cmi_format.mli))
+       (impl (path ocaml_typing/cmi_format.ml))))
+     (module
+      (obj_name ocaml_typing__Cmt_cache)
+      (visibility public)
+      (source (path Cmt_cache) (impl (path ocaml_typing/cmt_cache.ml))))
+     (module
+      (obj_name ocaml_typing__Cmt_format)
+      (visibility public)
+      (source
+       (path Cmt_format)
+       (intf (path ocaml_typing/cmt_format.mli))
+       (impl (path ocaml_typing/cmt_format.ml))))
+     (module
+      (obj_name ocaml_typing__Ctype)
+      (visibility public)
+      (source
+       (path Ctype)
+       (intf (path ocaml_typing/ctype.mli))
+       (impl (path ocaml_typing/ctype.ml))))
+     (module
+      (obj_name ocaml_typing__Datarepr)
+      (visibility public)
+      (source
+       (path Datarepr)
+       (intf (path ocaml_typing/datarepr.mli))
+       (impl (path ocaml_typing/datarepr.ml))))
+     (module
+      (obj_name ocaml_typing__Env)
+      (visibility public)
+      (source
+       (path Env)
+       (intf (path ocaml_typing/env.mli))
+       (impl (path ocaml_typing/env.ml))))
+     (module
+      (obj_name ocaml_typing__Envaux)
+      (visibility public)
+      (source
+       (path Envaux)
+       (intf (path ocaml_typing/envaux.mli))
+       (impl (path ocaml_typing/envaux.ml))))
+     (module
+      (obj_name ocaml_typing__Errortrace)
+      (visibility public)
+      (source
+       (path Errortrace)
+       (intf (path ocaml_typing/errortrace.mli))
+       (impl (path ocaml_typing/errortrace.ml))))
+     (module
+      (obj_name ocaml_typing__Ident)
+      (visibility public)
+      (source
+       (path Ident)
+       (intf (path ocaml_typing/ident.mli))
+       (impl (path ocaml_typing/ident.ml))))
+     (module
+      (obj_name ocaml_typing__Includeclass)
+      (visibility public)
+      (source
+       (path Includeclass)
+       (intf (path ocaml_typing/includeclass.mli))
+       (impl (path ocaml_typing/includeclass.ml))))
+     (module
+      (obj_name ocaml_typing__Includecore)
+      (visibility public)
+      (source
+       (path Includecore)
+       (intf (path ocaml_typing/includecore.mli))
+       (impl (path ocaml_typing/includecore.ml))))
+     (module
+      (obj_name ocaml_typing__Includemod)
+      (visibility public)
+      (source
+       (path Includemod)
+       (intf (path ocaml_typing/includemod.mli))
+       (impl (path ocaml_typing/includemod.ml))))
+     (module
+      (obj_name ocaml_typing__Includemod_errorprinter)
+      (visibility public)
+      (source
+       (path Includemod_errorprinter)
+       (intf (path ocaml_typing/includemod_errorprinter.mli))
+       (impl (path ocaml_typing/includemod_errorprinter.ml))))
+     (module
+      (obj_name ocaml_typing__Magic_numbers)
+      (visibility public)
+      (source
+       (path Magic_numbers)
+       (impl (path ocaml_typing/magic_numbers.ml))))
+     (module
+      (obj_name ocaml_typing__Msupport)
+      (visibility public)
+      (source
+       (path Msupport)
+       (intf (path ocaml_typing/msupport.mli))
+       (impl (path ocaml_typing/msupport.ml))))
+     (module
+      (obj_name ocaml_typing__Mtype)
+      (visibility public)
+      (source
+       (path Mtype)
+       (intf (path ocaml_typing/mtype.mli))
+       (impl (path ocaml_typing/mtype.ml))))
+     (module
+      (obj_name ocaml_typing__Natural)
+      (visibility public)
+      (source
+       (path Natural)
+       (intf (path ocaml_typing/natural.mli))
+       (impl (path ocaml_typing/natural.ml))))
+     (module
+      (obj_name ocaml_typing__Oprint)
+      (visibility public)
+      (source
+       (path Oprint)
+       (intf (path ocaml_typing/oprint.mli))
+       (impl (path ocaml_typing/oprint.ml))))
+     (module
+      (obj_name ocaml_typing__Outcometree)
+      (visibility public)
+      (source (path Outcometree) (intf (path ocaml_typing/outcometree.mli))))
+     (module
+      (obj_name ocaml_typing__Parmatch)
+      (visibility public)
+      (source
+       (path Parmatch)
+       (intf (path ocaml_typing/parmatch.mli))
+       (impl (path ocaml_typing/parmatch.ml))))
+     (module
+      (obj_name ocaml_typing__Path)
+      (visibility public)
+      (source
+       (path Path)
+       (intf (path ocaml_typing/path.mli))
+       (impl (path ocaml_typing/path.ml))))
+     (module
+      (obj_name ocaml_typing__Patterns)
+      (visibility public)
+      (source
+       (path Patterns)
+       (intf (path ocaml_typing/patterns.mli))
+       (impl (path ocaml_typing/patterns.ml))))
+     (module
+      (obj_name ocaml_typing__Persistent_env)
+      (visibility public)
+      (source
+       (path Persistent_env)
+       (intf (path ocaml_typing/persistent_env.mli))
+       (impl (path ocaml_typing/persistent_env.ml))))
+     (module
+      (obj_name ocaml_typing__Predef)
+      (visibility public)
+      (source
+       (path Predef)
+       (intf (path ocaml_typing/predef.mli))
+       (impl (path ocaml_typing/predef.ml))))
+     (module
+      (obj_name ocaml_typing__Primitive)
+      (visibility public)
+      (source
+       (path Primitive)
+       (intf (path ocaml_typing/primitive.mli))
+       (impl (path ocaml_typing/primitive.ml))))
+     (module
+      (obj_name ocaml_typing__Printpat)
+      (visibility public)
+      (source
+       (path Printpat)
+       (intf (path ocaml_typing/printpat.mli))
+       (impl (path ocaml_typing/printpat.ml))))
+     (module
+      (obj_name ocaml_typing__Printtyp)
+      (visibility public)
+      (source
+       (path Printtyp)
+       (intf (path ocaml_typing/printtyp.mli))
+       (impl (path ocaml_typing/printtyp.ml))))
+     (module
+      (obj_name ocaml_typing__Printtyped)
+      (visibility public)
+      (source
+       (path Printtyped)
+       (intf (path ocaml_typing/printtyped.mli))
+       (impl (path ocaml_typing/printtyped.ml))))
+     (module
+      (obj_name ocaml_typing__Rec_check)
+      (visibility public)
+      (source
+       (path Rec_check)
+       (intf (path ocaml_typing/rec_check.mli))
+       (impl (path ocaml_typing/rec_check.ml))))
+     (module
+      (obj_name ocaml_typing__Saved_parts)
+      (visibility public)
+      (source
+       (path Saved_parts)
+       (intf (path ocaml_typing/saved_parts.mli))
+       (impl (path ocaml_typing/saved_parts.ml))))
+     (module
+      (obj_name ocaml_typing__Shape)
+      (visibility public)
+      (source
+       (path Shape)
+       (intf (path ocaml_typing/shape.mli))
+       (impl (path ocaml_typing/shape.ml))))
+     (module
+      (obj_name ocaml_typing__Short_paths)
+      (visibility public)
+      (source
+       (path Short_paths)
+       (intf (path ocaml_typing/short_paths.mli))
+       (impl (path ocaml_typing/short_paths.ml))))
+     (module
+      (obj_name ocaml_typing__Short_paths_graph)
+      (visibility public)
+      (source
+       (path Short_paths_graph)
+       (intf (path ocaml_typing/short_paths_graph.mli))
+       (impl (path ocaml_typing/short_paths_graph.ml))))
+     (module
+      (obj_name ocaml_typing__Signature_group)
+      (visibility public)
+      (source
+       (path Signature_group)
+       (intf (path ocaml_typing/signature_group.mli))
+       (impl (path ocaml_typing/signature_group.ml))))
+     (module
+      (obj_name ocaml_typing__Stypes)
+      (visibility public)
+      (source
+       (path Stypes)
+       (intf (path ocaml_typing/stypes.mli))
+       (impl (path ocaml_typing/stypes.ml))))
+     (module
+      (obj_name ocaml_typing__Subst)
+      (visibility public)
+      (source
+       (path Subst)
+       (intf (path ocaml_typing/subst.mli))
+       (impl (path ocaml_typing/subst.ml))))
+     (module
+      (obj_name ocaml_typing__Tast_iterator)
+      (visibility public)
+      (source
+       (path Tast_iterator)
+       (intf (path ocaml_typing/tast_iterator.mli))
+       (impl (path ocaml_typing/tast_iterator.ml))))
+     (module
+      (obj_name ocaml_typing__Tast_mapper)
+      (visibility public)
+      (source
+       (path Tast_mapper)
+       (intf (path ocaml_typing/tast_mapper.mli))
+       (impl (path ocaml_typing/tast_mapper.ml))))
+     (module
+      (obj_name ocaml_typing__Type_immediacy)
+      (visibility public)
+      (source
+       (path Type_immediacy)
+       (intf (path ocaml_typing/type_immediacy.mli))
+       (impl (path ocaml_typing/type_immediacy.ml))))
+     (module
+      (obj_name ocaml_typing__Typeclass)
+      (visibility public)
+      (source
+       (path Typeclass)
+       (intf (path ocaml_typing/typeclass.mli))
+       (impl (path ocaml_typing/typeclass.ml))))
+     (module
+      (obj_name ocaml_typing__Typecore)
+      (visibility public)
+      (source
+       (path Typecore)
+       (intf (path ocaml_typing/typecore.mli))
+       (impl (path ocaml_typing/typecore.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl)
+      (visibility public)
+      (source
+       (path Typedecl)
+       (intf (path ocaml_typing/typedecl.mli))
+       (impl (path ocaml_typing/typedecl.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl_immediacy)
+      (visibility public)
+      (source
+       (path Typedecl_immediacy)
+       (intf (path ocaml_typing/typedecl_immediacy.mli))
+       (impl (path ocaml_typing/typedecl_immediacy.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl_properties)
+      (visibility public)
+      (source
+       (path Typedecl_properties)
+       (intf (path ocaml_typing/typedecl_properties.mli))
+       (impl (path ocaml_typing/typedecl_properties.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl_separability)
+      (visibility public)
+      (source
+       (path Typedecl_separability)
+       (intf (path ocaml_typing/typedecl_separability.mli))
+       (impl (path ocaml_typing/typedecl_separability.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl_unboxed)
+      (visibility public)
+      (source
+       (path Typedecl_unboxed)
+       (intf (path ocaml_typing/typedecl_unboxed.mli))
+       (impl (path ocaml_typing/typedecl_unboxed.ml))))
+     (module
+      (obj_name ocaml_typing__Typedecl_variance)
+      (visibility public)
+      (source
+       (path Typedecl_variance)
+       (intf (path ocaml_typing/typedecl_variance.mli))
+       (impl (path ocaml_typing/typedecl_variance.ml))))
+     (module
+      (obj_name ocaml_typing__Typedtree)
+      (visibility public)
+      (source
+       (path Typedtree)
+       (intf (path ocaml_typing/typedtree.mli))
+       (impl (path ocaml_typing/typedtree.ml))))
+     (module
+      (obj_name ocaml_typing__Typemod)
+      (visibility public)
+      (source
+       (path Typemod)
+       (intf (path ocaml_typing/typemod.mli))
+       (impl (path ocaml_typing/typemod.ml))))
+     (module
+      (obj_name ocaml_typing__Typeopt)
+      (visibility public)
+      (source
+       (path Typeopt)
+       (intf (path ocaml_typing/typeopt.mli))
+       (impl (path ocaml_typing/typeopt.ml))))
+     (module
+      (obj_name ocaml_typing__Types)
+      (visibility public)
+      (source
+       (path Types)
+       (intf (path ocaml_typing/types.mli))
+       (impl (path ocaml_typing/types.ml))))
+     (module
+      (obj_name ocaml_typing__Typetexp)
+      (visibility public)
+      (source
+       (path Typetexp)
+       (intf (path ocaml_typing/typetexp.mli))
+       (impl (path ocaml_typing/typetexp.ml))))
+     (module
+      (obj_name ocaml_typing__Untypeast)
+      (visibility public)
+      (source
+       (path Untypeast)
+       (intf (path ocaml_typing/untypeast.mli))
+       (impl (path ocaml_typing/untypeast.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.ocaml_utils)
+ (kind normal)
+ (archives
+  (byte ocaml_utils/ocaml_utils.cma)
+  (native ocaml_utils/ocaml_utils.cmxa))
+ (plugins
+  (byte ocaml_utils/ocaml_utils.cma)
+  (native ocaml_utils/ocaml_utils.cmxs))
+ (native_archives ocaml_utils/ocaml_utils.a)
+ (requires merlin-lib.config merlin-lib.utils)
+ (main_module_name Ocaml_utils)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ocaml_utils)
+     (visibility public)
+     (kind alias)
+     (source (path Ocaml_utils) (impl (path ocaml_utils/ocaml_utils.ml-gen))))
+    (name Ocaml_utils)
+    (modules
+     (module
+      (obj_name ocaml_utils__Build_path_prefix_map)
+      (visibility public)
+      (source
+       (path Build_path_prefix_map)
+       (intf (path ocaml_utils/build_path_prefix_map.mli))
+       (impl (path ocaml_utils/build_path_prefix_map.ml))))
+     (module
+      (obj_name ocaml_utils__Clflags)
+      (visibility public)
+      (source
+       (path Clflags)
+       (intf (path ocaml_utils/clflags.mli))
+       (impl (path ocaml_utils/clflags.ml))))
+     (module
+      (obj_name ocaml_utils__Config)
+      (visibility public)
+      (source
+       (path Config)
+       (intf (path ocaml_utils/config.mli))
+       (impl (path ocaml_utils/config.ml))))
+     (module
+      (obj_name ocaml_utils__Consistbl)
+      (visibility public)
+      (source
+       (path Consistbl)
+       (intf (path ocaml_utils/consistbl.mli))
+       (impl (path ocaml_utils/consistbl.ml))))
+     (module
+      (obj_name ocaml_utils__Diffing)
+      (visibility public)
+      (source
+       (path Diffing)
+       (intf (path ocaml_utils/diffing.mli))
+       (impl (path ocaml_utils/diffing.ml))))
+     (module
+      (obj_name ocaml_utils__Diffing_with_keys)
+      (visibility public)
+      (source
+       (path Diffing_with_keys)
+       (intf (path ocaml_utils/diffing_with_keys.mli))
+       (impl (path ocaml_utils/diffing_with_keys.ml))))
+     (module
+      (obj_name ocaml_utils__Directory_content_cache)
+      (visibility public)
+      (source
+       (path Directory_content_cache)
+       (impl (path ocaml_utils/directory_content_cache.ml))))
+     (module
+      (obj_name ocaml_utils__Identifiable)
+      (visibility public)
+      (source
+       (path Identifiable)
+       (intf (path ocaml_utils/identifiable.mli))
+       (impl (path ocaml_utils/identifiable.ml))))
+     (module
+      (obj_name ocaml_utils__Lazy_backtrack)
+      (visibility public)
+      (source
+       (path Lazy_backtrack)
+       (intf (path ocaml_utils/lazy_backtrack.mli))
+       (impl (path ocaml_utils/lazy_backtrack.ml))))
+     (module
+      (obj_name ocaml_utils__Load_path)
+      (visibility public)
+      (source
+       (path Load_path)
+       (intf (path ocaml_utils/load_path.mli))
+       (impl (path ocaml_utils/load_path.ml))))
+     (module
+      (obj_name ocaml_utils__Local_store)
+      (visibility public)
+      (source
+       (path Local_store)
+       (intf (path ocaml_utils/local_store.mli))
+       (impl (path ocaml_utils/local_store.ml))))
+     (module
+      (obj_name ocaml_utils__Tbl)
+      (visibility public)
+      (source
+       (path Tbl)
+       (intf (path ocaml_utils/tbl.mli))
+       (impl (path ocaml_utils/tbl.ml))))
+     (module
+      (obj_name ocaml_utils__Warnings)
+      (visibility public)
+      (source
+       (path Warnings)
+       (intf (path ocaml_utils/warnings.mli))
+       (impl (path ocaml_utils/warnings.ml))))))
+   (wrapped true))))
+(library
+ (name merlin-lib.os_ipc)
+ (kind normal)
+ (archives (byte os_ipc/os_ipc.cma) (native os_ipc/os_ipc.cmxa))
+ (plugins (byte os_ipc/os_ipc.cma) (native os_ipc/os_ipc.cmxs))
+ (foreign_objects os_ipc/os_ipc_stub.o)
+ (foreign_archives (archives (for all) (files os_ipc/libos_ipc_stubs.a)))
+ (foreign_dll_files ../stublibs/dllos_ipc_stubs.so)
+ (native_archives os_ipc/os_ipc.a)
+ (main_module_name Os_ipc)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name os_ipc)
+   (visibility public)
+   (source (path Os_ipc) (impl (path os_ipc/os_ipc.ml))))))
+(library
+ (name merlin-lib.query_commands)
+ (kind normal)
+ (archives
+  (byte query_commands/query_commands.cma)
+  (native query_commands/query_commands.cmxa))
+ (plugins
+  (byte query_commands/query_commands.cma)
+  (native query_commands/query_commands.cmxs))
+ (native_archives query_commands/query_commands.a)
+ (requires
+  merlin-lib.utils
+  merlin-lib.kernel
+  merlin-lib.ocaml_utils
+  merlin-lib.ocaml_parsing
+  merlin-lib.ocaml_typing
+  merlin-lib.ocaml_merlin_specific
+  merlin-lib.config
+  merlin-lib.analysis
+  merlin-lib.query_protocol)
+ (main_module_name Query_commands)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name query_commands)
+   (visibility public)
+   (source
+    (path Query_commands)
+    (intf (path query_commands/query_commands.mli))
+    (impl (path query_commands/query_commands.ml))))))
+(library
+ (name merlin-lib.query_protocol)
+ (kind normal)
+ (archives
+  (byte query_protocol/query_protocol.cma)
+  (native query_protocol/query_protocol.cmxa))
+ (plugins
+  (byte query_protocol/query_protocol.cma)
+  (native query_protocol/query_protocol.cmxs))
+ (native_archives query_protocol/query_protocol.a)
+ (requires merlin-lib.kernel merlin-lib.utils merlin-lib.ocaml_parsing)
+ (main_module_name Query_protocol)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name query_protocol)
+   (visibility public)
+   (source
+    (path Query_protocol)
+    (impl (path query_protocol/query_protocol.ml))))))
+(library
+ (name merlin-lib.utils)
+ (kind normal)
+ (archives (byte utils/merlin_utils.cma) (native utils/merlin_utils.cmxa))
+ (plugins (byte utils/merlin_utils.cma) (native utils/merlin_utils.cmxs))
+ (foreign_objects utils/platform_misc.o)
+ (foreign_archives (archives (for all) (files utils/libmerlin_utils_stubs.a)))
+ (foreign_dll_files ../stublibs/dllmerlin_utils_stubs.so)
+ (native_archives utils/merlin_utils.a)
+ (requires str unix)
+ (main_module_name Merlin_utils)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name merlin_utils)
+     (visibility public)
+     (kind alias)
+     (source (path Merlin_utils) (impl (path utils/merlin_utils.ml-gen))))
+    (name Merlin_utils)
+    (modules
+     (module
+      (obj_name merlin_utils__File_cache)
+      (visibility public)
+      (source
+       (path File_cache)
+       (intf (path utils/file_cache.mli))
+       (impl (path utils/file_cache.ml))))
+     (module
+      (obj_name merlin_utils__File_id)
+      (visibility public)
+      (source
+       (path File_id)
+       (intf (path utils/file_id.mli))
+       (impl (path utils/file_id.ml))))
+     (module
+      (obj_name merlin_utils__Lib_config)
+      (visibility public)
+      (source
+       (path Lib_config)
+       (intf (path utils/lib_config.mli))
+       (impl (path utils/lib_config.ml))))
+     (module
+      (obj_name merlin_utils__Logger)
+      (visibility public)
+      (source
+       (path Logger)
+       (intf (path utils/logger.mli))
+       (impl (path utils/logger.ml))))
+     (module
+      (obj_name merlin_utils__Marg)
+      (visibility public)
+      (source
+       (path Marg)
+       (intf (path utils/marg.mli))
+       (impl (path utils/marg.ml))))
+     (module
+      (obj_name merlin_utils__Misc)
+      (visibility public)
+      (source
+       (path Misc)
+       (intf (path utils/misc.mli))
+       (impl (path utils/misc.ml))))
+     (module
+      (obj_name merlin_utils__Ppxsetup)
+      (visibility public)
+      (source
+       (path Ppxsetup)
+       (intf (path utils/ppxsetup.mli))
+       (impl (path utils/ppxsetup.ml))))
+     (module
+      (obj_name merlin_utils__Sexp)
+      (visibility public)
+      (source
+       (path Sexp)
+       (intf (path utils/sexp.mli))
+       (impl (path utils/sexp.ml))))
+     (module
+      (obj_name merlin_utils__Stamped_hashtable)
+      (visibility public)
+      (source
+       (path Stamped_hashtable)
+       (intf (path utils/stamped_hashtable.mli))
+       (impl (path utils/stamped_hashtable.ml))))
+     (module
+      (obj_name merlin_utils__Std)
+      (visibility public)
+      (source (path Std) (impl (path utils/std.ml))))))
+   (wrapped true))))

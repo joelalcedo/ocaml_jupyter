@@ -1,0 +1,34 @@
+(lang dune 3.19)
+(name dyn)
+(version 3.19.1)
+(sections (lib .) (libexec .) (doc ../../doc/dyn))
+(files
+ (lib
+  (META
+   dune-package
+   dyn.a
+   dyn.cma
+   dyn.cmi
+   dyn.cmt
+   dyn.cmti
+   dyn.cmx
+   dyn.cmxa
+   dyn.ml
+   dyn.mli
+   opam))
+ (libexec (dyn.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name dyn)
+ (kind normal)
+ (archives (byte dyn.cma) (native dyn.cmxa))
+ (plugins (byte dyn.cma) (native dyn.cmxs))
+ (native_archives dyn.a)
+ (requires pp ordering)
+ (main_module_name Dyn)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name dyn)
+   (visibility public)
+   (source (path Dyn) (intf (path dyn.mli)) (impl (path dyn.ml))))))

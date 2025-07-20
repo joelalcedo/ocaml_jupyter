@@ -1,0 +1,57 @@
+(library (name cryptokit) (public_name cryptokit)
+ (libraries unix zarith)
+ (wrapped false)
+ (modules CryptokitBignum Cryptokit)
+ (foreign_stubs
+  (language c)
+  (flags -DCAML_NAME_SPACE -DEXPORT=static
+         -DBLAKE3_NO_SSE2 -DBLAKE3_NO_SSE41 -DBLAKE3_NO_AVX2 -DBLAKE3_NO_AVX512
+         -DBLAKE3_USE_NEON=0
+         (:include flags.sexp))
+  (names stubs-arcfour
+         stubs-blowfish
+         stubs-des
+         stubs-ripemd160
+         stubs-sha1
+         stubs-sha256
+         stubs-sha512
+         stubs-aes
+         stubs-md5
+         stubs-misc
+         stubs-rng
+         stubs-zlib
+         stubs-sha3
+         stubs-chacha20
+         stubs-blake2
+         stubs-ghash
+         stubs-poly1305
+         stubs-siphash
+         stubs-blake3)
+  (extra_deps
+    aesni.c
+    arcfour.c
+    blowfish.c
+    d3des.c
+    rijndael-alg-fst.c
+    ripemd160.c
+    sha1.c
+    sha256.c
+    sha512.c
+    keccak.c
+    chacha20.c
+    blake2.c
+    ghash.c
+    pclmul.c
+    poly1305-donna.c
+    siphash.c
+    blake3.c
+    blake3_dispatch.c
+    blake3_portable.c))
+  (c_library_flags (:include library_flags.sexp))
+  (flags :standard -safe-string -w -7 -w -27 -w -37))
+
+; compute flags
+(rule
+ (alias configure)
+ (targets flags.sexp library_flags.sexp)
+ (action (run config/flags.exe)))

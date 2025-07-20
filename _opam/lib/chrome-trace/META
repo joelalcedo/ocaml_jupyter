@@ -1,0 +1,7 @@
+version = "3.19.1"
+description = "Emit catapult trace files, compatible with chrome://tracing"
+requires = ""
+archive(byte) = "chrome_trace.cma"
+archive(native) = "chrome_trace.cmxa"
+plugin(byte) = "chrome_trace.cma"
+plugin(native) = "chrome_trace.cmxs"

@@ -1,0 +1,21 @@
+opam-version: "2.0"
+added: [
+  "doc/lwt_react" {"D"}
+  "doc/lwt_react/CHANGES" {"F:S44595T1753036244.51"}
+  "doc/lwt_react/LICENSE.md" {"F:S1083T1753036244.51"}
+  "doc/lwt_react/README.md" {"F:S7369T1753036244.51"}
+  "lib/lwt_react" {"D"}
+  "lib/lwt_react/META" {"F:S225T1753036244.51"}
+  "lib/lwt_react/dune-package" {"F:S822T1753036244.51"}
+  "lib/lwt_react/lwt_react.a" {"F:S89000T1753036244.51"}
+  "lib/lwt_react/lwt_react.cma" {"F:S129896T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmi" {"F:S65510T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmt" {"F:S226451T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmti" {"F:S218933T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmx" {"F:S12599T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmxa" {"F:S698T1753036244.51"}
+  "lib/lwt_react/lwt_react.cmxs" {"F:S119408T1753036244.51"}
+  "lib/lwt_react/lwt_react.ml" {"F:S14611T1753036244.51"}
+  "lib/lwt_react/lwt_react.mli" {"F:S7511T1753036244.51"}
+  "lib/lwt_react/opam" {"F:S570T1753036244.51"}
+]

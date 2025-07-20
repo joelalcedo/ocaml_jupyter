@@ -1,0 +1,78 @@
+(lang dune 3.19)
+(name cryptokit)
+(version 1.20)
+(sections
+ (lib .)
+ (libexec .)
+ (doc ../../doc/cryptokit)
+ (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   cryptokit.a
+   cryptokit.cma
+   cryptokit.cmi
+   cryptokit.cmt
+   cryptokit.cmti
+   cryptokit.cmx
+   cryptokit.cmxa
+   cryptokit.ml
+   cryptokit.mli
+   cryptokitBignum.cmi
+   cryptokitBignum.cmt
+   cryptokitBignum.cmti
+   cryptokitBignum.cmx
+   cryptokitBignum.ml
+   cryptokitBignum.mli
+   dune-package
+   libcryptokit_stubs.a
+   opam))
+ (libexec (cryptokit.cmxs))
+ (doc (LICENSE README.md))
+ (stublibs (dllcryptokit_stubs.so)))
+(library
+ (name cryptokit)
+ (kind normal)
+ (archives (byte cryptokit.cma) (native cryptokit.cmxa))
+ (plugins (byte cryptokit.cma) (native cryptokit.cmxs))
+ (foreign_objects
+  stubs-aes.o
+  stubs-arcfour.o
+  stubs-blake2.o
+  stubs-blake3.o
+  stubs-blowfish.o
+  stubs-chacha20.o
+  stubs-des.o
+  stubs-ghash.o
+  stubs-md5.o
+  stubs-misc.o
+  stubs-poly1305.o
+  stubs-ripemd160.o
+  stubs-rng.o
+  stubs-sha1.o
+  stubs-sha256.o
+  stubs-sha3.o
+  stubs-sha512.o
+  stubs-siphash.o
+  stubs-zlib.o)
+ (foreign_archives (archives (for all) (files libcryptokit_stubs.a)))
+ (foreign_dll_files ../stublibs/dllcryptokit_stubs.so)
+ (native_archives cryptokit.a)
+ (requires unix zarith)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name cryptokit)
+    (visibility public)
+    (source
+     (path Cryptokit)
+     (intf (path cryptokit.mli))
+     (impl (path cryptokit.ml))))
+   (module
+    (obj_name cryptokitBignum)
+    (visibility public)
+    (source
+     (path CryptokitBignum)
+     (intf (path cryptokitBignum.mli))
+     (impl (path cryptokitBignum.ml)))))))

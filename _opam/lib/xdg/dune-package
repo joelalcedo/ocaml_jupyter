@@ -1,0 +1,39 @@
+(lang dune 3.19)
+(name xdg)
+(version 3.19.1)
+(sections (lib .) (libexec .) (doc ../../doc/xdg) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   dune-package
+   libxdg_stubs.a
+   opam
+   xdg.a
+   xdg.cma
+   xdg.cmi
+   xdg.cmt
+   xdg.cmti
+   xdg.cmx
+   xdg.cmxa
+   xdg.ml
+   xdg.mli))
+ (libexec (xdg.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md odoc-pages/index.mld))
+ (stublibs (dllxdg_stubs.so)))
+(library
+ (name xdg)
+ (kind normal)
+ (synopsis "[Internal] XDG base directories specification implementation")
+ (archives (byte xdg.cma) (native xdg.cmxa))
+ (plugins (byte xdg.cma) (native xdg.cmxs))
+ (foreign_objects xdg_stubs.o)
+ (foreign_archives (archives (for all) (files libxdg_stubs.a)))
+ (foreign_dll_files ../stublibs/dllxdg_stubs.so)
+ (native_archives xdg.a)
+ (main_module_name Xdg)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name xdg)
+   (visibility public)
+   (source (path Xdg) (intf (path xdg.mli)) (impl (path xdg.ml))))))

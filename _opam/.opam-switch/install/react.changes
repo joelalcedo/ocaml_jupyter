@@ -1,0 +1,26 @@
+opam-version: "2.0"
+added: [
+  "doc/react" {"D"}
+  "doc/react/CHANGES.md" {"F:S3058T1753036232.17"}
+  "doc/react/LICENSE.md" {"F:S739T1753036232.17"}
+  "doc/react/README.md" {"F:S1543T1753036232.17"}
+  "doc/react/odoc-pages" {"D"}
+  "doc/react/odoc-pages/index.mld" {"F:S337T1753036232.17"}
+  "lib/react" {"D"}
+  "lib/react/META" {"F:S468T1753036232.16"}
+  "lib/react/opam" {"F:S1094T1753036232.16"}
+  "lib/react/react.a" {"F:S255184T1753036232.16"}
+  "lib/react/react.cma" {"F:S416855T1753036232.16"}
+  "lib/react/react.cmi" {"F:S52866T1753036232.16"}
+  "lib/react/react.cmti" {"F:S268497T1753036232.16"}
+  "lib/react/react.cmx" {"F:S16299T1753036232.16"}
+  "lib/react/react.cmxa" {"F:S460T1753036232.16"}
+  "lib/react/react.cmxs" {"F:S232136T1753036232.17"}
+  "lib/react/react.mli" {"F:S44883T1753036232.17"}
+  "lib/react/react_top.a" {"F:S2472T1753036232.17"}
+  "lib/react/react_top.cma" {"F:S3329T1753036232.17"}
+  "lib/react/react_top.cmx" {"F:S1333T1753036232.17"}
+  "lib/react/react_top.cmxa" {"F:S1339T1753036232.17"}
+  "lib/react/react_top.cmxs" {"F:S51024T1753036232.17"}
+  "lib/react/react_top_init.ml" {"F:S1244T1753036232.17"}
+]

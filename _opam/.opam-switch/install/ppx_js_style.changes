@@ -1,0 +1,22 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_js_style" {"D"}
+  "doc/ppx_js_style/CHANGES.md" {"F:S164T1753036249.43"}
+  "doc/ppx_js_style/LICENSE.md" {"F:S1117T1753036249.43"}
+  "doc/ppx_js_style/README.md" {"F:S3473T1753036249.43"}
+  "lib/ppx_js_style" {"D"}
+  "lib/ppx_js_style/META" {"F:S506T1753036249.42"}
+  "lib/ppx_js_style/dune-package" {"F:S932T1753036249.42"}
+  "lib/ppx_js_style/opam" {"F:S847T1753036249.42"}
+  "lib/ppx_js_style/ppx.exe" {"F:S14285096T1753036249.43"}
+  "lib/ppx_js_style/ppx_js_style.a" {"F:S83440T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cma" {"F:S148226T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmi" {"F:S5080T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmt" {"F:S274601T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmti" {"F:S17097T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmx" {"F:S11480T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmxa" {"F:S7874T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.cmxs" {"F:S109328T1753036249.43"}
+  "lib/ppx_js_style/ppx_js_style.ml" {"F:S19641T1753036249.42"}
+  "lib/ppx_js_style/ppx_js_style.mli" {"F:S802T1753036249.42"}
+]

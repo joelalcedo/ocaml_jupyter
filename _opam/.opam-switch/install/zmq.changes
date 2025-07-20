@@ -1,0 +1,42 @@
+opam-version: "2.0"
+added: [
+  "doc/zmq" {"D"}
+  "doc/zmq/CHANGES.md" {"F:S3118T1753036241.74"}
+  "doc/zmq/LICENSE.md" {"F:S1118T1753036241.74"}
+  "doc/zmq/README.md" {"F:S999T1753036241.74"}
+  "lib/stublibs/dllzmq_stubs.so" {"F:S61888T1753036241.74"}
+  "lib/zmq" {"D"}
+  "lib/zmq/META" {"F:S451T1753036241.73"}
+  "lib/zmq/deferred" {"D"}
+  "lib/zmq/deferred/deferred.ml" {"F:S1205T1753036241.73"}
+  "lib/zmq/deferred/socket.ml" {"F:S8068T1753036241.73"}
+  "lib/zmq/deferred/socket.mli" {"F:S2628T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.a" {"F:S27472T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.cma" {"F:S40503T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.cmi" {"F:S343T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.cmt" {"F:S3165T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.cmx" {"F:S153T1753036241.73"}
+  "lib/zmq/deferred/zmq_deferred.cmxa" {"F:S1015T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred.cmxs" {"F:S57600T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred.ml" {"F:S182T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Deferred.cmi" {"F:S2887T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Deferred.cmt" {"F:S15370T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Deferred.cmx" {"F:S316T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Socket.cmi" {"F:S5326T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Socket.cmt" {"F:S76134T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Socket.cmti" {"F:S24176T1753036241.74"}
+  "lib/zmq/deferred/zmq_deferred__Socket.cmx" {"F:S1770T1753036241.74"}
+  "lib/zmq/dune-package" {"F:S2388T1753036241.74"}
+  "lib/zmq/libzmq_stubs.a" {"F:S81912T1753036241.74"}
+  "lib/zmq/opam" {"F:S956T1753036241.74"}
+  "lib/zmq/zmq.a" {"F:S91712T1753036241.74"}
+  "lib/zmq/zmq.cma" {"F:S119309T1753036241.74"}
+  "lib/zmq/zmq.cmi" {"F:S23912T1753036241.74"}
+  "lib/zmq/zmq.cmt" {"F:S253777T1753036241.74"}
+  "lib/zmq/zmq.cmti" {"F:S108806T1753036241.74"}
+  "lib/zmq/zmq.cmx" {"F:S10550T1753036241.74"}
+  "lib/zmq/zmq.cmxa" {"F:S1064T1753036241.74"}
+  "lib/zmq/zmq.cmxs" {"F:S135400T1753036241.74"}
+  "lib/zmq/zmq.ml" {"F:S23337T1753036241.74"}
+  "lib/zmq/zmq.mli" {"F:S11799T1753036241.74"}
+]

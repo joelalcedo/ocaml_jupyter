@@ -1,0 +1,121 @@
+(lang dune 3.19)
+(name fiber)
+(version 3.7.0)
+(sections (lib .) (libexec .) (doc ../../doc/fiber))
+(files
+ (lib
+  (META
+   cancel.ml
+   core.ml
+   dune-package
+   fiber.a
+   fiber.cma
+   fiber.cmi
+   fiber.cmt
+   fiber.cmti
+   fiber.cmx
+   fiber.cmxa
+   fiber.ml
+   fiber.mli
+   fiber__.cmi
+   fiber__.cmt
+   fiber__.cmx
+   fiber__.ml
+   fiber__Cancel.cmi
+   fiber__Cancel.cmt
+   fiber__Cancel.cmx
+   fiber__Core.cmi
+   fiber__Core.cmt
+   fiber__Core.cmx
+   fiber__Mutex.cmi
+   fiber__Mutex.cmt
+   fiber__Mutex.cmx
+   fiber__Mvar.cmi
+   fiber__Mvar.cmt
+   fiber__Mvar.cmx
+   fiber__Pool.cmi
+   fiber__Pool.cmt
+   fiber__Pool.cmx
+   fiber__Scheduler.cmi
+   fiber__Scheduler.cmt
+   fiber__Scheduler.cmx
+   fiber__Stream.cmi
+   fiber__Stream.cmt
+   fiber__Stream.cmx
+   fiber__Svar.cmi
+   fiber__Svar.cmt
+   fiber__Svar.cmx
+   fiber__Throttle.cmi
+   fiber__Throttle.cmt
+   fiber__Throttle.cmx
+   mutex.ml
+   mvar.ml
+   opam
+   pool.ml
+   scheduler.ml
+   stream.ml
+   svar.ml
+   throttle.ml))
+ (libexec (fiber.cmxs))
+ (doc (CHANGES.md LICENSE.md)))
+(library
+ (name fiber)
+ (kind normal)
+ (synopsis "Monadic concurrency library")
+ (archives (byte fiber.cma) (native fiber.cmxa))
+ (plugins (byte fiber.cma) (native fiber.cmxs))
+ (native_archives fiber.a)
+ (requires ordering dyn pp stdune.filesystem_stubs stdune)
+ (main_module_name Fiber)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name fiber__)
+     (visibility public)
+     (kind alias)
+     (source (path Fiber__) (impl (path fiber__.ml-gen))))
+    (name Fiber)
+    (modules
+     (module
+      (obj_name fiber__Cancel)
+      (visibility public)
+      (source (path Cancel) (impl (path cancel.ml))))
+     (module
+      (obj_name fiber__Core)
+      (visibility public)
+      (source (path Core) (impl (path core.ml))))
+     (module
+      (obj_name fiber)
+      (visibility public)
+      (source (path Fiber) (intf (path fiber.mli)) (impl (path fiber.ml))))
+     (module
+      (obj_name fiber__Mutex)
+      (visibility public)
+      (source (path Mutex) (impl (path mutex.ml))))
+     (module
+      (obj_name fiber__Mvar)
+      (visibility public)
+      (source (path Mvar) (impl (path mvar.ml))))
+     (module
+      (obj_name fiber__Pool)
+      (visibility public)
+      (source (path Pool) (impl (path pool.ml))))
+     (module
+      (obj_name fiber__Scheduler)
+      (visibility public)
+      (source (path Scheduler) (impl (path scheduler.ml))))
+     (module
+      (obj_name fiber__Stream)
+      (visibility public)
+      (source (path Stream) (impl (path stream.ml))))
+     (module
+      (obj_name fiber__Svar)
+      (visibility public)
+      (source (path Svar) (impl (path svar.ml))))
+     (module
+      (obj_name fiber__Throttle)
+      (visibility public)
+      (source (path Throttle) (impl (path throttle.ml))))))
+   (wrapped true))))

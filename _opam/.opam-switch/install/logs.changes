@@ -1,0 +1,43 @@
+opam-version: "2.0"
+added: [
+  "doc/logs" {"D"}
+  "doc/logs/CHANGES.md" {"F:S3729T1753036245.06"}
+  "doc/logs/LICENSE.md" {"F:S738T1753036245.06"}
+  "doc/logs/README.md" {"F:S1709T1753036245.06"}
+  "doc/logs/odoc-pages" {"D"}
+  "doc/logs/odoc-pages/index.mld" {"F:S627T1753036245.06"}
+  "lib/logs" {"D"}
+  "lib/logs/META" {"F:S2244T1753036245.06"}
+  "lib/logs/fmt" {"D"}
+  "lib/logs/fmt/logs_fmt_top_init.ml" {"F:S314T1753036245.06"}
+  "lib/logs/logs.a" {"F:S51088T1753036245.06"}
+  "lib/logs/logs.cma" {"F:S77552T1753036245.06"}
+  "lib/logs/logs.cmi" {"F:S11613T1753036245.06"}
+  "lib/logs/logs.cmti" {"F:S92287T1753036245.06"}
+  "lib/logs/logs.cmx" {"F:S11886T1753036245.06"}
+  "lib/logs/logs.cmxa" {"F:S868T1753036245.06"}
+  "lib/logs/logs.cmxs" {"F:S84040T1753036245.06"}
+  "lib/logs/logs.mli" {"F:S22863T1753036245.06"}
+  "lib/logs/logs_top_init.ml" {"F:S353T1753036245.06"}
+  "lib/logs/lwt" {"D"}
+  "lib/logs/lwt/logs_lwt.a" {"F:S15088T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cma" {"F:S23369T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cmi" {"F:S4704T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cmti" {"F:S26551T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cmx" {"F:S3190T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cmxa" {"F:S528T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.cmxs" {"F:S56272T1753036245.06"}
+  "lib/logs/lwt/logs_lwt.mli" {"F:S4025T1753036245.06"}
+  "lib/logs/opam" {"F:S2145T1753036245.06"}
+  "lib/logs/threaded" {"D"}
+  "lib/logs/threaded/logs_threaded.a" {"F:S3528T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cma" {"F:S3453T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cmi" {"F:S320T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cmti" {"F:S3522T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cmx" {"F:S487T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cmxa" {"F:S455T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.cmxs" {"F:S51440T1753036245.06"}
+  "lib/logs/threaded/logs_threaded.mli" {"F:S461T1753036245.06"}
+  "lib/logs/top" {"D"}
+  "lib/logs/top/logs_top_init_ml" {"F:S353T1753036245.06"}
+]

@@ -1,0 +1,24 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/ppx_js_style/META"
+  "_build/install/default/lib/ppx_js_style/dune-package"
+  "_build/install/default/lib/ppx_js_style/opam"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.a"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cma"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmi"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmt"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmti"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmx"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmxa"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.ml"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.mli"
+]
+doc: [
+  "_build/install/default/doc/ppx_js_style/CHANGES.md"
+  "_build/install/default/doc/ppx_js_style/LICENSE.md"
+  "_build/install/default/doc/ppx_js_style/README.md"
+]
+libexec: [
+  "_build/install/default/lib/ppx_js_style/ppx.exe"
+  "_build/install/default/lib/ppx_js_style/ppx_js_style.cmxs"
+]

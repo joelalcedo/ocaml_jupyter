@@ -1,0 +1,7 @@
+version = "1.18.0"
+description = ""
+requires = "jsonrpc ppx_yojson_conv_lib uutf yojson"
+archive(byte) = "lsp.cma"
+archive(native) = "lsp.cmxa"
+plugin(byte) = "lsp.cma"
+plugin(native) = "lsp.cmxs"

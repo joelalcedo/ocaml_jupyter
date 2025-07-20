@@ -1,0 +1,19 @@
+opam-version: "2.0"
+lib: [
+  "_build/opam" {"opam"}
+  "_build/pkg/META" {"META"}
+  "_build/src/uuidm.a" {"uuidm.a"}
+  "_build/src/uuidm.cma" {"uuidm.cma"}
+  "_build/src/uuidm.cmi" {"uuidm.cmi"}
+  "?_build/src/uuidm.cmti" {"uuidm.cmti"}
+  "_build/src/uuidm.cmx" {"uuidm.cmx"}
+  "_build/src/uuidm.cmxa" {"uuidm.cmxa"}
+  "_build/src/uuidm.cmxs" {"uuidm.cmxs"}
+  "_build/src/uuidm.mli" {"uuidm.mli"}
+]
+doc: [
+  "_build/CHANGES.md" {"CHANGES.md"}
+  "_build/LICENSE.md" {"LICENSE.md"}
+  "_build/README.md" {"README.md"}
+  "_build/doc/index.mld" {"odoc-pages/index.mld"}
+]

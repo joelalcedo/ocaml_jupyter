@@ -1,0 +1,1037 @@
+(lang dune 3.19)
+(name stdune)
+(version 3.19.1)
+(sections (lib .) (libexec .) (doc ../../doc/stdune) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   ansi_color.ml
+   ansi_color.mli
+   appendable_list.ml
+   appendable_list.mli
+   applicative.ml
+   applicative.mli
+   applicative_intf.ml
+   array.ml
+   array.mli
+   bin.ml
+   bin.mli
+   bit_set.ml
+   bit_set.mli
+   bool.ml
+   bool.mli
+   bytes.ml
+   bytes.mli
+   bytes_unit.ml
+   bytes_unit.mli
+   caller_id.ml
+   caller_id.mli
+   char.ml
+   char.mli
+   code_error.ml
+   code_error.mli
+   compact_position.ml
+   compact_position.mli
+   comparable.ml
+   comparable.mli
+   comparable_intf.ml
+   comparator.ml
+   comparator.mli
+   dev_null.ml
+   dev_null.mli
+   dune-package
+   dune_either.ml
+   either.ml
+   either.mli
+   env.ml
+   env.mli
+   env_path.ml
+   env_path.mli
+   escape.ml
+   escape.mli
+   exn.ml
+   exn.mli
+   exn_with_backtrace.ml
+   exn_with_backtrace.mli
+   fdecl.ml
+   fdecl.mli
+   filename.ml
+   filename.mli
+   filename_set.ml
+   filename_set.mli
+   filesystem_stubs/dune_filesystem_stubs.a
+   filesystem_stubs/dune_filesystem_stubs.cma
+   filesystem_stubs/dune_filesystem_stubs.cmi
+   filesystem_stubs/dune_filesystem_stubs.cmt
+   filesystem_stubs/dune_filesystem_stubs.cmti
+   filesystem_stubs/dune_filesystem_stubs.cmx
+   filesystem_stubs/dune_filesystem_stubs.cmxa
+   filesystem_stubs/dune_filesystem_stubs.ml
+   filesystem_stubs/dune_filesystem_stubs.mli
+   filesystem_stubs/libdune_filesystem_stubs_stubs.a
+   float.ml
+   float.mli
+   format.ml
+   format.mli
+   fpath.ml
+   fpath.mli
+   hashable.ml
+   hashtbl.ml
+   hashtbl.mli
+   hashtbl_intf.ml
+   id.ml
+   id.mli
+   int.ml
+   int.mli
+   io.ml
+   io.mli
+   io_intf.ml
+   lazy.ml
+   lexbuf.ml
+   lexbuf.mli
+   libstdune_stubs.a
+   list.ml
+   list.mli
+   loc.ml
+   loc.mli
+   loc0.ml
+   loc0.mli
+   map.ml
+   map.mli
+   map_intf.ml
+   monad.ml
+   monad.mli
+   monad_intf.ml
+   monoid.ml
+   monoid.mli
+   monoid_intf.ml
+   nonempty_list.ml
+   nonempty_list.mli
+   nothing.ml
+   nothing.mli
+   opam
+   option.ml
+   option.mli
+   or_exn.ml
+   or_exn.mli
+   path.ml
+   path.mli
+   path_intf.ml
+   per_item.ml
+   per_item.mli
+   per_item_intf.ml
+   pid.ml
+   pid.mli
+   platform.ml
+   platform.mli
+   poly.ml
+   poly.mli
+   predicate.ml
+   predicate.mli
+   proc.ml
+   proc.mli
+   queue.ml
+   queue.mli
+   result.ml
+   result.mli
+   scanf.ml
+   scanf.mli
+   seq.ml
+   seq.mli
+   set.ml
+   set.mli
+   set_intf.ml
+   sexp.ml
+   sexp.mli
+   signal.ml
+   signal.mli
+   staged.ml
+   staged.mli
+   state.ml
+   state.mli
+   stdune.a
+   stdune.cma
+   stdune.cmi
+   stdune.cmt
+   stdune.cmx
+   stdune.cmxa
+   stdune.ml
+   stdune__.cmi
+   stdune__.cmt
+   stdune__.cmx
+   stdune__.ml
+   stdune__Ansi_color.cmi
+   stdune__Ansi_color.cmt
+   stdune__Ansi_color.cmti
+   stdune__Ansi_color.cmx
+   stdune__Appendable_list.cmi
+   stdune__Appendable_list.cmt
+   stdune__Appendable_list.cmti
+   stdune__Appendable_list.cmx
+   stdune__Applicative.cmi
+   stdune__Applicative.cmt
+   stdune__Applicative.cmti
+   stdune__Applicative.cmx
+   stdune__Applicative_intf.cmi
+   stdune__Applicative_intf.cmt
+   stdune__Applicative_intf.cmx
+   stdune__Array.cmi
+   stdune__Array.cmt
+   stdune__Array.cmti
+   stdune__Array.cmx
+   stdune__Bin.cmi
+   stdune__Bin.cmt
+   stdune__Bin.cmti
+   stdune__Bin.cmx
+   stdune__Bit_set.cmi
+   stdune__Bit_set.cmt
+   stdune__Bit_set.cmti
+   stdune__Bit_set.cmx
+   stdune__Bool.cmi
+   stdune__Bool.cmt
+   stdune__Bool.cmti
+   stdune__Bool.cmx
+   stdune__Bytes.cmi
+   stdune__Bytes.cmt
+   stdune__Bytes.cmti
+   stdune__Bytes.cmx
+   stdune__Bytes_unit.cmi
+   stdune__Bytes_unit.cmt
+   stdune__Bytes_unit.cmti
+   stdune__Bytes_unit.cmx
+   stdune__Caller_id.cmi
+   stdune__Caller_id.cmt
+   stdune__Caller_id.cmti
+   stdune__Caller_id.cmx
+   stdune__Char.cmi
+   stdune__Char.cmt
+   stdune__Char.cmti
+   stdune__Char.cmx
+   stdune__Code_error.cmi
+   stdune__Code_error.cmt
+   stdune__Code_error.cmti
+   stdune__Code_error.cmx
+   stdune__Compact_position.cmi
+   stdune__Compact_position.cmt
+   stdune__Compact_position.cmti
+   stdune__Compact_position.cmx
+   stdune__Comparable.cmi
+   stdune__Comparable.cmt
+   stdune__Comparable.cmti
+   stdune__Comparable.cmx
+   stdune__Comparable_intf.cmi
+   stdune__Comparable_intf.cmt
+   stdune__Comparable_intf.cmx
+   stdune__Comparator.cmi
+   stdune__Comparator.cmt
+   stdune__Comparator.cmti
+   stdune__Comparator.cmx
+   stdune__Dev_null.cmi
+   stdune__Dev_null.cmt
+   stdune__Dev_null.cmti
+   stdune__Dev_null.cmx
+   stdune__Dune_either.cmi
+   stdune__Dune_either.cmt
+   stdune__Dune_either.cmx
+   stdune__Either.cmi
+   stdune__Either.cmt
+   stdune__Either.cmti
+   stdune__Either.cmx
+   stdune__Env.cmi
+   stdune__Env.cmt
+   stdune__Env.cmti
+   stdune__Env.cmx
+   stdune__Env_path.cmi
+   stdune__Env_path.cmt
+   stdune__Env_path.cmti
+   stdune__Env_path.cmx
+   stdune__Escape.cmi
+   stdune__Escape.cmt
+   stdune__Escape.cmti
+   stdune__Escape.cmx
+   stdune__Exn.cmi
+   stdune__Exn.cmt
+   stdune__Exn.cmti
+   stdune__Exn.cmx
+   stdune__Exn_with_backtrace.cmi
+   stdune__Exn_with_backtrace.cmt
+   stdune__Exn_with_backtrace.cmti
+   stdune__Exn_with_backtrace.cmx
+   stdune__Fdecl.cmi
+   stdune__Fdecl.cmt
+   stdune__Fdecl.cmti
+   stdune__Fdecl.cmx
+   stdune__Filename.cmi
+   stdune__Filename.cmt
+   stdune__Filename.cmti
+   stdune__Filename.cmx
+   stdune__Filename_set.cmi
+   stdune__Filename_set.cmt
+   stdune__Filename_set.cmti
+   stdune__Filename_set.cmx
+   stdune__Float.cmi
+   stdune__Float.cmt
+   stdune__Float.cmti
+   stdune__Float.cmx
+   stdune__Format.cmi
+   stdune__Format.cmt
+   stdune__Format.cmti
+   stdune__Format.cmx
+   stdune__Fpath.cmi
+   stdune__Fpath.cmt
+   stdune__Fpath.cmti
+   stdune__Fpath.cmx
+   stdune__Hashable.cmi
+   stdune__Hashable.cmt
+   stdune__Hashable.cmx
+   stdune__Hashtbl.cmi
+   stdune__Hashtbl.cmt
+   stdune__Hashtbl.cmti
+   stdune__Hashtbl.cmx
+   stdune__Hashtbl_intf.cmi
+   stdune__Hashtbl_intf.cmt
+   stdune__Hashtbl_intf.cmx
+   stdune__Id.cmi
+   stdune__Id.cmt
+   stdune__Id.cmti
+   stdune__Id.cmx
+   stdune__Int.cmi
+   stdune__Int.cmt
+   stdune__Int.cmti
+   stdune__Int.cmx
+   stdune__Io.cmi
+   stdune__Io.cmt
+   stdune__Io.cmti
+   stdune__Io.cmx
+   stdune__Io_intf.cmi
+   stdune__Io_intf.cmt
+   stdune__Io_intf.cmx
+   stdune__Lazy.cmi
+   stdune__Lazy.cmt
+   stdune__Lazy.cmx
+   stdune__Lexbuf.cmi
+   stdune__Lexbuf.cmt
+   stdune__Lexbuf.cmti
+   stdune__Lexbuf.cmx
+   stdune__List.cmi
+   stdune__List.cmt
+   stdune__List.cmti
+   stdune__List.cmx
+   stdune__Loc.cmi
+   stdune__Loc.cmt
+   stdune__Loc.cmti
+   stdune__Loc.cmx
+   stdune__Loc0.cmi
+   stdune__Loc0.cmt
+   stdune__Loc0.cmti
+   stdune__Loc0.cmx
+   stdune__Map.cmi
+   stdune__Map.cmt
+   stdune__Map.cmti
+   stdune__Map.cmx
+   stdune__Map_intf.cmi
+   stdune__Map_intf.cmt
+   stdune__Map_intf.cmx
+   stdune__Monad.cmi
+   stdune__Monad.cmt
+   stdune__Monad.cmti
+   stdune__Monad.cmx
+   stdune__Monad_intf.cmi
+   stdune__Monad_intf.cmt
+   stdune__Monad_intf.cmx
+   stdune__Monoid.cmi
+   stdune__Monoid.cmt
+   stdune__Monoid.cmti
+   stdune__Monoid.cmx
+   stdune__Monoid_intf.cmi
+   stdune__Monoid_intf.cmt
+   stdune__Monoid_intf.cmx
+   stdune__Nonempty_list.cmi
+   stdune__Nonempty_list.cmt
+   stdune__Nonempty_list.cmti
+   stdune__Nonempty_list.cmx
+   stdune__Nothing.cmi
+   stdune__Nothing.cmt
+   stdune__Nothing.cmti
+   stdune__Nothing.cmx
+   stdune__Option.cmi
+   stdune__Option.cmt
+   stdune__Option.cmti
+   stdune__Option.cmx
+   stdune__Or_exn.cmi
+   stdune__Or_exn.cmt
+   stdune__Or_exn.cmti
+   stdune__Or_exn.cmx
+   stdune__Path.cmi
+   stdune__Path.cmt
+   stdune__Path.cmti
+   stdune__Path.cmx
+   stdune__Path_intf.cmi
+   stdune__Path_intf.cmt
+   stdune__Path_intf.cmx
+   stdune__Per_item.cmi
+   stdune__Per_item.cmt
+   stdune__Per_item.cmti
+   stdune__Per_item.cmx
+   stdune__Per_item_intf.cmi
+   stdune__Per_item_intf.cmt
+   stdune__Per_item_intf.cmx
+   stdune__Pid.cmi
+   stdune__Pid.cmt
+   stdune__Pid.cmti
+   stdune__Pid.cmx
+   stdune__Platform.cmi
+   stdune__Platform.cmt
+   stdune__Platform.cmti
+   stdune__Platform.cmx
+   stdune__Poly.cmi
+   stdune__Poly.cmt
+   stdune__Poly.cmti
+   stdune__Poly.cmx
+   stdune__Predicate.cmi
+   stdune__Predicate.cmt
+   stdune__Predicate.cmti
+   stdune__Predicate.cmx
+   stdune__Proc.cmi
+   stdune__Proc.cmt
+   stdune__Proc.cmti
+   stdune__Proc.cmx
+   stdune__Queue.cmi
+   stdune__Queue.cmt
+   stdune__Queue.cmti
+   stdune__Queue.cmx
+   stdune__Result.cmi
+   stdune__Result.cmt
+   stdune__Result.cmti
+   stdune__Result.cmx
+   stdune__Scanf.cmi
+   stdune__Scanf.cmt
+   stdune__Scanf.cmti
+   stdune__Scanf.cmx
+   stdune__Seq.cmi
+   stdune__Seq.cmt
+   stdune__Seq.cmti
+   stdune__Seq.cmx
+   stdune__Set.cmi
+   stdune__Set.cmt
+   stdune__Set.cmti
+   stdune__Set.cmx
+   stdune__Set_intf.cmi
+   stdune__Set_intf.cmt
+   stdune__Set_intf.cmx
+   stdune__Sexp.cmi
+   stdune__Sexp.cmt
+   stdune__Sexp.cmti
+   stdune__Sexp.cmx
+   stdune__Signal.cmi
+   stdune__Signal.cmt
+   stdune__Signal.cmti
+   stdune__Signal.cmx
+   stdune__Staged.cmi
+   stdune__Staged.cmt
+   stdune__Staged.cmti
+   stdune__Staged.cmx
+   stdune__State.cmi
+   stdune__State.cmt
+   stdune__State.cmti
+   stdune__State.cmx
+   stdune__String.cmi
+   stdune__String.cmt
+   stdune__String.cmti
+   stdune__String.cmx
+   stdune__String_builder.cmi
+   stdune__String_builder.cmt
+   stdune__String_builder.cmti
+   stdune__String_builder.cmx
+   stdune__String_split.cmi
+   stdune__String_split.cmt
+   stdune__String_split.cmti
+   stdune__String_split.cmx
+   stdune__Sys.cmi
+   stdune__Sys.cmt
+   stdune__Sys.cmti
+   stdune__Sys.cmx
+   stdune__Table.cmi
+   stdune__Table.cmt
+   stdune__Table.cmti
+   stdune__Table.cmx
+   stdune__Temp.cmi
+   stdune__Temp.cmt
+   stdune__Temp.cmti
+   stdune__Temp.cmx
+   stdune__Top_closure.cmi
+   stdune__Top_closure.cmt
+   stdune__Top_closure.cmti
+   stdune__Top_closure.cmx
+   stdune__Top_closure_intf.cmi
+   stdune__Top_closure_intf.cmt
+   stdune__Top_closure_intf.cmx
+   stdune__Tuple.cmi
+   stdune__Tuple.cmt
+   stdune__Tuple.cmti
+   stdune__Tuple.cmx
+   stdune__Type_eq.cmi
+   stdune__Type_eq.cmt
+   stdune__Type_eq.cmti
+   stdune__Type_eq.cmx
+   stdune__Unit.cmi
+   stdune__Unit.cmt
+   stdune__Unit.cmti
+   stdune__Unit.cmx
+   stdune__Univ_map.cmi
+   stdune__Univ_map.cmt
+   stdune__Univ_map.cmti
+   stdune__Univ_map.cmx
+   stdune__Univ_map_intf.cmi
+   stdune__Univ_map_intf.cmt
+   stdune__Univ_map_intf.cmx
+   stdune__User_error.cmi
+   stdune__User_error.cmt
+   stdune__User_error.cmti
+   stdune__User_error.cmx
+   stdune__User_message.cmi
+   stdune__User_message.cmt
+   stdune__User_message.cmti
+   stdune__User_message.cmx
+   stdune__User_warning.cmi
+   stdune__User_warning.cmt
+   stdune__User_warning.cmti
+   stdune__User_warning.cmx
+   string.ml
+   string.mli
+   string_builder.ml
+   string_builder.mli
+   string_split.ml
+   string_split.mli
+   sys.ml
+   sys.mli
+   table.ml
+   table.mli
+   temp.ml
+   temp.mli
+   top_closure.ml
+   top_closure.mli
+   top_closure_intf.ml
+   tuple.ml
+   tuple.mli
+   type_eq.ml
+   type_eq.mli
+   unit.ml
+   unit.mli
+   univ_map.ml
+   univ_map.mli
+   univ_map_intf.ml
+   user_error.ml
+   user_error.mli
+   user_message.ml
+   user_message.mli
+   user_warning.ml
+   user_warning.mli))
+ (libexec (filesystem_stubs/dune_filesystem_stubs.cmxs stdune.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dlldune_filesystem_stubs_stubs.so dllstdune_stubs.so)))
+(library
+ (name stdune)
+ (kind normal)
+ (synopsis
+  "Standard library of Dune.\nThis library offers no backwards compatibility guarantees. Use at your own risk.")
+ (archives (byte stdune.cma) (native stdune.cmxa))
+ (plugins (byte stdune.cma) (native stdune.cmxs))
+ (foreign_objects
+  copyfile_stubs.o
+  platform_stubs.o
+  signal_stubs.o
+  wait4_stubs.o)
+ (foreign_archives (archives (for all) (files libstdune_stubs.a)))
+ (foreign_dll_files ../stublibs/dllstdune_stubs.so)
+ (native_archives stdune.a)
+ (requires
+  unix
+  csexp
+  (re_export ordering)
+  (re_export dyn)
+  (re_export pp)
+  (re_export stdune.filesystem_stubs))
+ (main_module_name Stdune)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name stdune__)
+     (visibility public)
+     (kind alias)
+     (source (path Stdune__) (impl (path stdune__.ml-gen))))
+    (name Stdune)
+    (modules
+     (module
+      (obj_name stdune__Ansi_color)
+      (visibility public)
+      (source
+       (path Ansi_color)
+       (intf (path ansi_color.mli))
+       (impl (path ansi_color.ml))))
+     (module
+      (obj_name stdune__Appendable_list)
+      (visibility public)
+      (source
+       (path Appendable_list)
+       (intf (path appendable_list.mli))
+       (impl (path appendable_list.ml))))
+     (module
+      (obj_name stdune__Applicative)
+      (visibility public)
+      (source
+       (path Applicative)
+       (intf (path applicative.mli))
+       (impl (path applicative.ml))))
+     (module
+      (obj_name stdune__Applicative_intf)
+      (visibility public)
+      (source (path Applicative_intf) (impl (path applicative_intf.ml))))
+     (module
+      (obj_name stdune__Array)
+      (visibility public)
+      (source (path Array) (intf (path array.mli)) (impl (path array.ml))))
+     (module
+      (obj_name stdune__Bin)
+      (visibility public)
+      (source (path Bin) (intf (path bin.mli)) (impl (path bin.ml))))
+     (module
+      (obj_name stdune__Bit_set)
+      (visibility public)
+      (source
+       (path Bit_set)
+       (intf (path bit_set.mli))
+       (impl (path bit_set.ml))))
+     (module
+      (obj_name stdune__Bool)
+      (visibility public)
+      (source (path Bool) (intf (path bool.mli)) (impl (path bool.ml))))
+     (module
+      (obj_name stdune__Bytes)
+      (visibility public)
+      (source (path Bytes) (intf (path bytes.mli)) (impl (path bytes.ml))))
+     (module
+      (obj_name stdune__Bytes_unit)
+      (visibility public)
+      (source
+       (path Bytes_unit)
+       (intf (path bytes_unit.mli))
+       (impl (path bytes_unit.ml))))
+     (module
+      (obj_name stdune__Caller_id)
+      (visibility public)
+      (source
+       (path Caller_id)
+       (intf (path caller_id.mli))
+       (impl (path caller_id.ml))))
+     (module
+      (obj_name stdune__Char)
+      (visibility public)
+      (source (path Char) (intf (path char.mli)) (impl (path char.ml))))
+     (module
+      (obj_name stdune__Code_error)
+      (visibility public)
+      (source
+       (path Code_error)
+       (intf (path code_error.mli))
+       (impl (path code_error.ml))))
+     (module
+      (obj_name stdune__Compact_position)
+      (visibility public)
+      (source
+       (path Compact_position)
+       (intf (path compact_position.mli))
+       (impl (path compact_position.ml))))
+     (module
+      (obj_name stdune__Comparable)
+      (visibility public)
+      (source
+       (path Comparable)
+       (intf (path comparable.mli))
+       (impl (path comparable.ml))))
+     (module
+      (obj_name stdune__Comparable_intf)
+      (visibility public)
+      (source (path Comparable_intf) (impl (path comparable_intf.ml))))
+     (module
+      (obj_name stdune__Comparator)
+      (visibility public)
+      (source
+       (path Comparator)
+       (intf (path comparator.mli))
+       (impl (path comparator.ml))))
+     (module
+      (obj_name stdune__Dev_null)
+      (visibility public)
+      (source
+       (path Dev_null)
+       (intf (path dev_null.mli))
+       (impl (path dev_null.ml))))
+     (module
+      (obj_name stdune__Dune_either)
+      (visibility public)
+      (source (path Dune_either) (impl (path dune_either.ml))))
+     (module
+      (obj_name stdune__Either)
+      (visibility public)
+      (source (path Either) (intf (path either.mli)) (impl (path either.ml))))
+     (module
+      (obj_name stdune__Env)
+      (visibility public)
+      (source (path Env) (intf (path env.mli)) (impl (path env.ml))))
+     (module
+      (obj_name stdune__Env_path)
+      (visibility public)
+      (source
+       (path Env_path)
+       (intf (path env_path.mli))
+       (impl (path env_path.ml))))
+     (module
+      (obj_name stdune__Escape)
+      (visibility public)
+      (source (path Escape) (intf (path escape.mli)) (impl (path escape.ml))))
+     (module
+      (obj_name stdune__Exn)
+      (visibility public)
+      (source (path Exn) (intf (path exn.mli)) (impl (path exn.ml))))
+     (module
+      (obj_name stdune__Exn_with_backtrace)
+      (visibility public)
+      (source
+       (path Exn_with_backtrace)
+       (intf (path exn_with_backtrace.mli))
+       (impl (path exn_with_backtrace.ml))))
+     (module
+      (obj_name stdune__Fdecl)
+      (visibility public)
+      (source (path Fdecl) (intf (path fdecl.mli)) (impl (path fdecl.ml))))
+     (module
+      (obj_name stdune__Filename)
+      (visibility public)
+      (source
+       (path Filename)
+       (intf (path filename.mli))
+       (impl (path filename.ml))))
+     (module
+      (obj_name stdune__Filename_set)
+      (visibility public)
+      (source
+       (path Filename_set)
+       (intf (path filename_set.mli))
+       (impl (path filename_set.ml))))
+     (module
+      (obj_name stdune__Float)
+      (visibility public)
+      (source (path Float) (intf (path float.mli)) (impl (path float.ml))))
+     (module
+      (obj_name stdune__Format)
+      (visibility public)
+      (source (path Format) (intf (path format.mli)) (impl (path format.ml))))
+     (module
+      (obj_name stdune__Fpath)
+      (visibility public)
+      (source (path Fpath) (intf (path fpath.mli)) (impl (path fpath.ml))))
+     (module
+      (obj_name stdune__Hashable)
+      (visibility public)
+      (source (path Hashable) (impl (path hashable.ml))))
+     (module
+      (obj_name stdune__Hashtbl)
+      (visibility public)
+      (source
+       (path Hashtbl)
+       (intf (path hashtbl.mli))
+       (impl (path hashtbl.ml))))
+     (module
+      (obj_name stdune__Hashtbl_intf)
+      (visibility public)
+      (source (path Hashtbl_intf) (impl (path hashtbl_intf.ml))))
+     (module
+      (obj_name stdune__Id)
+      (visibility public)
+      (source (path Id) (intf (path id.mli)) (impl (path id.ml))))
+     (module
+      (obj_name stdune__Int)
+      (visibility public)
+      (source (path Int) (intf (path int.mli)) (impl (path int.ml))))
+     (module
+      (obj_name stdune__Io)
+      (visibility public)
+      (source (path Io) (intf (path io.mli)) (impl (path io.ml))))
+     (module
+      (obj_name stdune__Io_intf)
+      (visibility public)
+      (source (path Io_intf) (impl (path io_intf.ml))))
+     (module
+      (obj_name stdune__Lazy)
+      (visibility public)
+      (source (path Lazy) (impl (path lazy.ml))))
+     (module
+      (obj_name stdune__Lexbuf)
+      (visibility public)
+      (source (path Lexbuf) (intf (path lexbuf.mli)) (impl (path lexbuf.ml))))
+     (module
+      (obj_name stdune__List)
+      (visibility public)
+      (source (path List) (intf (path list.mli)) (impl (path list.ml))))
+     (module
+      (obj_name stdune__Loc)
+      (visibility public)
+      (source (path Loc) (intf (path loc.mli)) (impl (path loc.ml))))
+     (module
+      (obj_name stdune__Loc0)
+      (visibility public)
+      (source (path Loc0) (intf (path loc0.mli)) (impl (path loc0.ml))))
+     (module
+      (obj_name stdune__Map)
+      (visibility public)
+      (source (path Map) (intf (path map.mli)) (impl (path map.ml))))
+     (module
+      (obj_name stdune__Map_intf)
+      (visibility public)
+      (source (path Map_intf) (impl (path map_intf.ml))))
+     (module
+      (obj_name stdune__Monad)
+      (visibility public)
+      (source (path Monad) (intf (path monad.mli)) (impl (path monad.ml))))
+     (module
+      (obj_name stdune__Monad_intf)
+      (visibility public)
+      (source (path Monad_intf) (impl (path monad_intf.ml))))
+     (module
+      (obj_name stdune__Monoid)
+      (visibility public)
+      (source (path Monoid) (intf (path monoid.mli)) (impl (path monoid.ml))))
+     (module
+      (obj_name stdune__Monoid_intf)
+      (visibility public)
+      (source (path Monoid_intf) (impl (path monoid_intf.ml))))
+     (module
+      (obj_name stdune__Nonempty_list)
+      (visibility public)
+      (source
+       (path Nonempty_list)
+       (intf (path nonempty_list.mli))
+       (impl (path nonempty_list.ml))))
+     (module
+      (obj_name stdune__Nothing)
+      (visibility public)
+      (source
+       (path Nothing)
+       (intf (path nothing.mli))
+       (impl (path nothing.ml))))
+     (module
+      (obj_name stdune__Option)
+      (visibility public)
+      (source (path Option) (intf (path option.mli)) (impl (path option.ml))))
+     (module
+      (obj_name stdune__Or_exn)
+      (visibility public)
+      (source (path Or_exn) (intf (path or_exn.mli)) (impl (path or_exn.ml))))
+     (module
+      (obj_name stdune__Path)
+      (visibility public)
+      (source (path Path) (intf (path path.mli)) (impl (path path.ml))))
+     (module
+      (obj_name stdune__Path_intf)
+      (visibility public)
+      (source (path Path_intf) (impl (path path_intf.ml))))
+     (module
+      (obj_name stdune__Per_item)
+      (visibility public)
+      (source
+       (path Per_item)
+       (intf (path per_item.mli))
+       (impl (path per_item.ml))))
+     (module
+      (obj_name stdune__Per_item_intf)
+      (visibility public)
+      (source (path Per_item_intf) (impl (path per_item_intf.ml))))
+     (module
+      (obj_name stdune__Pid)
+      (visibility public)
+      (source (path Pid) (intf (path pid.mli)) (impl (path pid.ml))))
+     (module
+      (obj_name stdune__Platform)
+      (visibility public)
+      (source
+       (path Platform)
+       (intf (path platform.mli))
+       (impl (path platform.ml))))
+     (module
+      (obj_name stdune__Poly)
+      (visibility public)
+      (source (path Poly) (intf (path poly.mli)) (impl (path poly.ml))))
+     (module
+      (obj_name stdune__Predicate)
+      (visibility public)
+      (source
+       (path Predicate)
+       (intf (path predicate.mli))
+       (impl (path predicate.ml))))
+     (module
+      (obj_name stdune__Proc)
+      (visibility public)
+      (source (path Proc) (intf (path proc.mli)) (impl (path proc.ml))))
+     (module
+      (obj_name stdune__Queue)
+      (visibility public)
+      (source (path Queue) (intf (path queue.mli)) (impl (path queue.ml))))
+     (module
+      (obj_name stdune__Result)
+      (visibility public)
+      (source (path Result) (intf (path result.mli)) (impl (path result.ml))))
+     (module
+      (obj_name stdune__Scanf)
+      (visibility public)
+      (source (path Scanf) (intf (path scanf.mli)) (impl (path scanf.ml))))
+     (module
+      (obj_name stdune__Seq)
+      (visibility public)
+      (source (path Seq) (intf (path seq.mli)) (impl (path seq.ml))))
+     (module
+      (obj_name stdune__Set)
+      (visibility public)
+      (source (path Set) (intf (path set.mli)) (impl (path set.ml))))
+     (module
+      (obj_name stdune__Set_intf)
+      (visibility public)
+      (source (path Set_intf) (impl (path set_intf.ml))))
+     (module
+      (obj_name stdune__Sexp)
+      (visibility public)
+      (source (path Sexp) (intf (path sexp.mli)) (impl (path sexp.ml))))
+     (module
+      (obj_name stdune__Signal)
+      (visibility public)
+      (source (path Signal) (intf (path signal.mli)) (impl (path signal.ml))))
+     (module
+      (obj_name stdune__Staged)
+      (visibility public)
+      (source (path Staged) (intf (path staged.mli)) (impl (path staged.ml))))
+     (module
+      (obj_name stdune__State)
+      (visibility public)
+      (source (path State) (intf (path state.mli)) (impl (path state.ml))))
+     (module
+      (obj_name stdune)
+      (visibility public)
+      (source (path Stdune) (impl (path stdune.ml))))
+     (module
+      (obj_name stdune__String)
+      (visibility public)
+      (source (path String) (intf (path string.mli)) (impl (path string.ml))))
+     (module
+      (obj_name stdune__String_builder)
+      (visibility public)
+      (source
+       (path String_builder)
+       (intf (path string_builder.mli))
+       (impl (path string_builder.ml))))
+     (module
+      (obj_name stdune__String_split)
+      (visibility public)
+      (source
+       (path String_split)
+       (intf (path string_split.mli))
+       (impl (path string_split.ml))))
+     (module
+      (obj_name stdune__Sys)
+      (visibility public)
+      (source (path Sys) (intf (path sys.mli)) (impl (path sys.ml))))
+     (module
+      (obj_name stdune__Table)
+      (visibility public)
+      (source (path Table) (intf (path table.mli)) (impl (path table.ml))))
+     (module
+      (obj_name stdune__Temp)
+      (visibility public)
+      (source (path Temp) (intf (path temp.mli)) (impl (path temp.ml))))
+     (module
+      (obj_name stdune__Top_closure)
+      (visibility public)
+      (source
+       (path Top_closure)
+       (intf (path top_closure.mli))
+       (impl (path top_closure.ml))))
+     (module
+      (obj_name stdune__Top_closure_intf)
+      (visibility public)
+      (source (path Top_closure_intf) (impl (path top_closure_intf.ml))))
+     (module
+      (obj_name stdune__Tuple)
+      (visibility public)
+      (source (path Tuple) (intf (path tuple.mli)) (impl (path tuple.ml))))
+     (module
+      (obj_name stdune__Type_eq)
+      (visibility public)
+      (source
+       (path Type_eq)
+       (intf (path type_eq.mli))
+       (impl (path type_eq.ml))))
+     (module
+      (obj_name stdune__Unit)
+      (visibility public)
+      (source (path Unit) (intf (path unit.mli)) (impl (path unit.ml))))
+     (module
+      (obj_name stdune__Univ_map)
+      (visibility public)
+      (source
+       (path Univ_map)
+       (intf (path univ_map.mli))
+       (impl (path univ_map.ml))))
+     (module
+      (obj_name stdune__Univ_map_intf)
+      (visibility public)
+      (source (path Univ_map_intf) (impl (path univ_map_intf.ml))))
+     (module
+      (obj_name stdune__User_error)
+      (visibility public)
+      (source
+       (path User_error)
+       (intf (path user_error.mli))
+       (impl (path user_error.ml))))
+     (module
+      (obj_name stdune__User_message)
+      (visibility public)
+      (source
+       (path User_message)
+       (intf (path user_message.mli))
+       (impl (path user_message.ml))))
+     (module
+      (obj_name stdune__User_warning)
+      (visibility public)
+      (source
+       (path User_warning)
+       (intf (path user_warning.mli))
+       (impl (path user_warning.ml))))))
+   (wrapped true))))
+(library
+ (name stdune.filesystem_stubs)
+ (kind normal)
+ (archives
+  (byte filesystem_stubs/dune_filesystem_stubs.cma)
+  (native filesystem_stubs/dune_filesystem_stubs.cmxa))
+ (plugins
+  (byte filesystem_stubs/dune_filesystem_stubs.cma)
+  (native filesystem_stubs/dune_filesystem_stubs.cmxs))
+ (foreign_objects filesystem_stubs/readdir.o)
+ (foreign_archives
+  (archives
+   (for all)
+   (files filesystem_stubs/libdune_filesystem_stubs_stubs.a)))
+ (foreign_dll_files ../stublibs/dlldune_filesystem_stubs_stubs.so)
+ (native_archives filesystem_stubs/dune_filesystem_stubs.a)
+ (requires unix)
+ (main_module_name Dune_filesystem_stubs)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name dune_filesystem_stubs)
+   (visibility public)
+   (source
+    (path Dune_filesystem_stubs)
+    (intf (path filesystem_stubs/dune_filesystem_stubs.mli))
+    (impl (path filesystem_stubs/dune_filesystem_stubs.ml))))))

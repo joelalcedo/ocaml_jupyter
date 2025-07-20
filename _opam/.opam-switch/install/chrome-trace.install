@@ -1,0 +1,21 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/chrome-trace/META"
+  "_build/install/default/lib/chrome-trace/chrome_trace.a"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cma"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cmi"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cmt"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cmti"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cmx"
+  "_build/install/default/lib/chrome-trace/chrome_trace.cmxa"
+  "_build/install/default/lib/chrome-trace/chrome_trace.ml"
+  "_build/install/default/lib/chrome-trace/chrome_trace.mli"
+  "_build/install/default/lib/chrome-trace/dune-package"
+  "_build/install/default/lib/chrome-trace/opam"
+]
+doc: [
+  "_build/install/default/doc/chrome-trace/CHANGES.md"
+  "_build/install/default/doc/chrome-trace/LICENSE.md"
+  "_build/install/default/doc/chrome-trace/README.md"
+]
+libexec: "_build/install/default/lib/chrome-trace/chrome_trace.cmxs"

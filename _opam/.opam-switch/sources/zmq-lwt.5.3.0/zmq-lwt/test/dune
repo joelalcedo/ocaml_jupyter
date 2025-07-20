@@ -1,0 +1,11 @@
+(executable
+ (name test)
+ (libraries zmq_deferred_test zmq-lwt))
+
+(rule
+ (alias runtest)
+ (deps
+  (:test test.exe))
+ (action
+  (run %{test}))
+ (package zmq-lwt))

@@ -1,0 +1,7 @@
+version = "5.2.2-15-g7cca40d"
+description = ""
+requires = "lwt lwt.unix zmq.deferred"
+archive(byte) = "zmq_lwt.cma"
+archive(native) = "zmq_lwt.cmxa"
+plugin(byte) = "zmq_lwt.cma"
+plugin(native) = "zmq_lwt.cmxs"

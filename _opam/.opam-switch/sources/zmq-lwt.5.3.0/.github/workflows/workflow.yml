@@ -1,0 +1,64 @@
+name: Main workflow
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-20.04
+        ocaml-version:
+          - 5
+          - 4.14.0
+          - 4.04.1
+        include:
+          - lwt: true
+          - async: true
+          - eio: true
+            ocaml-version: 5
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use OCaml ${{ matrix.ocaml-version }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-version }}
+          opam-local-packages: zmq.opam
+
+      - name: zmq
+        run: |
+          opam install --deps-only --with-doc --with-test zmq
+          opam exec -- dune build zmq
+          opam exec -- dune runtest zmq
+
+      - name: zmq-lwt
+        if: matrix.lwt
+        run: |
+          opam pin add zmq-lwt.dev . --no-action
+          opam install --deps-only --with-doc --with-test zmq-lwt
+          opam exec -- dune build zmq-lwt
+          opam exec -- dune runtest zmq-lwt
+
+      - name: zmq-async
+        if: matrix.async
+        run: |
+          opam pin add zmq-async.dev . --no-action
+          opam install --deps-only --with-doc --with-test zmq-async
+          opam exec -- dune build zmq-async
+          opam exec -- dune runtest zmq-async
+
+      - name: zmq-eio
+        if: matrix.eio
+        run: |
+          opam pin add zmq-eio.dev . --no-action
+          opam install --deps-only --with-doc --with-test zmq-eio
+          opam exec -- dune build zmq-eio
+          opam exec -- dune runtest zmq-eio

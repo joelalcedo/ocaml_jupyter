@@ -1,0 +1,39 @@
+(lang dune 3.19)
+(name spawn)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/spawn) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   dune-package
+   libspawn_stubs.a
+   opam
+   spawn.a
+   spawn.cma
+   spawn.cmi
+   spawn.cmt
+   spawn.cmti
+   spawn.cmx
+   spawn.cmxa
+   spawn.ml
+   spawn.mli))
+ (libexec (spawn.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dllspawn_stubs.so)))
+(library
+ (name spawn)
+ (kind normal)
+ (archives (byte spawn.cma) (native spawn.cmxa))
+ (plugins (byte spawn.cma) (native spawn.cmxs))
+ (foreign_objects spawn_stubs.o)
+ (foreign_archives (archives (for all) (files libspawn_stubs.a)))
+ (foreign_dll_files ../stublibs/dllspawn_stubs.so)
+ (native_archives spawn.a)
+ (requires unix threads)
+ (main_module_name Spawn)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name spawn)
+   (visibility public)
+   (source (path Spawn) (intf (path spawn.mli)) (impl (path spawn.ml))))))

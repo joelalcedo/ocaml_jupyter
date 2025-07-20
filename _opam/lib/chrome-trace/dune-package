@@ -1,0 +1,37 @@
+(lang dune 3.19)
+(name chrome-trace)
+(version 3.19.1)
+(sections (lib .) (libexec .) (doc ../../doc/chrome-trace))
+(files
+ (lib
+  (META
+   chrome_trace.a
+   chrome_trace.cma
+   chrome_trace.cmi
+   chrome_trace.cmt
+   chrome_trace.cmti
+   chrome_trace.cmx
+   chrome_trace.cmxa
+   chrome_trace.ml
+   chrome_trace.mli
+   dune-package
+   opam))
+ (libexec (chrome_trace.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name chrome-trace)
+ (kind normal)
+ (synopsis "Emit catapult trace files, compatible with chrome://tracing")
+ (archives (byte chrome_trace.cma) (native chrome_trace.cmxa))
+ (plugins (byte chrome_trace.cma) (native chrome_trace.cmxs))
+ (native_archives chrome_trace.a)
+ (main_module_name Chrome_trace)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name chrome_trace)
+   (visibility public)
+   (source
+    (path Chrome_trace)
+    (intf (path chrome_trace.mli))
+    (impl (path chrome_trace.ml))))))

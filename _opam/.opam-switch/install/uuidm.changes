@@ -1,0 +1,20 @@
+opam-version: "2.0"
+added: [
+  "doc/uuidm" {"D"}
+  "doc/uuidm/CHANGES.md" {"F:S3313T1753036231.74"}
+  "doc/uuidm/LICENSE.md" {"F:S739T1753036231.74"}
+  "doc/uuidm/README.md" {"F:S1121T1753036231.74"}
+  "doc/uuidm/odoc-pages" {"D"}
+  "doc/uuidm/odoc-pages/index.mld" {"F:S3587T1753036231.74"}
+  "lib/uuidm" {"D"}
+  "lib/uuidm/META" {"F:S249T1753036231.74"}
+  "lib/uuidm/opam" {"F:S1198T1753036231.74"}
+  "lib/uuidm/uuidm.a" {"F:S37976T1753036231.74"}
+  "lib/uuidm/uuidm.cma" {"F:S62210T1753036231.74"}
+  "lib/uuidm/uuidm.cmi" {"F:S8004T1753036231.74"}
+  "lib/uuidm/uuidm.cmti" {"F:S48171T1753036231.74"}
+  "lib/uuidm/uuidm.cmx" {"F:S4571T1753036231.74"}
+  "lib/uuidm/uuidm.cmxa" {"F:S1265T1753036231.74"}
+  "lib/uuidm/uuidm.cmxs" {"F:S59368T1753036231.74"}
+  "lib/uuidm/uuidm.mli" {"F:S10423T1753036231.74"}
+]

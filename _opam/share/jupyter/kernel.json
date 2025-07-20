@@ -1,0 +1,14 @@
+{
+  "display_name": "OCaml /Users/joelalcedo/Documents/development/ocaml_jupyter",
+  "language": "OCaml",
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "eval $(opam env --switch=/Users/joelalcedo/Documents/development/ocaml_jupyter --shell=sh) && /Users/joelalcedo/Documents/development/ocaml_jupyter/_opam/bin/ocaml-jupyter-kernel \"$@\"",
+    "ocaml-jupyter-kernel",
+    "-init", "/Users/joelalcedo/.ocamlinit",
+    "--merlin", "/Users/joelalcedo/Documents/development/ocaml_jupyter/_opam/bin/ocamlmerlin",
+    "--verbosity", "app",
+    "--connection-file", "{connection_file}"
+  ]
+}

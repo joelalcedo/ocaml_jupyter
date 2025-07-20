@@ -1,0 +1,87 @@
+opam-version: "2.0"
+added: [
+  "doc/ocaml-compiler-libs" {"D"}
+  "doc/ocaml-compiler-libs/CHANGES.md" {"F:S206T1753036239.16"}
+  "doc/ocaml-compiler-libs/LICENSE.md" {"F:S1117T1753036239.16"}
+  "doc/ocaml-compiler-libs/README.org" {"F:S338T1753036239.16"}
+  "lib/ocaml-compiler-libs" {"D"}
+  "lib/ocaml-compiler-libs/META" {"F:S1379T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp" {"D"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.a"
+    {"F:S1488T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cma"
+    {"F:S2816T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cmi"
+    {"F:S950T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cmt"
+    {"F:S5510T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cmx"
+    {"F:S306T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cmxa"
+    {"F:S312T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.cmxs"
+    {"F:S34224T1753036239.15"}
+  "lib/ocaml-compiler-libs/bytecomp/ocaml_bytecomp.ml"
+    {"F:S373T1753036239.15"}
+  "lib/ocaml-compiler-libs/common" {"D"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.a" {"F:S1456T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cma"
+    {"F:S10734T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cmi" {"F:S9001T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cmt"
+    {"F:S36908T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cmx" {"F:S1704T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cmxa"
+    {"F:S1710T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.cmxs"
+    {"F:S34208T1753036239.15"}
+  "lib/ocaml-compiler-libs/common/ocaml_common.ml" {"F:S5791T1753036239.15"}
+  "lib/ocaml-compiler-libs/dune-package" {"F:S3887T1753036239.15"}
+  "lib/ocaml-compiler-libs/opam" {"F:S841T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp" {"D"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.a" {"F:S1472T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cma"
+    {"F:S13178T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cmi"
+    {"F:S11454T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cmt"
+    {"F:S43334T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cmx"
+    {"F:S2348T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cmxa"
+    {"F:S2354T1753036239.15"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.cmxs"
+    {"F:S34208T1753036239.16"}
+  "lib/ocaml-compiler-libs/optcomp/ocaml_optcomp.ml"
+    {"F:S7051T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow" {"D"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.a" {"F:S1984T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cma"
+    {"F:S76626T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cmi"
+    {"F:S74369T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cmt"
+    {"F:S202617T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cmx" {"F:S201T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cmxa" {"F:S181T1753036239.15"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.cmxs"
+    {"F:S34256T1753036239.16"}
+  "lib/ocaml-compiler-libs/shadow/ocaml_shadow.ml" {"F:S38129T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel" {"D"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.a"
+    {"F:S1488T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cma"
+    {"F:S2573T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cmi"
+    {"F:S704T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cmt"
+    {"F:S4573T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cmx"
+    {"F:S258T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cmxa"
+    {"F:S264T1753036239.15"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.cmxs"
+    {"F:S34224T1753036239.16"}
+  "lib/ocaml-compiler-libs/toplevel/ocaml_toplevel.ml"
+    {"F:S251T1753036239.15"}
+]

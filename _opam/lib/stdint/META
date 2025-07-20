@@ -1,0 +1,7 @@
+version = "0.7.2"
+description = "Standard integer types for OCaml"
+requires = ""
+archive(byte) = "stdint.cma"
+archive(native) = "stdint.cmxa"
+plugin(byte) = "stdint.cma"
+plugin(native) = "stdint.cmxs"

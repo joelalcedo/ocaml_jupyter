@@ -1,0 +1,59 @@
+(lang dune 3.19)
+(name zmq-lwt)
+(version 5.2.2-15-g7cca40d)
+(sections (lib .) (libexec .) (doc ../../doc/zmq-lwt))
+(files
+ (lib
+  (META
+   deferred.ml
+   deferred.mli
+   dune-package
+   opam
+   zmq_lwt.a
+   zmq_lwt.cma
+   zmq_lwt.cmi
+   zmq_lwt.cmt
+   zmq_lwt.cmx
+   zmq_lwt.cmxa
+   zmq_lwt.ml
+   zmq_lwt__.cmi
+   zmq_lwt__.cmt
+   zmq_lwt__.cmx
+   zmq_lwt__.ml
+   zmq_lwt__Deferred.cmi
+   zmq_lwt__Deferred.cmt
+   zmq_lwt__Deferred.cmti
+   zmq_lwt__Deferred.cmx))
+ (libexec (zmq_lwt.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name zmq-lwt)
+ (kind normal)
+ (archives (byte zmq_lwt.cma) (native zmq_lwt.cmxa))
+ (plugins (byte zmq_lwt.cma) (native zmq_lwt.cmxs))
+ (native_archives zmq_lwt.a)
+ (requires zmq.deferred lwt lwt.unix)
+ (main_module_name Zmq_lwt)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name zmq_lwt__)
+     (visibility public)
+     (kind alias)
+     (source (path Zmq_lwt__) (impl (path zmq_lwt__.ml-gen))))
+    (name Zmq_lwt)
+    (modules
+     (module
+      (obj_name zmq_lwt__Deferred)
+      (visibility public)
+      (source
+       (path Deferred)
+       (intf (path deferred.mli))
+       (impl (path deferred.ml))))
+     (module
+      (obj_name zmq_lwt)
+      (visibility public)
+      (source (path Zmq_lwt) (impl (path zmq_lwt.ml))))))
+   (wrapped true))))

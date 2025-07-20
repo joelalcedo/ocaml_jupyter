@@ -1,0 +1,20 @@
+opam-version: "2.0"
+added: [
+  "doc/uutf" {"D"}
+  "doc/uutf/CHANGES.md" {"F:S2294T1753036231.83"}
+  "doc/uutf/LICENSE.md" {"F:S738T1753036231.83"}
+  "doc/uutf/README.md" {"F:S1439T1753036231.83"}
+  "doc/uutf/odoc-pages" {"D"}
+  "doc/uutf/odoc-pages/index.mld" {"F:S901T1753036231.83"}
+  "lib/uutf" {"D"}
+  "lib/uutf/META" {"F:S240T1753036231.83"}
+  "lib/uutf/opam" {"F:S1142T1753036231.83"}
+  "lib/uutf/uutf.a" {"F:S78944T1753036231.83"}
+  "lib/uutf/uutf.cma" {"F:S150385T1753036231.83"}
+  "lib/uutf/uutf.cmi" {"F:S6725T1753036231.83"}
+  "lib/uutf/uutf.cmti" {"F:S68204T1753036231.83"}
+  "lib/uutf/uutf.cmx" {"F:S8527T1753036231.83"}
+  "lib/uutf/uutf.cmxa" {"F:S762T1753036231.83"}
+  "lib/uutf/uutf.cmxs" {"F:S100104T1753036231.83"}
+  "lib/uutf/uutf.mli" {"F:S20893T1753036231.83"}
+]
